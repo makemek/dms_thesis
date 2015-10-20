@@ -1,7 +1,51 @@
 \chapter{Introduction}
 
 \section{Motivation}
+\gls{ic} is a faculty of \gls{kmitl}. 
+IC has been up and running well for 6 years.
+About 25 employees are working here. %TODO add number of students, lecturers
+Their main objective is to provide educational services to students. 
+Right now, they have a trouble with paper clutter. 
+Even though they have organized documents into categories. 
+The organization takes countless hours to organize, store, and retrieve documents.
+This problem hinders employee's productivity when they need to retrieve many documents. 
+Another problem is losing track of document during its workflow execution. 
+A workflow is a series of repeatable steps performed in a sequential manner to reach a goal.
+Each type of workflow usually associates with a set of actions. 
+A person who receive a document will execute some actions depending on their responsibility.
+They have to execute them sequentially. 
+Some workflows are very complicated and very difficult to keep track of.
+
+IC would like to prevent these problems before it goes out of control. 
+%TODO Wrong solution, what are we trying to do exactly?
+Our proposed solution is to move physical papers to digital format. 
+Meaning that they have to scan documents not owned by IC through a scanner. 
+We will create a system that provide ability to search and to track documents.
+We are working on \dms.
+Because we want to provide a system to manage documents within IC.
+Once we do, IC can manage and track documents more efficient, thus, increase organization's productivity.
 
 \section{Objective}
+% list of our primary objectives
+Our primary objectives are
+\begin{enumerate}
+\item To get the workflow model and to track document's current state during its workflow execution. 
+\item To report other related or dependent documents required by its originator.
+\item To store and retrieve digital documents that complete its workflow from one centralized IC's server.
+\end{enumerate}
 
 \section{Scope}
+We are going to develop a web-based application hosted on an IC's server.
+Only people within IC and granted external users can access the system.
+To be specific, there are 4 types of users.
+\begin{enumerate}
+\item IC's staffs.
+%TODO list all employee's position who invovled in this system
+\item KMITL lecturers who is assigned to IC.
+\item Stdents who is currently enroll in IC, KMITL.
+\item External users who is allowed to access the system by IC.
+\end{enumerate}
+
+The system have to manage only document distributed officially by IC.
+This also includes other attachments from external sources given that IC requires them.
+No personal document involved.
