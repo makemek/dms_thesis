@@ -107,10 +107,11 @@ User can create a multi-level folder structure to organize their files.
 \end{description}
 
 \newpage
+\begin{center}
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
-    columns/deployment/.style={column name=Deployment, column type={|p{0.3\linewidth}}},
+    columns/deployment/.style={column name=Deployment, column type={|l}},
     columns/alfresco/.style={column name=Alfresco One, column type={|c}},
     columns/docmee/.style={column name=Docmee, column type={|c}},
     columns/asite/.style={column name=Age, column type={|c}},
@@ -119,3 +120,4 @@ User can create a multi-level folder structure to organize their files.
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
     ]{res/app-deploy-summary.csv}
+\end{center}
