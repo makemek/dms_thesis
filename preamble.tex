@@ -2,6 +2,8 @@
 % Include this file before "begin{document}".
 
 \usepackage{graphicx}
+\usepackage{pgfplotstable}
+\usepackage{lscape}
 
 % Common use words
 \newcommand{\kmitl}{King Mongkut's Institute of Technology Ladkrabang}
@@ -20,3 +22,14 @@
     \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[1.2in]{\hrulefill}%
     \par\noindent\makebox[2.5in][l]{#1} \hfill\makebox[2.0in][r]{Date}%
 }%
+
+\usepackage{geometry}
+\usepackage{array,booktabs}
+\newcolumntype{P}[1]{>{\centering}p{#1}}
+
+\begin{filecontents*}{res/app-deploy-summary.csv}
+deployment,alfresco,docmee,asite,eclipse,efile
+Require a program to be installed on PC,,X,,X,X
+Has mobile application,X,X,X,,X
+Access via web,X,X,X,X,X
+\end{filecontents*}
