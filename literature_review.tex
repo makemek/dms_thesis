@@ -4,22 +4,42 @@ Section \ref{dms-features} gives lists of required features of \dms.
 Section \ref{relate-works} explores some existing document management applications.
 
 \section{Integrated features} \label{dms-features}
-The features of \dms contains the following
-\begin{description}
-\item[Search file-reference]
-User can search documents and their dependencies based on these keywords
-\begin{enumerate}
-\item Title
-\item Description
-\item Author's name
-\item Date
-\item Category
-\end{enumerate}
+Document management is the process of applying policies and rules to how documents are created, persisted, and expired within an organization.
+We analysed each service based on the following features.
 
-\item[Upload/download file]
-\item[Print documents]
-\item[Generate ID and version of each document]
-\item[Provide document's status]
+\begin{description}
+\item[Access Control] \hfill \\
+This feature controls how much user can interact with the document.
+The system should use role-based access control to authorize the user because IC classify employees by their responsibilities.
+A role-based access control defines what operation user can perform based on their roles.
+
+\item[Archiving and Retention] \hfill \\
+How the system stores documents on a permanent storage.
+How the system search and retrieve files.
+This feature manage the files and how to access them.
+
+\item[Collaboration] \hfill \\
+This feature enables users to cooperate with other individuals on the same document. 
+
+\item[Document Assembly] \hfill \\
+This feature assists user to create a digital document.
+It provides the document with pre-existing text called a template when the user creates a new document.
+
+\item[Version Control] \hfill \\
+Version control is the management of changes to documents.
+It stores changes' history for later recovery.
+In this case, the system has to have a periodic document backup when user is editing a document.
+Lastly, user should be able to create new revision of document when they ready to publish the document.
+
+\item[Form Management] \hfill \\
+This feature let user creates and manages document forms.
+The system treats form as another type of document.
+The difference is user can fill in the blank fields provided in the document.
+
+\item[Document Searching Service] \hfill \\
+When user request a document, the system will look in its storage based on given keywords.
+User does not have to look within the storage by oneself.
+The system provides user with various searching criteria for user to get what they need.
 \end{description}
 
 \section{Related Works} \label{relate-works}
