@@ -52,7 +52,7 @@ This also includes other attachments from external sources given that IC require
 No personal document involved because they are not a property of IC.
 This thesis conducts only on the following 7 types of documents.
 \begin{enumerate}
-\item Quality Manual \hfill \\
+\item \label{quality-manual} Quality Manual \hfill \\
 A document on policies management.
 It describes the following information about the organization.
 \begin{multicols}{2}
@@ -67,20 +67,23 @@ It describes the following information about the organization.
 \end{itemize}
 \end{multicols}
 
-\item \label{work-prod} Work Procedure \hfill \\
+\item \label{doc-type:work-prod} Work Procedure \hfill \\
 A document describes details on working procedures, departments or persons who hold responsibilities for documents.
 
-\item \label{work-ins} Work Instruction \hfill \\
+\item \label{doc-type:work-ins} Work Instruction \hfill \\
 A document indicates employee's roles and responsibilities.
 The employee can work to meet organization's needs.
 
-\item Forms \hfill \\
+\item Forms \label{doc-type:form} \hfill \\
 Forms use to collect information or work results.
-They reference either type \ref{work-prod} or \ref{work-ins}.
+They reference either type \ref{doc-type:work-prod} or \ref{doc-type:work-ins}.
 
-\item Records
+\item Records \label{doc-type:record} \hfill \\
 A record is an already-filled form.
 IC will use the them evidences.
+
+\item Supported Document \hfill \\
+Other IC's document that are not type \ref{quality-manual}, \ref{doc-type:work-prod}, \ref{doc-type:work-ins}, \ref{doc-type:form}, and \ref{doc-type:record}
 \end{enumerate}
 
 \section{Project plan}
