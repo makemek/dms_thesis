@@ -107,7 +107,8 @@ User can create a multi-level folder structure to organize their files.
 \end{description}
 
 \newpage
-\begin{center}
+
+\begin{table}
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
@@ -120,18 +121,21 @@ User can create a multi-level folder structure to organize their files.
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
     ]{res/app-deploy-summary.csv}
+\end{table}
 
 \vspace{1.5cm}
 
+\begin{table}
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
     ]{res/app-feature-summary.csv}
-
+\end{table}
 \vspace{3cm}
 
+\begin{table}
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
@@ -143,9 +147,9 @@ User can create a multi-level folder structure to organize their files.
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
     ]{res/app-deploy-summary-2.csv}
-
+\end{table}
 \vspace{1.5cm}
-
+\begin{table}
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
@@ -153,4 +157,4 @@ User can create a multi-level folder structure to organize their files.
     every last row/.style={after row=\hline},
     ]{res/app-feature-summary-2.csv}
     
-\end{center}
+\end{table}
