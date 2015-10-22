@@ -45,6 +45,80 @@ To be specific, there are 4 types of users.
 \item External users who is allowed to access the system by IC.
 \end{enumerate}
 
+Our primary focus is the end-product of a document workflow.
+They are filled document from a predefined template with other attachments included optionally.
 The system have to manage only document distributed officially by IC.
 This also includes other attachments from external sources given that IC requires them.
-No personal document involved.
+No personal document involved because they are not a property of IC.
+This thesis conducts only on the following 7 types of documents.
+\begin{enumerate}
+\item \label{quality-manual} Quality Manual \hfill \\
+A document on policies management.
+It describes the following information about the organization.
+\begin{multicols}{2}
+\begin{itemize}
+\item Management strategy
+\item Scope
+\item Goals
+\item Work procedure
+\item Management structure
+\item Objectives
+\item Responsibilities
+\end{itemize}
+\end{multicols}
+
+\item \label{doc-type:work-prod} Work Procedure \hfill \\
+A document describes details on working procedures, departments or persons who hold responsibilities for documents.
+
+\item \label{doc-type:work-ins} Work Instruction \hfill \\
+A document indicates employee's roles and responsibilities.
+The employee can work to meet organization's needs.
+
+\item Forms \label{doc-type:form} \hfill \\
+Forms use to collect information or work results.
+They reference either type \ref{doc-type:work-prod} or \ref{doc-type:work-ins}.
+
+\item Records \label{doc-type:record} \hfill \\
+A record is an already-filled form.
+IC will use the them evidences.
+
+\item Supported Document \hfill \\
+Other IC's document that are not type \ref{quality-manual}, \ref{doc-type:work-prod}, \ref{doc-type:work-ins}, \ref{doc-type:form}, and \ref{doc-type:record}
+
+\item External Document \hfill \\
+A document receives from other departments in order to proceed some tasks inside IC.
+\end{enumerate}
+
+\section{Project plan}
+The project starts at August 18th, 2015.
+We expect to deliver it on March 25th, 2016.
+For our project planing, we divide our work into 4 phases.
+%TODO descibe them
+\begin{enumerate}
+\item Plan and research (18/08/15 -- 30/10/15) \hfill \\
+The first phase is to gather user's requirements by interviewing.
+We are going to interview IC's vice dean because he is a client who came up with this project.
+Then, we will move on to interviewing IC's employees asking about document related problem they encountered.
+Next, we will discuss about software tools that solve the problem.
+\item Design and architecture (29/09/15 -- 23/11/15) \hfill \\
+On the second phase, we are going to design the software architecture.
+The architecture is the core of how software must behave, also to get an overview of system interaction.
+Later, we are going to design a \gls{gui} of this system.
+\item System implementation (7/12/15 -- 22/02/16) \hfill \\
+This phase begins writing source codes based on designed architecture and technical specification.
+Later on, we plan to connect each system component together.
+\item Testing (19/02/16 -- 07/03/16) \hfill \\
+This phase ensures that systems runs correctly with user and system requirements.
+We will conduct testing phase on user acceptance.
+Then, We will evaluate testing result.
+If the result is satisfying, we will deploy the system to IC's server.
+\end{enumerate}
+
+\begin{landscape}
+\begin{figure}
+\centering
+\caption{Project's schedule shown as Gantt chart}
+\label{fig:project-schedule}
+\includegraphics[scale=0.45]{res/project_plan}
+\end{figure}
+\end{landscape}
