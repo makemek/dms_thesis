@@ -1,6 +1,6 @@
-Feature,Alfresco One,Docmee,Asite,Eclipse,Efile
+feature,alfresco,docmee,asite,eclipse,efile
 Access Controls,X,X,X,X,X
-Archiving Retention,X,X,X,X,X
+Archiving \& Retention,X,X,X,X,X
 Collaboration,/,/,X,X,X
 Document Assembly,X,/,X,X,/
 Form Management,/,/,X,X,/

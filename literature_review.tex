@@ -129,11 +129,18 @@ User can create a multi-level folder structure to organize their files.
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
+    columns/feature/.style={column name=Feature, column type={|l}},
+    columns/alfresco/.style={column name=Alfresco One, column type={|c}},
+    columns/docmee/.style={column name=Docmee, column type={|c}},
+    columns/asite/.style={column name=Asite, column type={|c}},
+    columns/eclipse/.style={column name=Eclipse Document Management, column type={|P{2cm}}},
+    columns/efile/.style={column name=eFileCabinet, column type={|c|}},    
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
     ]{res/app-feature-summary.csv}
 \end{table}
-\vspace{3cm}
+
+\clearpage
 
 \begin{table}
 \pgfplotstabletypeset[
@@ -153,8 +160,12 @@ User can create a multi-level folder structure to organize their files.
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
+    columns/feature/.style={column name=Feature, column type={|l}},
+    columns/contentverse/.style={column name=Cententverse, column type={|c}},
+    columns/smartFile/.style={column name=smartFile, column type={|c}},
+    columns/isoTracker/.style={column name=isoTracker, column type={|c}},
+    columns/zoho/.style={column name=Zoho Docs, column type={|c|}},  
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
     ]{res/app-feature-summary-2.csv}
-    
 \end{table}
