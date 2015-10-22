@@ -3,9 +3,19 @@
 
 \usepackage{graphicx}
 
+\usepackage{pgfplotstable}
+\usepackage{lscape}
+
 % Common use words
-\newcommand{\kmitl}{International College, King Mongkut's Institute of Technology Ladkrabang}
+\newcommand{\kmitl}{King Mongkut's Institute of Technology Ladkrabang}
 \newcommand{\dms}{Opensources-based Document Management System for Educational Purposes}
+\newcommand{\IC}{International College}
+
+% glossaries
+\usepackage[acronym]{glossaries}
+\newacronym{ic}{IC}{\IC}
+\newacronym{kmitl}{KMITL}{\kmitl}
+\newacronym{OCR}{OCR}{Optical Character Recognition}
 
 %signature fields
 \usepackage{amsmath}
@@ -13,3 +23,41 @@
     \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[1.2in]{\hrulefill}%
     \par\noindent\makebox[2.5in][l]{#1} \hfill\makebox[2.0in][r]{Date}%
 }%
+
+\usepackage{geometry}
+\usepackage{array,booktabs}
+\newcolumntype{P}[1]{>{\centering}p{#1}}
+
+\begin{filecontents*}{res/app-deploy-summary.csv}
+deployment,alfresco,docmee,asite,eclipse,efile
+Require a program to be installed on a computer,/,X,/,X,X
+Has mobile application,X,X,X,/,X
+Access via a web browser,X,X,X,X,X
+\end{filecontents*}
+
+\begin{filecontents*}{res/app-feature-summary.csv}
+feature,alfresco,docmee,asite,eclipse,efile
+Access Controls,X,X,X,X,X
+Archiving \& Retention,X,X,X,X,X
+Collaboration,/,/,X,X,X
+Document Assembly,X,/,X,X,/
+Form Management,/,/,X,X,/
+Full Text Search,X,X,X,X,X
+\end{filecontents*}
+
+\begin{filecontents*}{res/app-deploy-summary-2.csv}
+deployment,contentverse,smartFile,isoTracker,zoho
+Require a program to be installed on a computer,X,/,/,X
+Has mobile application,X,/,/,X
+Access via a web browser,X,X,X,/
+\end{filecontents*}
+
+\begin{filecontents*}{res/app-feature-summary-2.csv}
+feature,contentverse,smartFile,isoTracker,zoho
+Access Controls,X,X,X,X
+Archiving \& Retention,X,X,X,X
+Collaboration,X,/,X,X
+Document Assembly,X,/,/,X
+Form Management,X,/,/,X
+Full Text Search,X,X,/,X
+\end{filecontents*}

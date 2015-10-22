@@ -1,3 +1,186 @@
 \chapter{Literature Review}
+This chapter introduces some existing document management system.
+Section \ref{dms-features} gives lists of required features of \dms.
+Section \ref{relate-works} explores some existing document management applications.
 
-\section{Related Works}
+\section{Integrated features} \label{dms-features}
+Document management is the process of applying policies and rules to how documents are created, persisted, and expired within an organization.
+We analysed each service based on the following features.
+
+\begin{description}
+\item[Access Control] \hfill \\
+This feature controls how much user can interact with the document.
+The system should use role-based access control to authorize the user because IC classify employees by their responsibilities.
+A role-based access control defines what operation user can perform based on their roles.
+
+\item[Archiving and Retention] \hfill \\
+How the system stores documents on a permanent storage.
+How the system search and retrieve files.
+This feature manage the files and how to access them.
+
+\item[Collaboration] \hfill \\
+This feature enables users to cooperate with other individuals on the same document. 
+
+\item[Document Assembly] \hfill \\
+This feature assists user to create a digital document.
+It provides the document with pre-existing text called a template when the user creates a new document.
+
+\item[Version Control] \hfill \\
+Version control is the management of changes to documents.
+It stores changes' history for later recovery.
+In this case, the system has to have a periodic document backup when user is editing a document.
+Lastly, user should be able to create new revision of document when they ready to publish the document.
+
+\item[Form Management] \hfill \\
+This feature let user creates and manages document forms.
+The system treats form as another type of document.
+The difference is user can fill in the blank fields provided in the document.
+
+\item[Document Searching Service] \hfill \\
+When user request a document, the system will look in its storage based on given keywords.
+User does not have to look within the storage by oneself.
+The system provides user with various searching criteria for user to get what they need.
+\end{description}
+
+\section{Related Works} \label{relate-works}
+We pick 9 existing document management applications to investigate.
+Each application has its interesting functionalities and characteristics.
+We focus mainly on these 2 features, access control and document retention.
+\begin{description}
+\item[Alfresco One] \hfill \\
+Alfresco One allows organizations to manage any type of content from small office documents, photographs, to large video files.
+The system allows users to choose how to access their content --- via the Web, desktop or email --- while the server enforces access controls and security.
+
+\item[Docmee] \hfill \\
+Dokmee has multiple editions targeted at companies of all sizes.
+It can run in a Windows-based Intranet network, as a Web-hosted system or as a software-as-a-service model.
+User can organize files into folders and can store unlimited number of files.
+
+\item[Asite Document Manager] \hfill \\
+Asite Document Manager provides an organization with a centralize storage with folder-like structure.
+They claim that doing so saves user's time and effort of each party managing their own filing system.
+
+\item[Eclipse Document Managment] \hfill \\
+This program, developed by docSTAR, offers solution on storing and scanning electronic document files.
+User can grant access to documents based on user permission.
+It has a centralized storage accessible from other locations.
+It searches documents by text, field, annotation, and name with auto-complete feature.
+The program also claims that it can locate documents that sound similar too.
+
+\item[eFileCabinet] \hfill \\
+eFileCabinet hosts document on their cloud server.
+It searches document by filename and tags.
+The program saves search history every time user perform a search for auto completion.
+It can look for word and phrases inside a document.
+User can sends document directly to eFileCabinet from Windows File Explorer or Microsoft Office Products.
+
+\item[Contentverse] \hfill \\
+Contentverse has file naming and storing familiar to cabinet and folder structure, indexed for immediate full-text search and retrieval.
+The program track every changes -- every version of any file available for reference.
+The program allows user to assign permission to users based on their specific job requirements.
+
+\item[SmartFile] \hfill \\
+SmartFile is a file management solution that enables everyone to more securely share, manage and control files offline and online.
+SmartFile offers \gls{OCR} search.
+User can find content within their documents.
+The program narrows search result by let user specify date interval and file size interval.
+User can view PDFs, JPG, PNG, GIF, and other image formats with its own viewer.
+The characteristics of this program is its permanent activity logs.
+Activity logs contain file's access information, who access the file, what user did to the file.
+These logs are kept in the program permanently.
+
+\item[isoTracker] \hfill \\
+The software encrypts documents and stores safely in folders.
+User can set access permission on files or folders themselves.
+The program search documents by metadata.
+Documents can be reviewed, commented on and modified. The software also features a complete usage log for each document.
+
+\item[Zoho Docs] \hfill \\
+Zoho Docs is a document management system on a cloud server.
+User can access the file anywhere on their smart phone device.
+The software encourages real-time collaboration among other team members.
+The program also has its own tools for creating word documents, spreadsheets, and presentations
+Search feature of this program can search by filename only.
+It can not search for contents within the file.
+Zoho Docs has a predefined folders separate by categories such as accounts, sales, and marketing.
+User can create a multi-level folder structure to organize their files.
+\end{description}
+
+Table \ref{tbl:deploy-sum1} and \ref{tbl:deploy-sum2} shows a comparison application platform available.
+Table \ref{tbl:feature-sum1} and \ref{tbl:feature-sum2} shows a comparison of features that we interested.
+
+\newpage
+
+\begin{table}
+\pgfplotstabletypeset[
+    col sep=comma,
+    string type,
+    columns/deployment/.style={column name=Deployment, column type={|p{0.3\linewidth}}},
+    columns/alfresco/.style={column name=Alfresco One, column type={|c}},
+    columns/docmee/.style={column name=Docmee, column type={|c}},
+    columns/asite/.style={column name=Asite, column type={|c}},
+    columns/eclipse/.style={column name=Eclipse Document Management, column type={|P{2cm}}},
+    columns/efile/.style={column name=eFileCabinet, column type={|c|}},
+    every head row/.style={before row=\hline,after row=\hline},
+    every last row/.style={after row=\hline},
+    ]{res/app-deploy-summary.csv}
+    
+    \caption{The comparison of deployment between Alfresco One, Docmee, Asite, Eclipse Document Managment, and eFileCabinet}
+    \label{tbl:deploy-sum1}
+\end{table}
+
+\vspace{1.5cm}
+
+\begin{table}
+\pgfplotstabletypeset[
+    col sep=comma,
+    string type,
+    columns/feature/.style={column name=Feature, column type={|l}},
+    columns/alfresco/.style={column name=Alfresco One, column type={|c}},
+    columns/docmee/.style={column name=Docmee, column type={|c}},
+    columns/asite/.style={column name=Asite, column type={|c}},
+    columns/eclipse/.style={column name=Eclipse Document Management, column type={|P{2cm}}},
+    columns/efile/.style={column name=eFileCabinet, column type={|c|}},    
+    every head row/.style={before row=\hline,after row=\hline},
+    every last row/.style={after row=\hline},
+    ]{res/app-feature-summary.csv}
+    
+    \caption{The comparison of features between Alfresco One, Docmee, Asite, Eclipse Document Managment, and eFileCabinet}
+    \label{tbl:feature-sum1}
+\end{table}
+
+\clearpage
+
+\begin{table}
+\pgfplotstabletypeset[
+    col sep=comma,
+    string type,
+    columns/deployment/.style={column name=Deployment, column type={|p{0.3\linewidth}}},
+    columns/contentverse/.style={column name=Contentverse, column type={|c}},
+    columns/smartFile/.style={column name=smartFile, column type={|c}},
+    columns/isoTracker/.style={column name=isoTracker, column type={|c}},
+    columns/zoho/.style={column name=Zoho Docs, column type={|c|}},
+    every head row/.style={before row=\hline,after row=\hline},
+    every last row/.style={after row=\hline},
+    ]{res/app-deploy-summary-2.csv}
+    
+    \caption{The comparison of deployment between Contentverse, smartFile, isoTracker, and Zoho Docs}
+    \label{tbl:deploy-sum2}
+\end{table}
+\vspace{1.5cm}
+\begin{table}
+\pgfplotstabletypeset[
+    col sep=comma,
+    string type,
+    columns/feature/.style={column name=Feature, column type={|l}},
+    columns/contentverse/.style={column name=Cententverse, column type={|c}},
+    columns/smartFile/.style={column name=smartFile, column type={|c}},
+    columns/isoTracker/.style={column name=isoTracker, column type={|c}},
+    columns/zoho/.style={column name=Zoho Docs, column type={|c|}},  
+    every head row/.style={before row=\hline,after row=\hline},
+    every last row/.style={after row=\hline},
+    ]{res/app-feature-summary-2.csv}
+    
+    \caption{The comparison of features between Contentverse, smartFile, isoTracker, and Zoho Docs}
+    \label{tbl:feature-sum2}
+\end{table}
