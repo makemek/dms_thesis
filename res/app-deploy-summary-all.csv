@@ -1,0 +1,10 @@
+deployment, reqProg, hasMblApp, webAccess
+Alfresco One, /, X, X
+Docmee, X, X, X
+Asite, /, X, X
+Eclipse Document Management, X, /, X
+Efilecabinet, X, X, X
+Contentverse, X, X, X
+smartFile, /, /, X
+isoTracker, /, /, X
+Zoho Docs, X, X, /

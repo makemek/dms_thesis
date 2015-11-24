@@ -115,17 +115,27 @@ Table \ref{tbl:feature-sum1} and \ref{tbl:feature-sum2} shows a comparison of fe
 \pgfplotstabletypeset[
     col sep=comma,
     string type,
-    columns/deployment/.style={column name=Deployment, column type={|p{0.3\linewidth}}},
-    columns/alfresco/.style={column name=Alfresco One, column type={|c}},
-    columns/docmee/.style={column name=Docmee, column type={|c}},
-    columns/asite/.style={column name=Asite, column type={|c}},
-    columns/eclipse/.style={column name=Eclipse Document Management, column type={|P{2cm}}},
-    columns/efile/.style={column name=eFileCabinet, column type={|c|}},
+    columns/deployment/.style={
+    	column name=Deployment,
+    	column type={|p{0.2\linewidth}|}
+    	},
+    columns/reqProg/.style={
+       	column name=Require a program to be installed on a computer,
+       	column type={C{4cm}|}
+    },
+    columns/hasMblApp/.style={
+    	column name=Has mobile application,
+    	column type={C{2cm}|}
+    },
+    columns/webAccess/.style={
+    	column name=Access via a web browser,
+    	column type={C{2cm}|}
+    },        
     every head row/.style={before row=\hline,after row=\hline},
     every last row/.style={after row=\hline},
-    ]{res/app-deploy-summary.csv}
+    ]{res/app-deploy-summary-all.csv}
     
-    \caption{The comparison of deployment between Alfresco One, Docmee, Asite, Eclipse Document Managment, and eFileCabinet}
+    \caption{The comparison of all reviewed program by their deployment}
     \label{tbl:deploy-sum1}
 \end{table}
 
@@ -151,23 +161,6 @@ Table \ref{tbl:feature-sum1} and \ref{tbl:feature-sum2} shows a comparison of fe
 
 \clearpage
 
-\begin{table}
-\pgfplotstabletypeset[
-    col sep=comma,
-    string type,
-    columns/deployment/.style={column name=Deployment, column type={|p{0.3\linewidth}}},
-    columns/contentverse/.style={column name=Contentverse, column type={|c}},
-    columns/smartFile/.style={column name=smartFile, column type={|c}},
-    columns/isoTracker/.style={column name=isoTracker, column type={|c}},
-    columns/zoho/.style={column name=Zoho Docs, column type={|c|}},
-    every head row/.style={before row=\hline,after row=\hline},
-    every last row/.style={after row=\hline},
-    ]{res/app-deploy-summary-2.csv}
-    
-    \caption{The comparison of deployment between Contentverse, smartFile, isoTracker, and Zoho Docs}
-    \label{tbl:deploy-sum2}
-\end{table}
-\vspace{1.5cm}
 \begin{table}
 \pgfplotstabletypeset[
     col sep=comma,
