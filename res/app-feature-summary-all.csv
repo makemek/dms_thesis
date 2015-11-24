@@ -1,7 +1,7 @@
 feature, accessCtrl, achiveRetent, collab, docAssem, formManage, txtSearch, verCtrl
 Alfresco One, X, X, /, X, /, X, X
-Docmee, X, X, /, /, /, X, X
-Asite, X, X, X, /, X, X, X
+Dokmee, X, X, /, /, /, X, X
+Asite Document Manager, X, X, X, /, X, X, X
 Eclipse Document Management, X, X, X, X, X, X, X
 eFilecabinet, X, X, X, /, /, X, /
 Contentverse, X, X, X, X, X, X, /
