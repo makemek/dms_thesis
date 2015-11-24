@@ -106,8 +106,8 @@ Zoho Docs has a predefined folders separate by categories such as accounts, sale
 User can create a multi-level folder structure to organize their files.
 \end{description}
 
-Table \ref{tbl:deploy-sum1} and \ref{tbl:deploy-sum2} shows a comparison application platform available.
-Table \ref{tbl:feature-sum1} and \ref{tbl:feature-sum2} shows a comparison of features that we interested.
+Table \ref{tbl:deploy-sum} shows a comparison application platform available.
+Table \ref{tbl:feature-sum} shows a comparison of features that we interested.
 
 \newpage
 
@@ -136,44 +136,46 @@ Table \ref{tbl:feature-sum1} and \ref{tbl:feature-sum2} shows a comparison of fe
     ]{res/app-deploy-summary-all.csv}
     
     \caption{The comparison of all reviewed program by their deployment}
-    \label{tbl:deploy-sum1}
+    \label{tbl:deploy-sum}
 \end{table}
-
-\vspace{1.5cm}
 
 \begin{table}
-\pgfplotstabletypeset[
-    col sep=comma,
-    string type,
-    columns/feature/.style={column name=Feature, column type={|l}},
-    columns/alfresco/.style={column name=Alfresco One, column type={|c}},
-    columns/docmee/.style={column name=Docmee, column type={|c}},
-    columns/asite/.style={column name=Asite, column type={|c}},
-    columns/eclipse/.style={column name=Eclipse Document Management, column type={|P{2cm}}},
-    columns/efile/.style={column name=eFileCabinet, column type={|c|}},    
-    every head row/.style={before row=\hline,after row=\hline},
-    every last row/.style={after row=\hline},
-    ]{res/app-feature-summary.csv}
-    
-    \caption{The comparison of features between Alfresco One, Docmee, Asite, Eclipse Document Managment, and eFileCabinet}
-    \label{tbl:feature-sum1}
+	\pgfplotstabletypeset[
+	col sep=comma,
+	string type,
+	columns/feature/.style={
+		column name=Feature,
+		column type={|p{0.2\linewidth}|}
+	},
+	columns/accessCtrl/.style={
+		column name=Access Controls,
+		column type={C{1.5cm}|}
+	},
+	columns/achiveRetent/.style={
+		column name=Archiving \& Retention ,
+		column type={C{1.5cm}|}
+	},
+	columns/collab/.style={
+		column name=Collaboration,
+		column type={C{1.5cm}|}
+	},
+	columns/docAssem/.style={
+		column name=Document Assembly,
+		column type={C{2cm}|}
+	},  
+	columns/formManage/.style={
+		column name=Form Management,
+		column type={C{2cm}|}
+	},	      
+	columns/txtSearch/.style={
+		column name=Full Text Search,
+		column type={C{1.5cm}|}
+	},        		        
+	every head row/.style={before row=\hline,after row=\hline},
+	every last row/.style={after row=\hline},
+	]{res/app-feature-summary-all.csv}
+	
+	\caption{The comparison of all reviewed program and their features}
+	\label{tbl:feature-sum}
 \end{table}
 
-\clearpage
-
-\begin{table}
-\pgfplotstabletypeset[
-    col sep=comma,
-    string type,
-    columns/feature/.style={column name=Feature, column type={|l}},
-    columns/contentverse/.style={column name=Cententverse, column type={|c}},
-    columns/smartFile/.style={column name=smartFile, column type={|c}},
-    columns/isoTracker/.style={column name=isoTracker, column type={|c}},
-    columns/zoho/.style={column name=Zoho Docs, column type={|c|}},  
-    every head row/.style={before row=\hline,after row=\hline},
-    every last row/.style={after row=\hline},
-    ]{res/app-feature-summary-2.csv}
-    
-    \caption{The comparison of features between Contentverse, smartFile, isoTracker, and Zoho Docs}
-    \label{tbl:feature-sum2}
-\end{table}
