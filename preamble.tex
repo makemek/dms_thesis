@@ -5,8 +5,15 @@
 \usepackage{lscape}
 \usepackage{multicol}
 
-\usepackage{pgfplotstable}
 \usepackage{lscape}
+
+% Utilities for creating table
+\usepackage{pgfplotstable}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\arraystretch}{1.5}
 
 % Common use words
 \newcommand{\kmitl}{King Mongkut's Institute of Technology Ladkrabang}
@@ -31,37 +38,3 @@
 \usepackage{geometry}
 \usepackage{array,booktabs}
 \newcolumntype{P}[1]{>{\centering}p{#1}}
-
-\begin{filecontents*}{res/app-deploy-summary.csv}
-deployment,alfresco,docmee,asite,eclipse,efile
-Require a program to be installed on a computer,/,X,/,X,X
-Has mobile application,X,X,X,/,X
-Access via a web browser,X,X,X,X,X
-\end{filecontents*}
-
-\begin{filecontents*}{res/app-feature-summary.csv}
-feature,alfresco,docmee,asite,eclipse,efile
-Access Controls,X,X,X,X,X
-Archiving \& Retention,X,X,X,X,X
-Collaboration,/,/,X,X,X
-Document Assembly,X,/,X,X,/
-Form Management,/,/,X,X,/
-Full Text Search,X,X,X,X,X
-\end{filecontents*}
-
-\begin{filecontents*}{res/app-deploy-summary-2.csv}
-deployment,contentverse,smartFile,isoTracker,zoho
-Require a program to be installed on a computer,X,/,/,X
-Has mobile application,X,/,/,X
-Access via a web browser,X,X,X,/
-\end{filecontents*}
-
-\begin{filecontents*}{res/app-feature-summary-2.csv}
-feature,contentverse,smartFile,isoTracker,zoho
-Access Controls,X,X,X,X
-Archiving \& Retention,X,X,X,X
-Collaboration,X,/,X,X
-Document Assembly,X,/,/,X
-Form Management,X,/,/,X
-Full Text Search,X,X,/,X
-\end{filecontents*}

@@ -3,7 +3,7 @@
 \section{Motivation}
 \gls{ic} is a faculty of \gls{kmitl}. 
 IC has been up and running well for 6 years.
-About 25 employees are working here. %TODO add number of students, lecturers
+About 25 employees are working here.
 Their main objective is to provide educational services to students. 
 Right now, they have a trouble with paper clutter. 
 Even though they have organized documents into categories. 
@@ -20,7 +20,7 @@ IC would like to prevent these problems before it goes out of control.
 Our proposed solution is to manage, store, and retrieve documents digitally using a computer software.
 The employee will use less time to search and be less error-prone.
 We will create a system that provide ability to search and to track documents.
-We are working on \dms.
+We are working on \MakeLowercase{\dms}, or so called Monkey Office.
 Because we want to provide a system to manage documents within IC.
 Once we do, IC can manage and track documents more efficient, thus, increase organization's productivity.
 
@@ -28,9 +28,9 @@ Once we do, IC can manage and track documents more efficient, thus, increase org
 % list of our primary objectives
 Our primary objectives are
 \begin{enumerate}
-\item To get the workflow model and to track document's current state during its workflow execution. 
+\item To design a workflow model and to track document's current state during its workflow execution. 
 \item To report other related or dependent documents required by its originator.
-\item To store and retrieve digital documents that complete its workflow from one centralized IC's server.
+\item To store and retrieve digital documents corresponding to outgoing or finished workflows from and to IC's server.
 \end{enumerate}
 
 \section{Scope}
@@ -38,55 +38,57 @@ We are going to develop a web-based application hosted on an IC's server.
 Only people within IC and granted external users can access the system.
 To be specific, there are 4 types of users.
 \begin{enumerate}
-\item IC's staffs.
-%TODO list all employee's position who invovled in this system
+\item IC's administrative staffs.
 \item KMITL lecturers who is assigned to IC.
-\item Stdents who is currently enroll in IC, KMITL.
-\item External users who is allowed to access the system by IC.
+\item Students who are currently enrolled in IC, KMITL.
+\item External users who is allowed to access the system by IC e.g.\ Alumni students.
 \end{enumerate}
 
-Our primary focus is the end-product of a document workflow.
-They are filled document from a predefined template with other attachments included optionally.
-The system have to manage only document distributed officially by IC.
-This also includes other attachments from external sources given that IC requires them.
-No personal document involved because they are not a property of IC.
-This thesis conducts only on the following 7 types of documents.
+Before diving deeper into the scope of this project, we would like to clarify these 2 words---document and workflow---in terms of our project. %transition
+Because from now on, we will use these words frequently and we would like readers to interpret them correctly.
+%TODO Explain what is a document
+Firstly, a document is a record that provides information or served as an evidence.
+Pictures and sound can also be considered as a document both in physical and digital form. %TODO cite %TODO cite oxford dict http://goo.gl/Ziutvi and http://goo.gl/5x6EOZ
+%TODO Explain what is a workflow
+Secondly, a workflow is a sequence of repeatable tasks performed to achieve a single goal. %TODO cite
+Each tasks may perform with specific conditions.
+A person, machine, group of persons or machines are responsible to carry out the task. %TODO cite http://goo.gl/IayPio
+%TODO Explain how workflow and document are related
+So, how workflow and document are related together?
+In organizations, the goal of the document is get them approved, distributed, or archived.
+A document can be an input or end-product of the task.
+The task may require a certain document to execute.
+Other documents may be produced by the task.
+
+Our primary focus is digital documents produced from tasks in the workflow.
+The system has to manage workflows which are created officially by IC and documents produced by tasks.
+The system offer document file hosting services to users for reusing them later.
+Hosted documents that are not used by the workflow is not in the scope of this project.
+Uploaded documents that is not in the system's file hosting service is in the scope if IC requires them in one of the task in workflow.
+This thesis conducts only on the following 2 types of documents.
+%TODO How these 7 types are related to form, resulting docs, attachments, ...
 \begin{enumerate}
-\item \label{quality-manual} Quality Manual \hfill \\
-A document on policies management.
-It describes the following information about the organization.
-\begin{multicols}{2}
-\begin{itemize}
-\item Management strategy
-\item Scope
-\item Goals
-\item Work procedure
-\item Management structure
-\item Objectives
-\item Responsibilities
-\end{itemize}
-\end{multicols}
-
-\item \label{doc-type:work-prod} Work Procedure \hfill \\
-A document describes details on working procedures, departments or persons who hold responsibilities for documents.
-
-\item \label{doc-type:work-ins} Work Instruction \hfill \\
-A document indicates employee's roles and responsibilities.
-The employee can work to meet organization's needs.
-
-\item Forms \label{doc-type:form} \hfill \\
-Forms use to collect information or work results.
-They reference either type \ref{doc-type:work-prod} or \ref{doc-type:work-ins}.
-
-\item Records \label{doc-type:record} \hfill \\
-A record is an already-filled form.
-IC will use the them evidences.
-
-\item Supported Document \hfill \\
-Other IC's document that are not type \ref{quality-manual}, \ref{doc-type:work-prod}, \ref{doc-type:work-ins}, \ref{doc-type:form}, and \ref{doc-type:record}
-
-\item External Document \hfill \\
-A document receives from other departments in order to proceed some tasks inside IC.
+\item Electronic form \hfill \\
+A formatted document with blank fields that prompts user to fill in.
+Forms are created according to IC's work procedure and instruction.
+Work procedure provides details on working procedures, departments, or persons who hold responsibilities for documents.
+Work instruction indicates employee's roles and responsibilities.
+IC defines non-filled form as ''Form'' and already filled form as ''Record''.
+By the time of writing, this project conduct with 3 sub-types forms.
+\begin{enumerate}
+\item Absence form \hfill \\
+For IC's employee and students to take days off due to personal or business reasons.
+\item Student internship form \hfill \\
+For IC students who is above Year 2 to gain work experience in software industry during a summer semester.
+\item Conference outside KMITL form \hfill \\
+For lecturers to request going to a conference outside KMITL.
+\end{enumerate}
+Because all of these forms are in paper-based format, we have to convert them into the electronic form.
+Meaning that a system displays the form on a computer screen waiting for a user to fill in required blank fields.
+\item External document \hfill \\
+Documents received from other individuals or departments in order to proceed some tasks in a workflow.
+If received document is in paper form, it has to be scanned by a scanner first.
+The task includes these documents as attachments.
 \end{enumerate}
 
 \section{Project plan}
@@ -96,22 +98,22 @@ For our project planing, we divide our work into 4 phases.
 %TODO descibe them
 \begin{enumerate}
 \item Plan and research (18/08/15 -- 30/10/15) \hfill \\
-The first phase is to gather user's requirements by interviewing.
-We are going to interview IC's vice dean because he is a client who came up with this project.
-Then, we will move on to interviewing IC's employees asking about document related problem they encountered.
-Next, we will discuss about software tools that solve the problem.
+The first phase was to gather user's requirements by interviewing.
+We interviewed with IC's vice dean because he is a client who came up with this project.
+Then, we moved on to interviewing IC's employees asking about document related problem they encountered.
+Next, we discussed about software tools that solve the problem.
 \item Design and architecture (29/09/15 -- 23/11/15) \hfill \\
-On the second phase, we are going to design the software architecture.
+On the second phase, we designed the software architecture.
 The architecture is the core of how software must behave, also to get an overview of system interaction.
-Later, we are going to design a \gls{gui} of this system.
+Then, we designed a \gls{gui} of this system.
 \item System implementation (7/12/15 -- 22/02/16) \hfill \\
-This phase begins writing source codes based on designed architecture and technical specification.
-Later on, we plan to connect each system component together.
+This phase began writing source codes based on user requirements, designed architecture, and technical specification.
+Later on, we connected each system's components together.
 \item Testing (19/02/16 -- 07/03/16) \hfill \\
-This phase ensures that systems runs correctly with user and system requirements.
-We will conduct testing phase on user acceptance.
-Then, We will evaluate testing result.
-If the result is satisfying, we will deploy the system to IC's server.
+This phase ensured that systems ran correctly with user and system requirements.
+We also conducted user acceptance testing.
+Then, We evaluated testing result.
+If the result were satisfying, we would deploy the system to IC's server.
 \end{enumerate}
 
 \begin{landscape}
