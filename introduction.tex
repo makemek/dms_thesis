@@ -3,7 +3,7 @@
 \section{Motivation}
 \gls{ic} is a faculty of \gls{kmitl}. 
 IC has been up and running well for 6 years.
-About 25 employees are working here. %TODO add number of students, lecturers
+About 25 employees are working here.
 Their main objective is to provide educational services to students. 
 Right now, they have a trouble with paper clutter. 
 Even though they have organized documents into categories. 
@@ -39,18 +39,34 @@ Only people within IC and granted external users can access the system.
 To be specific, there are 4 types of users.
 \begin{enumerate}
 \item IC's administrative staffs.
-%TODO list all employee's position who invovled in this system
 \item KMITL lecturers who is assigned to IC.
 \item Students who are currently enrolled in IC, KMITL.
 \item External users who is allowed to access the system by IC e.g.\ Alumni students.
 \end{enumerate}
 
-Our primary focus is the end-product of a document workflow.
+Before diving deeper into the scope of this project, we would like to clarify these 2 words---document and workflow---in terms of our project. %transition
+Because from now on, we will use these words frequently and we would like readers to interpret them correctly.
+%TODO Explain what is a document
+Firstly, a document is a record that provides information or served as an evidence.
+Pictures and sound can also be considered as a document both in physical and digital form. %TODO cite %TODO cite oxford dict http://goo.gl/Ziutvi and http://goo.gl/5x6EOZ
+%TODO Explain what is a workflow
+Secondly, a workflow is a sequence of repeatable tasks performed to achieve a single goal. %TODO cite
+Each tasks may perform with specific conditions.
+A person, machine, group of persons or machines are responsible to carry out the task. %TODO cite http://goo.gl/IayPio
+%TODO Explain how workflow and document are related
+So, how workflow and document are related together?
+In organizations, the goal of the document is get them approved, distributed, or archived.
+A document can be an input or end-product of the task.
+The task may require a certain document to execute.
+Other documents may be produced by the task.
+
+Our primary focus is the end-product of a workflow.
 They are filled document from a predefined template with other attachments included optionally.
 The system have to manage only document distributed officially by IC.
 This also includes other attachments from external sources given that IC requires them.
 No personal document involved because they are not a property of IC.
 This thesis conducts only on the following 7 types of documents.
+%TODO How these 7 types are related to form, resulting docs, attachments, ...
 \begin{enumerate}
 \item \label{quality-manual} Quality Manual \hfill \\
 A document on policies management.
