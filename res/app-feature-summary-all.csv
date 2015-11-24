@@ -1,10 +1,10 @@
-feature, accessCtrl, achiveRetent, collab, docAssem, formManage, txtSearch
-Alfresco One, X, X, /, X, /, X
-Docmee, X, X, /, /, /, X
-Asite, X, X, X, /, X, X
-Eclipse Document Management, X, X, X, X, X, X
-Efilecabinet, X, X, X, /, /, X
-Contentverse, X, X, X, X, X, X
-smartFile, X, X, /, /, /, X
-isoTracker, X, X, X, /, /, /
-Zoho Docs, X, X, X, X, X, X
+feature, accessCtrl, achiveRetent, collab, docAssem, formManage, txtSearch, verCtrl
+Alfresco One, X, X, /, X, /, X, X
+Docmee, X, X, /, /, /, X, X
+Asite, X, X, X, /, X, X, X
+Eclipse Document Management, X, X, X, X, X, X, X
+eFilecabinet, X, X, X, /, /, X, /
+Contentverse, X, X, X, X, X, X, /
+smartFile, X, X, /, /, /, X, /
+isoTracker, X, X, X, /, /, /, /
+Zoho Docs, X, X, X, X, X, X, X

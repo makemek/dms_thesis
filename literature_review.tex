@@ -145,7 +145,7 @@ Table \ref{tbl:feature-sum} shows a comparison of features that we interested.
 	string type,
 	columns/feature/.style={
 		column name=Feature,
-		column type={|p{0.2\linewidth}|}
+		column type={|L{2cm}|}
 	},
 	columns/accessCtrl/.style={
 		column name=Access Controls,
@@ -168,9 +168,13 @@ Table \ref{tbl:feature-sum} shows a comparison of features that we interested.
 		column type={C{2cm}|}
 	},	      
 	columns/txtSearch/.style={
-		column name=Full Text Search,
+		column name=Document Searching Service,
 		column type={C{1.5cm}|}
-	},        		        
+	},  
+	columns/verCtrl/.style={
+		column name=Version Control,
+		column type={C{1.5cm}|}
+	},  	      		        
 	every head row/.style={before row=\hline,after row=\hline},
 	every last row/.style={after row=\hline},
 	]{res/app-feature-summary-all.csv}
