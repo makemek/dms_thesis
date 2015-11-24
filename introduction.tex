@@ -65,44 +65,30 @@ The system has to manage workflows which are created officially by IC and docume
 The system offer document file hosting services to users for reusing them later.
 Hosted documents that are not used by the workflow is not in the scope of this project.
 Uploaded documents that is not in the system's file hosting service is in the scope if IC requires them in one of the task in workflow.
-This thesis conducts only on the following 7 types of documents.
+This thesis conducts only on the following 2 types of documents.
 %TODO How these 7 types are related to form, resulting docs, attachments, ...
 \begin{enumerate}
-\item \label{quality-manual} Quality Manual \hfill \\
-A document on policies management.
-It describes the following information about the organization.
-\begin{multicols}{2}
-\begin{itemize}
-\item Management strategy
-\item Scope
-\item Goals
-\item Work procedure
-\item Management structure
-\item Objectives
-\item Responsibilities
-\end{itemize}
-\end{multicols}
-
-\item \label{doc-type:work-prod} Work Procedure \hfill \\
-A document describes details on working procedures, departments or persons who hold responsibilities for documents.
-
-\item \label{doc-type:work-ins} Work Instruction \hfill \\
-A document indicates employee's roles and responsibilities.
-The employee can work to meet organization's needs.
-
-\item Forms \label{doc-type:form} \hfill \\
-Forms use to collect information or work results.
-They reference either type \ref{doc-type:work-prod} or \ref{doc-type:work-ins}.
-
-\item Records \label{doc-type:record} \hfill \\
-A record is an already-filled form.
-IC will use the them evidences.
-
-\item Supported Document \hfill \\
-Other IC's document that are not type \ref{quality-manual}, \ref{doc-type:work-prod}, \ref{doc-type:work-ins}, \ref{doc-type:form}, and \ref{doc-type:record}
-
-\item External Document \hfill \\
-A document receives from other departments in order to proceed some tasks inside IC.
+\item Electronic form \hfill \\
+A formatted document with blank fields that prompts user to fill in.
+Forms are created according to IC's work procedure and instruction.
+Work procedure provides details on working procedures, departments, or persons who hold responsibilities for documents.
+Work instruction indicates employee's roles and responsibilities.
+IC defines non-filled form as ''Form'' and already filled form as ''Record''.
+By the time of writing, this project conduct with 3 sub-types forms.
+\begin{enumerate}
+\item Absence form \hfill \\
+For IC's employee and students to take days off due to personal or business reasons.
+\item Student internship form \hfill \\
+For IC students who is above Year 2 to gain work experience in software industry during a summer semester.
+\item Conference outside KMITL form \hfill \\
+For lecturers to request going to a conference outside KMITL.
+\end{enumerate}
+Because all of these forms are in paper-based format, we have to convert them into the electronic form.
+Meaning that a system displays the form on a computer screen waiting for a user to fill in required blank fields.
+\item External document \hfill \\
+Documents received from other individuals or departments in order to proceed some tasks in a workflow.
+If received document is in paper form, it has to be scanned by a scanner first.
+The task includes these documents as attachments.
 \end{enumerate}
 
 \section{Project plan}
