@@ -109,5 +109,35 @@ The following list shows common features of \gls{nosql} \cite[p.~12 - 16]{nosql-
 	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
 	Storing data across multiple servers in relational databases is a challenging task.
 	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
-	
 \end{description}
+
+\gls{nosql} databases organized data as a hierarchical model with parent-child relationships.
+A set of nodes and edges is known as graph.
+The topmost node in Figure \ref{arch-node} called a root node.
+This node is required as a starting point for a record and the model must have only one root node.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-hierarchical}
+	\caption{The hierarchical organized into a set of parent-child nodes}
+	\label{arch-node}
+\end{figure}
+Directed Edges connecting between two nodes represents relations.
+A node where an arrow points called a parent node.
+A node where an arrow is pointed called a child node.
+The parent node can many child nodes and each child node can have many parent nodes.
+
+For example, a simple customer's receipt with orders and billing addresses from figure \ref{nosql-aggregate-uml} can be modelled to hierarchical parent-child structure in figure \ref{nosql-aggregate-uml-realized}. 
+Each node is an object in itself.
+\gls{nosql} database can locate any node within the graph according to any specific queries.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-nosql-agregate-uml}
+	\caption{An aggregate data model in UML notation \cite[p.~41]{sadalage_fowler_2013}}
+	\label{nosql-aggregate-uml}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-uml-realized}
+	\caption{A hierarchical structure representation from figure \ref{nosql-aggregate-uml}}
+	\label{nosql-aggregate-uml-realized}
+\end{figure}
