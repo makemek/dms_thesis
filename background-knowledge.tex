@@ -85,3 +85,29 @@ The next row up is a structured metadata.
 It shows a higher abstraction concept to describe general real-world things.
 Julia Roberts can be generalized as a \enquote{Customer} entity with \enquote{Name} and \enquote{Birthdate} as its attributes.
 A checking account in the third example can be generalized as a table called \enquote{CHECKING\_ACCOUNT} with \enquote{Account\_number} and \enquote{Monthly\_charge} as its columns.
+
+\section{NoSQL}
+\gls{nosql} is a database that does not use \gls{sql}.
+\gls{sql} was designed to be a query language for relational databases, and relational databases are usually table-based.
+Records are stored in rows and columns represent fields.
+On the other hand, \gls{nosql} allow to define fields while creating a record.
+Nested values are common in \gls{nosql} databases because \gls{nosql} is aggregate oriented.
+Hashes and arrays and objects, and then nest more objects and arrays and hashes within those.
+
+The main characteristic separating \gls{nosql} databases from relational \gls{sql} databases is that they do not use query languages derived from \gls{sql}. 
+The following list shows common features of \gls{nosql} \cite[p.~12 - 16]{nosql-for-dummies}.
+\begin{description}
+	\item[Schema agnostic] \hfill \\
+	\gls{nosql} databases doesn't require schema to be defined explicitly.
+	Any type of records can be stored without having to know how databases store them internally.
+	\item[Nonrelational] \hfill \\
+	A relational database needs relations to describe how tables relate to each other.
+	\gls{nosql} databases don't have relationships concept.
+	They don't store how each record relate to each other but rather graph database with key-value pairs.
+	\item[Highly distributable] \hfill \\
+	A single server may not be able to handle all data requests in time.
+	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
+	Storing data across multiple servers in relational databases is a challenging task.
+	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
+	
+\end{description}
