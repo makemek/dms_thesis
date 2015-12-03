@@ -1,11 +1,21 @@
 % This file contains pre-loaded latex package.
 % Include this file before "begin{document}".
 
+\usepackage[backend=biber]{biblatex} 
+\addbibresource{biblio.bib}
+% make sure to use biber to compile bibliography
+% TexStudio: Options -> Configure TeXStudio -> Build -> Default Bibliography tool -> txs:///biber
+
 \usepackage{graphicx}
 \usepackage{lscape}
 \usepackage{multicol}
 
 \usepackage{lscape}
+
+% Make footcite from figure possible
+\usepackage{xcolor} % fix conflict with footnote package. It must load before fottnote package
+\usepackage{footnote}
+\makesavenoteenv{figure}
 
 % Utilities for creating table
 \usepackage{pgfplotstable}
@@ -15,9 +25,12 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \renewcommand{\arraystretch}{1.5}
 
+% Quote
+\usepackage{csquotes}
+
 % Common use words
 \newcommand{\kmitl}{King Mongkut's Institute of Technology Ladkrabang}
-\newcommand{\dms}{Opensources-based Document Management System for Educational Purposes}
+\newcommand{\dms}{Opensources-based Document Management System for \IC, \kmitl}
 \newcommand{\IC}{International College}
 
 % glossaries

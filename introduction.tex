@@ -5,18 +5,23 @@
 IC has been up and running well for 6 years.
 About 25 employees are working here.
 Their main objective is to provide educational services to students. 
-Right now, they have a trouble with paper clutter. 
-Even though they have organized documents into categories. 
-The organization takes countless hours to organize, store, and retrieve documents.
+Right now, they are having 2 major problems involved with their accumulating documents.
+First, the organization takes countless hours to store and retrieve documents even though they have organized documents into categories.
+By simply retrieving a document, as trivial as it seems, can take hours or even weeks. 
 This problem hinders employee's productivity when they need to retrieve many documents. 
-Another problem is losing track of document during its workflow execution. 
+A second problem is losing track of document during its workflow execution. 
 A workflow is a series of repeatable steps performed in a sequential manner to reach a goal.
-Each type of workflow usually associates with a set of actions. 
-A person who receive a document will execute some actions depending on their responsibility.
-They have to execute them sequentially. 
-Some workflows are very complicated and very difficult to keep track of.
+It provides specification, execution and control of business processes \cite{Jablonski:1996:WMM}. 
+All of documents can be as aligned to workflows in order to control business process in document management system \cite{DBLP:journals/corr/AsiliT14}.
+A person who hold responsibility of a document will execute actions based on their assigned roles.
+The problem is that some IC's workflows are so complicated that they are difficult to keep track of.
+There are many actions and conditions to execute.
+Many People from both inside and outside of the organization may involve during workflow's execution.
+Supplementary documents, or so called attachments, may need to be attached with original document in order to pass some certain guidelines.
+As a result, IC can't certainly identify who is currently involved and what actions they must do with that document.
+They also can't track attachments effectively causing delay in archiving.
 
-IC would like to prevent these problems before it goes out of control. 
+IC would like to prevent these problems before they go out of control. 
 Our proposed solution is to manage, store, and retrieve documents digitally using a computer software.
 The employee will use less time to search and be less error-prone.
 We will create a system that provide ability to search and to track documents.
@@ -28,8 +33,12 @@ Once we do, IC can manage and track documents more efficient, thus, increase org
 % list of our primary objectives
 Our primary objectives are
 \begin{enumerate}
-\item To design a workflow model and to track document's current state during its workflow execution. 
-\item To report other related or dependent documents required by its originator.
+\item To design IC's workflow model associated with each type of documents.\footnote{
+	Although workflow is not our main focus, we work closely with other researchers on \enquote{web-based automatic form generated system} \cite{web-based-form}.
+	Not only we share a similar objective, but also we have to link our system with them.
+	We need their general workflow models to achieve this objective.
+	}
+\item To track and to report the current task during workflow's execution.
 \item To store and retrieve digital documents corresponding to outgoing or finished workflows from and to IC's server.
 \end{enumerate}
 
@@ -46,14 +55,14 @@ To be specific, there are 4 types of users.
 
 Before diving deeper into the scope of this project, we would like to clarify these 2 words---document and workflow---in terms of our project. %transition
 Because from now on, we will use these words frequently and we would like readers to interpret them correctly.
-%TODO Explain what is a document
-Firstly, a document is a record that provides information or served as an evidence.
-Pictures and sound can also be considered as a document both in physical and digital form. %TODO cite %TODO cite oxford dict http://goo.gl/Ziutvi and http://goo.gl/5x6EOZ
-%TODO Explain what is a workflow
-Secondly, a workflow is a sequence of repeatable tasks performed to achieve a single goal. %TODO cite
+% Explain what is a document
+Firstly, a document is a record that provides information or served as an evidence. 
+Pictures and sound can also be considered as a document both in physical and digital form \cite{oxdict:document,whatis:document}. 
+% Explain what is a workflow
+Secondly, a workflow is a sequence of repeatable tasks performed to achieve a single goal \cite{Jablonski:1996:WMM}. 
 Each tasks may perform with specific conditions.
-A person, machine, group of persons or machines are responsible to carry out the task. %TODO cite http://goo.gl/IayPio
-%TODO Explain how workflow and document are related
+A person, machine, group of persons or machines are responsible to carry out the task \cite{wfMangement}. 
+% Explain how workflow and document are related
 So, how workflow and document are related together?
 In organizations, the goal of the document is get them approved, distributed, or archived.
 A document can be an input or end-product of the task.
@@ -66,14 +75,14 @@ The system offer document file hosting services to users for reusing them later.
 Hosted documents that are not used by the workflow is not in the scope of this project.
 Uploaded documents that is not in the system's file hosting service is in the scope if IC requires them in one of the task in workflow.
 This thesis conducts only on the following 2 types of documents.
-%TODO How these 7 types are related to form, resulting docs, attachments, ...
+% How these 7 types are related to form, resulting docs, attachments, ...
 \begin{enumerate}
 \item Electronic form \hfill \\
 A formatted document with blank fields that prompts user to fill in.
 Forms are created according to IC's work procedure and instruction.
 Work procedure provides details on working procedures, departments, or persons who hold responsibilities for documents.
 Work instruction indicates employee's roles and responsibilities.
-IC defines non-filled form as ''Form'' and already filled form as ''Record''.
+IC defines non-filled form as \enquote*{Form} and already filled form as \enquote*{Record}.
 By the time of writing, this project conduct with 3 sub-types forms.
 \begin{enumerate}
 \item Absence form \hfill \\
@@ -95,7 +104,6 @@ The task includes these documents as attachments.
 The project starts at August 18th, 2015.
 We expect to deliver it on March 25th, 2016.
 For our project planing, we divide our work into 4 phases.
-%TODO descibe them
 \begin{enumerate}
 \item Plan and research (18/08/15 -- 30/10/15) \hfill \\
 The first phase was to gather user's requirements by interviewing.
@@ -121,6 +129,6 @@ If the result were satisfying, we would deploy the system to IC's server.
 \centering
 \caption{Project's schedule shown as Gantt chart}
 \label{fig:project-schedule}
-\includegraphics[scale=0.45]{res/project_plan}
+\includegraphics[scale=0.4]{res/project_plan}
 \end{figure}
 \end{landscape}
