@@ -13,6 +13,9 @@
 
 \usepackage{lscape}
 
+% For inserting a blank space
+\usepackage{xspace}
+
 % Make footcite from figure possible
 \usepackage{xcolor} % fix conflict with footnote package. It must load before fottnote package
 \usepackage{footnote}
@@ -31,7 +34,8 @@
 
 % Common use words
 \newcommand{\kmitl}{King Mongkut's Institute of Technology Ladkrabang}
-\newcommand{\dms}{Opensources-based Document Management System for \IC, \kmitl}
+\newcommand{\projTitle}{Opensources-based Document Management System}
+\newcommand{\dms}{\projTitle \xspace for \IC, \kmitl}
 \newcommand{\IC}{International College}
 
 % glossaries
@@ -44,6 +48,7 @@
 \newacronym{sql}{SQL}{Structured Query Language}
 \newacronym{nosql}{NoSQL}{Not only SQL}
 \newacronym{dbms}{DBMS}{Database Management System}
+\newacronym{pdf}{PDF}{Portable Document Format}
 
 
 %signature fields
@@ -56,3 +61,6 @@
 \usepackage{geometry}
 \usepackage{array,booktabs}
 \newcolumntype{P}[1]{>{\centering}p{#1}}
+
+% My macros
+\newcommand{\citefigure}[1]{(\citeauthor{#1} \citeyear{#1})}
