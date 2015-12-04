@@ -151,3 +151,25 @@ Client have to use REST API provided by the database to query the data.
 \gls{rest} is a network-based software architectural style of the World Wide Web \cite{doglio, masse_2012}.
 It takes care interactions between client and server.
 Client program communicates with the database using \gls{http} through exposed \glspl{api}.
+
+Table \ref{tbl:doctype-storage-feature} summarize key features of \gls{nosql} database with \enquote{Document Store} storage type.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l c}
+		\hline
+		Feature                             &      Document Store \\
+		\hline
+		Table-like schema support (columns) &      No \\
+		Complete update/fetch               &      Yes \\
+		Partial update/fetch                &      Yes \\
+		Query/Filter on	value               &      Yes \\
+		Aggregates across rows              &      No \\
+		Relationships between entities      &      No \\
+		Cross-entity view support           &      Yes \\
+		Batch fetch                         &      Yes \\
+		Batch update                        &      Yes \\
+		\hline
+	\end{tabular}
+	\caption{Sumarization of available features for \enquote{Document Store} storage type \citefigure{vaish_2013} \cite{vaish_2013}}
+	\label{tbl:doctype-storage-feature}
+\end{table}
