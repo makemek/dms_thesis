@@ -103,7 +103,7 @@ The following list shows common features of \gls{nosql} \cite[p.~12 - 16]{nosql-
 	Any type of records can be stored without having to know how databases store them internally.
 	\item[Nonrelational] \hfill \\
 	A relational database needs relations to describe how tables relate to each other.
-	\gls{nosql} databases don't have relationships concept.
+	Unlike \gls{rdbms}, \gls{nosql} databases don't have any relation concept.
 	They don't store how each record relate to each other but rather graph database with key-value pairs.
 	\item[Highly distributable] \hfill \\
 	A single server may not be able to handle all data requests in time.
@@ -112,13 +112,16 @@ The following list shows common features of \gls{nosql} \cite[p.~12 - 16]{nosql-
 	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
 \end{description}
 
-\gls{nosql} databases organized data as a hierarchical model with parent-child relationships.
-A set of nodes and edges is known as graph.
+There are many \gls{nosql} storage types available to model the content.
+For example, \enquote{Column-oriented database} stores data as columns instead of rows in \gls{rdbms}.
+\enquote{Graph store} represents data as nodes and relationships as edges in a graph.
+This report will focus on \enquote{Document Store} storage type.
+\gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships.
 The topmost node in Figure \ref{arch-node} called a root node.
 This node is required as a starting point for a record and the model must have only one root node.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-hierarchical}
+	\includegraphics[scale=0.48]{res/bg-knowledge/nosql-hierarchical}
 	\caption{The hierarchical organized into a set of parent-child nodes \citefigure{nosql-for-mere-mortals}}
 	\label{arch-node}
 \end{figure}
@@ -132,7 +135,7 @@ Each node is an object in itself.
 \gls{nosql} database can locate any node within the graph according to any specific queries.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-nosql-agregate-uml}
+	\includegraphics[scale=0.55]{res/bg-knowledge/nosql-nosql-agregate-uml}
 	\caption{An aggregate data model in UML notation \citefigure{sadalage_fowler_2013}}
 	\label{nosql-aggregate-uml}
 \end{figure}
