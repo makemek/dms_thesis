@@ -7,9 +7,11 @@
 % TexStudio: Options -> Configure TeXStudio -> Build -> Default Bibliography tool -> txs:///biber
 
 \usepackage{graphicx}
+\usepackage{svg}
 \usepackage{wrapfig}
 \usepackage{lscape}
 \usepackage{multicol}
+\usepackage{multirow}
 
 \usepackage{lscape}
 
@@ -72,3 +74,10 @@
 
 % My macros
 \newcommand{\citefigure}[1]{(\citeauthor{#1} \citeyear{#1})}
+\newcommand{\bpmnfig}[2][0.015] 
+{
+	\begin{minipage}{0.2\textwidth}
+		\centering
+		\includegraphics[scale=#1]{#2}
+	\end{minipage}
+}
