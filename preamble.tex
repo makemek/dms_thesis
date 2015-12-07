@@ -75,10 +75,9 @@
 % My macros
 \newcommand{\citefigure}[1]{(\citeauthor{#1} \citeyear{#1})}
 \newcommand{\bpmnfig}[2][0.015] 
-{
-	\begin{minipage}{0.2\textwidth}
-		\centering
-		\includegraphics[scale=#1]{#2}
-	\end{minipage}
+{	
+		\begin{center}
+			\includegraphics[scale=#1]{#2}
+		\end{center}		
 }
 \newcommand{\bpmnSymRepo}[1]{res/bg-knowledge/bpmn-symbols/#1}
