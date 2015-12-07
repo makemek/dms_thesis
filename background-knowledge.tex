@@ -225,6 +225,11 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	It has no internal parts; it represents a single action. &
 	\bpmnfig[scale=0.03]{\bpmnSymRepo task} \\	
 	
+	Activity Looping &
+	Activity Looping loops itself continuously until its boolean condition becomes \textit{true}.
+	It evaluates condition every time before/after it performed for every loop iteration. &
+	\bpmnfig[scale=0.04]{\bpmnSymRepo task-loop} \\	
+	
 	Sub-Process &
 	A Sub-Process composes of a single activity or compound activity.
 	Task and Sub-Process are subtype of an activity.
@@ -300,7 +305,7 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Data Input
 	\bpmnfig[scale=0.025]{\bpmnSymRepo data-output}
 	Data Output \\
-	
+		
 	\hline
 
 \end{longtable}
