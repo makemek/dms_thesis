@@ -228,8 +228,9 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	\multirow{2}{*}{Gateway} & 
 	Control branching, merging, forking, and joining sequence flows path & \\
 	& \begin{description} 
-		\item[Exclusive decision] Creates alternative path within a process.
-		Only one path can be taken.
+		\item[Exclusive gateway] creates multiple alternative paths within a process.
+		It has the same functionality as conditional flow.
+		The difference is that exclusive gateway allows multiple branching from the same outgoing sequence flow.
 	\end{description} & 
 	
 	\begin{center}
