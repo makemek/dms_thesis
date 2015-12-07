@@ -237,8 +237,8 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Execute this flow if all other outgoing conditional expression evaluate to \textit{false}. &
 	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo default-flow} \\
 
-	\multirow{2}{*}{Gateway} & 
-	Control branching, merging, forking, and joining sequence flows path & \\
+	\multirow{3}{*}{Gateway} & 
+	Control branching, merging, forking, and joining sequence flows path. & \\
 	& \begin{description} 
 		\item[Exclusive gateway] creates multiple alternative paths within a process.
 		It has the same functionality as conditional flow.
@@ -260,6 +260,13 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 		If the event occurred, go to that outgoing flow.
 	\end{description} & 
 	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-eventbased} \\
+	
+	& \begin{description} 
+		\item[Parallel gateway] is used to create and to combine parallel flows.
+		It creates parallel path without checking any condition.
+		Parallel gateway will wait for all incoming flows to finish before moving on to outgoing flow.
+	\end{description} & 
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-parallel} \\	
 	
 	\hline
 
