@@ -248,8 +248,10 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Execute this flow if all other outgoing conditional expression evaluate to \textit{false}. &
 	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo default-flow} \\
 
-	\multirow{4}{*}{Gateway} & 
-	Controls branching, merging, forking, and joining sequence flows path. & \\
+	\multirow{5}{*}{Gateway} & 
+	Controls branching, merging, forking, and joining sequence flows path. 
+	& \\
+	
 	& \begin{description} 
 		\item[Exclusive gateway] creates multiple alternative paths within a process.
 		If one of a conditional expression evaluates to \textit{true}, it executes that path without evaluating other conditions.
