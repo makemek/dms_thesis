@@ -218,6 +218,13 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Indicates where a process will end &
 	\bpmnfig[scale=0.015]{\bpmnSymRepo end-event-none} \\
 	
+	Activity &
+	An activity perform work within a business process.
+	It can be single or compound.
+	The Activity marks a point on a process.
+	It is an executable element of \gls{bpmn}. &
+	See these two rows below. \\
+	
 	Task & 
 	A Task is a unit of work performs in a process.
 	It usually has a name inside a rounded rectangle notation.
@@ -225,22 +232,21 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	It has no internal parts; it represents a single action. &
 	\bpmnfig[scale=0.03]{\bpmnSymRepo task} \\	
 	
-	Activity Looping &
-	Activity Looping loops itself continuously until its boolean condition becomes \textit{true}.
-	It evaluates condition every time before/after it performed for every loop iteration. &
-	\bpmnfig[scale=0.04]{\bpmnSymRepo task-loop} \\	
-	
 	Sub-Process &
 	A Sub-Process composes of a single activity or compound activity.
-	Task and Sub-Process are subtype of an activity.
 	It refers to a process that can be broken down to a finer detail.
 	The collapsed Sub-Process hides activity details from the diagram indicated by a plus sign.
 	The expanded one shows activity details to the diagram indicated by a minus sign. &
 	\bpmnfig[scale=0.03]{\bpmnSymRepo subprocess-collapsed}
 	Collapsed Sub-Process
 	\bpmnfig[scale=0.03]{\bpmnSymRepo subprocess-expanded}
-	Expanded Sub-Process \\
+	Expanded Sub-Process \\	
 	
+	Activity Looping &
+	Activity Looping loops itself continuously until its boolean condition becomes \textit{true}.
+	It evaluates condition every time before/after it performed for every loop iteration. &
+	\bpmnfig[scale=0.04]{\bpmnSymRepo task-loop} \\	
+		
 	Normal Flow &
 	Shows activity order performed in a process &
 	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo connection} \\
@@ -255,7 +261,7 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 
 	Gateway & 
 	Controls branching, merging, forking, and joining sequence flows path. 
-	& See next four figures. \\
+	& See these four rows below. \\
 	
 	Exclusive gateway &
 	creates multiple alternative paths within a process.
