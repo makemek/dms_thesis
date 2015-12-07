@@ -315,7 +315,29 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	The bracket scales vertically to cover multiple lines of text.
 	&
 	\bpmnfig[scale=0.025]{\bpmnSymRepo text-annotation} \\
-		
+	
+	Pool &
+	A Pool represents a collaboration between participants in a process.
+	It can be partitioned to multiple smaller Pools called Lane.
+	Each Lane assigns to one participant.
+	The Participant is a person, machine, group of persons, or group of machines responsible for the process execution within the Pool.
+	The Pool is a container of activities.
+	All activities inside the Pool can cross boundaries to any Lane but not outside the Pool.
+	There are two types of Pool---horizontal and vertical.
+	Both of them has the same functionality.
+	The difference is their alignment.
+	A horizontal one expands horizontally while a vertical one expands vertically.
+	
+	&
+	\bpmnfig[scale=0.03]{\bpmnSymRepo participant}
+	Horizontal Pool
+	\bpmnfig[scale=0.03]{\bpmnSymRepo collaboration}
+	Horizontal Pool with Lanes
+	\bpmnfig[scale=0.03, angle=-90]{\bpmnSymRepo participant}
+	Vertical Pool
+	\bpmnfig[scale=0.03, angle=-90]{\bpmnSymRepo collaboration}
+	Horizontal Pool with Lanes. \\
+	
 	\hline
 
 \end{longtable}
