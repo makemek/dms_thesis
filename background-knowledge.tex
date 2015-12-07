@@ -197,7 +197,7 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	\centering
 	\caption{Summary of \gls{bpmn} symbols \citefigure{bpmn_manual_omg} \cite{bpmn_manual_omg}}
 	\label{tbl:sum-bpmn-symbol}
-\begin{tabular}{m{0.2\textwidth} m{0.5\textwidth} m{0.2\textwidth}}
+\begin{tabular}{m{0.2\textwidth} m{0.5\textwidth} m{0.4\textwidth}}
 	\hline
 	Element & Description & Notation \\
 	\hline
@@ -224,5 +224,23 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Conditional flow &
 	It will perform the outgoing sequence flow if and only if conditional expression evaluates to \textit{true}. &
 	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo{conditional-flow}} \\
+
+	\multirow{2}{*}{Gateway} & 
+	Control branching, merging, forking, and joining sequence flows path & \\
+	& \begin{description} 
+		\item[Exclusive decision] Creates alternative path within a process.
+		Only one path can be taken.
+	\end{description} & 
+	
+	\begin{center}
+	\begin{minipage}{0.1\textwidth}
+		\bpmnfig[scale=0.025]{\bpmnSymRepo{gateway-none}}
+	\end{minipage}
+	or
+	\begin{minipage}{0.1\textwidth}
+		\bpmnfig[scale=0.025]{\bpmnSymRepo{gateway-xor}}
+	\end{minipage}
+	\end{center} \\
+	\hline
 \end{tabular}
 \end{table}
