@@ -253,16 +253,15 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Execute this flow if all other outgoing conditional expression evaluate to \textit{false}. &
 	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo default-flow} \\
 
-	\multirow{5}{*}{Gateway} & 
+	Gateway & 
 	Controls branching, merging, forking, and joining sequence flows path. 
-	& \\
+	& See next four figures. \\
 	
-	& \begin{description} 
-		\item[Exclusive gateway] creates multiple alternative paths within a process.
-		If one of a conditional expression evaluates to \textit{true}, it executes that path without evaluating other conditions.
-		It has the same functionality as conditional flow.
-		The difference is that exclusive gateway allows multiple branching from the same node.
-	\end{description} & 
+	Exclusive gateway &
+	creates multiple alternative paths within a process.
+	If one of a conditional expression evaluates to \textit{true}, it executes that path without evaluating other conditions.
+	It has the same functionality as conditional flow.
+	The difference is that exclusive gateway allows multiple branching from the same node. &
 	
 	\begin{center}
 	\begin{minipage}{0.1\textwidth}
@@ -274,22 +273,19 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	\end{minipage}
 	\end{center} \\
 	
-	& \begin{description} 
-		\item[Event-based gateway] Evaluates which event has occurred first, not which condition is met.
-		If the event occurred, go to that outgoing flow.
-	\end{description} & 
+	Event-based gateway &
+	Evaluates which event has occurred first, not which condition is met.
+	If the event occurred, go to that outgoing flow. &
 	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-eventbased} \\
 	
-	& \begin{description} 
-		\item[Parallel gateway] is used to create and to combine parallel flows.
-		It creates parallel path without checking any condition.
-		Parallel gateway will wait for all incoming flows to finish before moving on to outgoing flow.
-	\end{description} & 
+	Parallel gateway &
+	Parallel gateway is used to create and to combine parallel flows.
+	It creates parallel path without checking any condition.
+	Parallel gateway will wait for all incoming flows to finish before moving on to outgoing flow. &
 	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-parallel} \\	
 	
-	& \begin{description} 
-		\item[Inclusive gateway] evaluates all conditional expression unlike the exclusive gateway.
-	\end{description} & 
+	Inclusive gateway &
+	Evaluates all conditional expression unlike the exclusive gateway. &
 	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-or} \\		
 	
 	Data Object &
