@@ -7,9 +7,14 @@
 % TexStudio: Options -> Configure TeXStudio -> Build -> Default Bibliography tool -> txs:///biber
 
 \usepackage{graphicx}
+\usepackage{svg}
 \usepackage{wrapfig}
 \usepackage{lscape}
+
+% Table
 \usepackage{multicol}
+\usepackage{multirow}
+\usepackage{longtable}
 
 \usepackage{lscape}
 
@@ -72,3 +77,10 @@
 
 % My macros
 \newcommand{\citefigure}[1]{(\citeauthor{#1} \citeyear{#1})}
+\newcommand{\bpmnfig}[2][,,] 
+{	
+		\begin{center}
+			\includegraphics[#1]{#2}
+		\end{center}		
+}
+\newcommand{\bpmnSymRepo}{res/bg-knowledge/bpmn-symbols/}
