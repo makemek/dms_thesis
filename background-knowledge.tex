@@ -3,30 +3,29 @@
 \section{A brief overview of Document Management System (DMS)}
 In the 1980s, printers, scanners, and household computers started to gain popularity.
 Organizations start to take actions on managing their information records and assets seriously.
-At that time, \gls{dip} systems are the only available software to satisfy their needs.
+\gls{dip} systems were the only available software to satisfy their needs.
 \gls{dip} is the electronic version of filing cabinet where documents need to be scanned, indexed, and store in the system \cite{1_adam_2008}.
-DIP can also analyse figures, texts, and handwriting \cite{akram2010document} using various image processing techniques.
+DIP can also analyse figures, texts, and handwriting using various image processing techniques \cite{akram2010document}.
 \begin{wrapfigure}{l}{0.5\textwidth}
-	\centering
-	\includegraphics[scale=0.75]{res/bg-knowledge/edms-components.png}
+	\includegraphics[scale=0.8]{res/bg-knowledge/edms-components.png}
 	\caption{Components of EDMS \citefigure{1_adam_2008}}
 	\label{fig:edms-components}
 \end{wrapfigure}
+
 Later on in the 1990s, \gls{edms} is developed targeting large enterprises with high volume of documents.
 It is the improved version of \gls{dip} with workflow functionality.
-Workflow functionality enables organizations to passed around scanned document throughout the organization to designated employee.
+Workflow functionality enables organizations to passed around scanned document throughout the organization to designated employees.
 \gls{edms} also has its own document repository allowing documents to be indexed and tracked using version control.
 There are various sub-types of \gls{edms} such as \gls{erms} deals mainly with record keeping.
-\gls{ecm}, suites of applications, deals with document and record management.
-Nowadays, \gls{edms} acronym is shortened to \gls{dms}.
+\gls{ecm} is a suite of applications that manages documents and records.
+Now, \gls{edms} acronym is shortened to \gls{dms}.
 Figure \ref{fig:edms-components} shows a basic components of \gls{dms}.
 Most \gls{dms} applications have these components implemented within.
 \begin{description}
 	\item[Document Repository] \hfill \\
-	A place where indexed documents are stored.
-	Typically on a hard disk of a network server.
+	Document Repository is a place where indexed documents are stored, usually on a server.
 	\item[Integration with desktop applications] \hfill \\
-	Allowing user to save documents straight to application when document is created.
+	Allowing user to save documents straight to application after the document is created.
 	It is usually a 3rd party add-on embedded in popular office applications such as Microsoft Office.
 	\item[Check-in and check-out] \hfill \\
 	This feature controls who is allowed to make changes or to read documents.
@@ -39,14 +38,14 @@ Most \gls{dms} applications have these components implemented within.
 	Track who changes document, when, and where.
 	Only authorized user can read these information.
 	\item[Security] \hfill \\
-	Controls how documents should be stored in the server to prevent hackers from attacking the system.
+	Controls how documents should be stored in the server to prevent unauthorized users from attacking the system.
 	\item[Classification and indexing] \hfill \\
 	Metadata and tags provide more information to documents.
 	It helps to search and retrieve documents easier.
 	\item[Search and Retrieval] \hfill \\
 	Allow user to retrieve documents according to keywords.
 	Keywords can be a metadata or contents within a document.
-	A system may offer advance search criteria by looking for individual fields and combine with other fields using basic logical operations (AND, OR, NOT). 
+	A system may offer advance search criteria by looking for individual fields and combine with other fields using basic boolean operations (AND, OR, NOT). 
 \end{description}
 
 \section{What is Metadata}
@@ -55,7 +54,7 @@ Brackett \cite[p.149]{brackett_2000} defined metadata in terms of organization a
 There is no clear definition on what metadata is because this term is used differently in different communities.
 For librarians, it refers to information in the library catalog that help users to find the right book in the library.
 For search engines, it means descriptions of web page's contents and keywords used to rank relevant websites.
-For others, it may refer to a descriptive information of resources in human readable format.
+For others, it refers to a descriptive information of resources in human readable format.
 Whatever metadata refers to, they share the following similar usage.
 \begin{enumerate}
 	\item To identify resources.
@@ -79,8 +78,8 @@ Figure \ref{fig:data-metadata} provides simple model examples of how metadata re
 Each column shows different examples.
 The third row is a descriptive metadata.
 Julia Robert is the customer's name and 10/28/67 is her birthdate.
-These 2 metadata refer to only this \enquote{Julia Roberts} \includegraphics[scale=0.3]{res/bg-knowledge/metadata-julia} and not any other Julia Roberts. 
-Same with a second example, A branch in \enquote{111 Wall Street} with a branch manager \enquote{Sam Sneed} refer to this \includegraphics[scale=0.3]{res/bg-knowledge/metadata-wallstreet} branch only.
+These two metadata refer to only this \enquote{Julia Roberts} \includegraphics[scale=0.3]{res/bg-knowledge/metadata-julia} and not any other Julia Roberts. 
+Same with a second example, A branch in \enquote{111 Wall Street} with a branch manager \enquote{Sam Sneed} refer only to this \includegraphics[scale=0.3]{res/bg-knowledge/metadata-wallstreet} branch.
 The next row up is a structured metadata.
 It shows a higher abstraction concept to describe general real-world things.
 Julia Roberts can be generalized as a \enquote{Customer} entity with \enquote{Name} and \enquote{Birthdate} as its attributes.
@@ -89,22 +88,22 @@ A checking account in the third example can be generalized as a table called \en
 \section{NoSQL}
 \gls{nosql} is a database that does not use \gls{sql}.
 It refers to any database that does not follow the traditional \gls{rdbms} model.
-\gls{sql} was designed to be a query language for relational databases, and they are usually table-based.
+\gls{sql} is designed to be a query language for relational databases which are usually table-based.
 Records are stored in rows and columns represent fields.
 On the other hand, \gls{nosql} allow to define fields while creating a record.
 Nested values are common in \gls{nosql} databases because \gls{nosql} is aggregate oriented.
-Hashes and arrays and objects, and then nest more objects and arrays and hashes within those.
+Hashes, arrays, and objects can be nested with themselves.
 
-The main characteristic separating \gls{nosql} databases from relational \gls{sql} databases is that they do not use query languages derived from \gls{sql}. 
-The following list shows common features of \gls{nosql} \cite[p.~12 - 16]{nosql-for-dummies}.
+The main characteristic separating \gls{nosql} databases from \gls{rdbms} is that they do not use query languages derived from \gls{sql}. 
+The following list shows common features of \gls{nosql} \cite[p.~12-16]{nosql-for-dummies}.
 \begin{description}
 	\item[Schema agnostic] \hfill \\
 	\gls{nosql} databases doesn't require schema to be defined explicitly.
-	Any type of records can be stored without having to know how databases store them internally.
+	Any type of records can be stored without having to know how database stores them internally.
 	\item[Nonrelational] \hfill \\
 	A relational database needs relations to describe how tables relate to each other.
 	Unlike \gls{rdbms}, \gls{nosql} databases don't have any relation concept.
-	They don't store how each record relate to each other but rather graph database with key-value pairs.
+	They don't store record's relation, but rather graph database with key-value pairs.
 	\item[Highly distributable] \hfill \\
 	A single server may not be able to handle all data requests in time.
 	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
@@ -125,14 +124,14 @@ This node is required as a starting point for a record and the model must have o
 	\caption{The hierarchical organized into a set of parent-child nodes \citefigure{nosql-for-mere-mortals}}
 	\label{arch-node}
 \end{figure}
-Directed Edges connecting between two nodes represents relations.
+Directed Edges connecting between two nodes represents a relationship.
 A node where an arrow points called a parent node.
 A node where an arrow is pointed called a child node.
-The parent node can many child nodes and each child node can have many parent nodes.
+The parent node can have many child nodes and each child node can have many parent nodes.
 
-For example, a simple customer's receipt with orders and billing addresses from figure \ref{nosql-aggregate-uml} can be modelled to hierarchical parent-child structure in figure \ref{nosql-aggregate-uml-realized}. 
+For example, a simple customer's receipt with orders and billing addresses from figure \ref{nosql-aggregate-uml} can be modelled to hierarchical parent-child relationship in figure \ref{nosql-aggregate-uml-realized}. 
 Each node is an object in itself.
-\gls{nosql} database can locate any node within the graph according to any specific queries.
+\gls{nosql} databases can locate any node within the graph according to any specific queries.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.55]{res/bg-knowledge/nosql-nosql-agregate-uml}
@@ -146,13 +145,13 @@ Each node is an object in itself.
 	\label{nosql-aggregate-uml-realized}
 \end{figure}
 
-Most databases use \gls{xml}, \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
+\enquote{Document Store} use \gls{xml}, \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
 Client have to use REST API provided by the database to query the data.
 \gls{rest} is a network-based software architectural style of the World Wide Web \cite{doglio, masse_2012}.
 It takes care interactions between client and server.
 Client program communicates with the database using \gls{http} through exposed \glspl{api}.
 
-Table \ref{tbl:doctype-storage-feature} summarize key features of \gls{nosql} database with \enquote{Document Store} storage type.
+Table \ref{tbl:doctype-storage-feature} summarizes key features of \gls{nosql} database with \enquote{Document Store} storage type.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l c}
