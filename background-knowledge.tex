@@ -226,7 +226,7 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	An activity performs work within a business process.
 	It can be single or compound.
 	It is an executable element of \gls{bpmn}. &
-	See those two rows below. \\
+	See those three rows below. \\
 	
 	Task & 
 	A Task is a unit of work performs in a process.
@@ -234,6 +234,10 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	The task is used when process can not be broken down any further.
 	It has no internal parts, representing a single action. &
 	\bpmnfig[scale=0.03]{\bpmnSymRepo task} \\	
+	
+	User Task &
+	A subtype of Task in which human is the one who perform a task with the help of a software application. &
+	\bpmnfig[scale=0.035]{\bpmnSymRepo user-task} \\	
 	
 	Sub-Process &
 	A Sub-Process composes of a single activity or compound activity.
