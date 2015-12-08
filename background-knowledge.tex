@@ -188,10 +188,21 @@ With \gls{bpmn}, organizations can understand, improve, and control their busine
 Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in this report along with their descriptions\footnote{Please refer to \url{http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf} (page 28 - 41) for more details on all available \gls{bpmn} symbols and its detailed descriptions.}.
 %TODO UPDATE NEW SYMBOLS AS IT APPEARS IN THIS REPORT
 \begin{longtable}{C{0.2\textwidth} L{0.45\textwidth} C{0.3\textwidth}}
+
+	% Setting up header-----------------------------
+	
+	% First header
 	\caption{Summary of \gls{bpmn} symbols \citefigure{bpmn_manual_omg} \cite{bpmn_manual_omg}}
 	\label{tbl:sum-bpmn-symbol} \\
 	
-	% Setting up header-----------------------------
+	\hline
+	Element & Description & Notation \\
+	\hline
+	\endfirsthead
+	%----------------------
+
+	% Repeated header
+	\caption{Summary of \gls{bpmn} symbols \citefigure{bpmn_manual_omg}} \\
 	\hline
 	Element & Description & Notation \\
 	\hline
@@ -202,6 +213,8 @@ Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in thi
 	
 	\hline \hline
 	\endlastfoot
+	%----------------------
+		
 	%-----------------------------------------------
 	
 	Start Event & 
