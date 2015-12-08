@@ -1,6 +1,15 @@
 % This file contains pre-loaded latex package.
 % Include this file before "begin{document}".
 
+% suppress warnings
+%-------------------------------------------
+
+% pdfTeX warning: pdflatex.exe (file <FILENAME>.pdf): PDF inclusion: multiple pdfs with page group included in a single page>]
+\pdfsuppresswarningpagegroup=1 
+
+
+%-------------------------------------------
+
 \usepackage[backend=biber]{biblatex} 
 \addbibresource{biblio.bib}
 
