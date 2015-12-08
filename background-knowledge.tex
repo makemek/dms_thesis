@@ -222,6 +222,18 @@ Please refer to http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf (page 28 - 41
 	Terminate all running activities in a process immediately without any error handling. &
 	\bpmnfig[scale=0.015]{\bpmnSymRepo end-event-terminate} \\
 	
+	Message &
+	A Message represents information communicating between two participants. &
+	See those two rows below. \\
+	
+	Start Message Event &
+	An event triggers a process to start when a Message arrives from a participant. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo start-event-message} \\
+	
+	End Message Event &
+	A message received from a participant concludes the end of a process. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo end-event-message} \\
+	
 	Activity &
 	An activity performs work within a business process.
 	It can be single or compound.
