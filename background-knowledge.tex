@@ -1,6 +1,6 @@
 \chapter{Background Knowledge}
 
-\section{A brief overview of \gls{dms}}
+\section{A brief overview of Document Management System (DMS)}
 In the 1980s, printers, scanners, and household computers started to gain popularity.
 Organizations start to take actions on managing their information records and assets seriously.
 At that time, Document Image Processing (DIP) systems are the only available software to satisfy their needs.
@@ -173,3 +173,231 @@ Table \ref{tbl:doctype-storage-feature} summarize key features of \gls{nosql} da
 	\caption{Sumarization of available features for \enquote{Document Store} storage type \citefigure{vaish_2013} \cite{vaish_2013}}
 	\label{tbl:doctype-storage-feature}
 \end{table}
+
+\section{Business Process Modelling Notation (BPMN)}
+\gls{bpmn} is a graphical notation that depicts the steps in business process \cite{bpmn_omg}.
+% What
+The goal is to represent business processes using standard graphical notation.
+% Who
+\gls{bpmn} targets business users and process implementers who need a standard model to communicate their business process.
+% Why
+Business users create, manage, and monitor processes while process implementers turn processes into a physical implementation. 
+\gls{bpmn} doesn't focus on why, when, and how a process is performed.
+But rather what processes, which are the steps to achieve that process, and who should do them.
+With \gls{bpmn}, organizations can understand, improve, and control their business processes.
+Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in this report along with their descriptions\footnote{Please refer to \url{http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf} (page 28 - 41) for more details on all available \gls{bpmn} symbols and its detailed descriptions.}.
+%TODO UPDATE NEW SYMBOLS AS IT APPEARS IN THIS REPORT
+\begin{longtable}{C{0.2\textwidth} L{0.45\textwidth} C{0.3\textwidth}}
+	\caption{Summary of \gls{bpmn} symbols \citefigure{bpmn_manual_omg} \cite{bpmn_manual_omg}}
+	\label{tbl:sum-bpmn-symbol} \\
+	
+	% Setting up header-----------------------------
+	\hline
+	Element & Description & Notation \\
+	\hline
+	\endhead
+	
+	\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+	\endfoot
+	
+	\hline \hline
+	\endlastfoot
+	%-----------------------------------------------
+	
+	Start Event & 
+	Indicates where a process begins &
+	\bpmnfig[scale=0.015]{\bpmnSymRepo start-event-none} \\
+	
+	Intermediate Event &
+	Intermediate Event represents a status reached in a process, and it is modelled explicitly.  &
+	\bpmnfig[scale=0.02]{\bpmnSymRepo start-event-intermediate} \\
+	
+	End Event & 
+	Indicates where a process ends &
+	\bpmnfig[scale=0.015]{\bpmnSymRepo end-event-none} \\
+	
+	End Event Terminate &
+	Terminate all running activities in a process immediately without any error handling. &
+	\bpmnfig[scale=0.015]{\bpmnSymRepo end-event-terminate} \\
+	
+	Message &
+	A Message represents information communicating between two participants. &
+	See two rows below. \\
+	
+	Start Message Event &
+	An event triggers a process to start when a Message arrives from a participant. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo start-event-message} \\
+	
+	End Message Event &
+	A message received from a participant concludes the end of a process. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo end-event-message} \\
+	
+	Activity &
+	An activity performs work within a business process.
+	It can be single or compound.
+	It is an executable element of \gls{bpmn}. &
+	See three rows below. \\
+	
+	Task & 
+	A Task is a unit of work performs in a process.
+	It has a task name inside a rounded rectangle notation.
+	The task is used when process can not be broken down any further.
+	It has no internal parts, representing a single action. &
+	\bpmnfig[scale=0.03]{\bpmnSymRepo task} \\	
+	
+	User Task &
+	A subtype of Task in which human is the one who perform a task with the help of a software application. &
+	\bpmnfig[scale=0.035]{\bpmnSymRepo user-task} \\	
+	
+	Sub-Process &
+	A Sub-Process composes of a single activity or compound activity.
+	It refers to a process that can be broken down to a finer detail.
+	The collapsed Sub-Process hides activity details from the diagram indicated by a plus sign.
+	The expanded one shows activities inside the diagram indicated by a minus sign. &
+	\bpmnfig[scale=0.03]{\bpmnSymRepo subprocess-collapsed}
+	Collapsed Sub-Process
+	\bpmnfig[scale=0.03]{\bpmnSymRepo subprocess-expanded}
+	Expanded Sub-Process \\	
+	
+	Activity Looping &
+	Activity Looping loops itself continuously until its boolean condition becomes \textit{true}.
+	It evaluates condition every time before/after it performed for every loop iteration. &
+	\bpmnfig[scale=0.04]{\bpmnSymRepo task-loop} \\	
+		
+	Normal Flow &
+	Shows activity order performed in a process &
+	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo connection} \\
+	
+	Conditional Flow &
+	It will perform the outgoing sequence flow if and only if conditional expression evaluates to \textit{true}. &
+	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo conditional-flow} \\
+
+	Default Flow &
+	Execute this flow if all other outgoing conditional expression evaluate to \textit{false}. &
+	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo default-flow} \\
+
+	Message Flow &
+	Indicates a Message sent between two participants. &
+	\bpmnfig[scale=0.025, angle=-45]{\bpmnSymRepo message-flow} \\
+
+	Gateway & 
+	Controls branching, merging, forking, and joining multiple sequence flow paths. 
+	& See four rows below. \\
+	
+	Exclusive Gateway &
+	Creates multiple alternative paths in a process.
+	If one of the conditional expression evaluates to \textit{true}, it executes that path without evaluating others.
+	It has the same functionality as conditional flow.
+	The difference is that Exclusive Gateway allows multiple branching from the same node. &
+	
+	\begin{center}
+	\begin{minipage}{0.1\textwidth}
+		\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-none}
+	\end{minipage}
+	or
+	\begin{minipage}{0.1\textwidth}
+		\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-xor}
+	\end{minipage}
+	\end{center} \\
+	
+	Event-based Gateway &
+	Evaluates which event occurs first, not which condition is met.
+	If that event occurred, go to that outgoing flow and discard other conditions. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-eventbased} \\
+	
+	Parallel Gateway &
+	Parallel gateway is used to create and to combine parallel flows.
+	It represents multiple concurrent activities performing at the same time.
+	It doesn't evaluate any condition or event before execution.
+	Parallel gateway will wait for all incoming flows to finish before proceeding to the next outgoing flow. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-parallel} \\	
+	
+	Inclusive Gateway &
+	Evaluates all conditional expression unlike the exclusive gateway.
+	It is used to create alternative parallel paths.
+	If there are multiple conditional expressions evaluated to \textit{true}, those flows will be executed independently in parallel. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-or} \\		
+	
+	Data Object &
+	Provide information about what activity requires to perform and/or what they produce. 
+	Data Object can also refer to a collection of Data Objects.
+	Data Input have a white arrow on the top corner.
+	It is placed before activity starts indicating what that activity requires.
+	Data Output have a shaded arrow on the the corner.
+	It is placed after activity finished indicating what activity produces. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo data-object}
+	Data Object
+	\bpmnfig[scale=0.025]{\bpmnSymRepo data-input}
+	Data Input
+	\bpmnfig[scale=0.025]{\bpmnSymRepo data-output}
+	Data Output \\
+	
+	Text Annotation &
+	Text Annotation provides additional information to a \gls{bpmn} diagram reader.
+	Its notation composes of a opening square bracket with a dashed line attached on the left.
+	The dashed line can connect to any \gls{bpmn} element.
+	The bracket contains a descriptive text on the right.
+	It scales vertically to cover multiple lines of text.
+	&
+	\bpmnfig[scale=0.025]{\bpmnSymRepo text-annotation} \\
+	
+	Pool &
+	A Pool represents a collaboration between participants in a process.
+	It can be partitioned to multiple smaller Pools called Lane.
+	Each Lane assigns to one participant.
+	The Participant is a person, machine, group of persons or machines responsible for the process execution within the Pool.
+	The Pool is a container of activities.
+	All activities inside the Pool can cross boundaries to any Lane but not outside the Pool.
+	There are two types of Pool---horizontal and vertical.
+	Both of them has the same functionality.
+	The difference is their alignment.
+	A horizontal one expands horizontally while a vertical one expands vertically.
+	
+	&
+	\bpmnfig[scale=0.03]{\bpmnSymRepo participant}
+	Horizontal Pool
+	\bpmnfig[scale=0.03]{\bpmnSymRepo collaboration}
+	Horizontal Pool with Lanes
+	\bpmnfig[scale=0.03, angle=-90]{\bpmnSymRepo participant}
+	Vertical Pool
+	\bpmnfig[scale=0.03, angle=-90]{\bpmnSymRepo collaboration}
+	Vertical Pool with Lanes. \\
+	
+	\hline
+
+\end{longtable}
+
+\newpage
+
+% Teach readers how to read a BPMN diagram by example.
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.55]{res/bg-knowledge/bpmn-example}
+	\caption{Shipment Process of a hardware retailer \citefigure{bpmn_manual_example_omg} \cite{bpmn_manual_example_omg}.}
+	\label{fig:bpmn-example}
+\end{figure}
+
+Figure \ref{fig:bpmn-example} provided an example of a \gls{bpmn} diagram.
+Note that all gateways come in pairs.
+Exclusive Gateway have to indicate where branching starts and merges.
+Parallel Gateway and Inclusive Gateway need to synchronize flows because branched tasks are performed in parallel.
+Synchronization is to ensure that all branched tasks are completed before going to the next flow.
+
+The figure shows steps of hardware retailer's shipment process of shipping goods to customers.
+There are three participants involved in the hardware retailer---a warehouse worker, a clerk, and a logistics manager.
+A Start Event (\includegraphics[scale=0.0035]{\bpmnSymRepo start-event-none}) marks the beginning of a process.
+An End Event (\includegraphics[scale=0.0035]{\bpmnSymRepo end-event-none}) marks the end of the process.
+Arrows navigates the flow to each node in the diagram.
+
+\enquote{Goods to ship} is a trigger of a process.
+A Parallel Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-parallel}) with outgoing two flows indicates that task \enquote{Decide if normal post or speical shipment} and \enquote{Package goods} have to be done in parallel.
+While clerk is deciding if goods is a normal postal or special shipment, the warehouse worker can start packaging the goods.
+Next clerk's task is to decide a \enquote{Mode of delivery} indicated by an Exclusive Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-none}).
+The gateway is not responsible for clerk's decision, but rather the task before it.
+If the clerk decides that goods are a special carrier, the clerk will perform \enquote{Request quotes from carriers} and \enquote{Assign a carrier \& prepare paperwork} task.
+A special carrier includes a carrier service denoted by a Text Annotation (\includegraphics[scale=0.005]{\bpmnSymRepo text-annotation}).
+If the clerk decides that goods are normal post, the clerk will perform \enquote{Check if extra insurance is necessary} task.
+While the clerk is filling in a post label, if goods requires an extra insurance, the logistics manager will take out extra insurance.
+An Inclusive Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-or}) ensures that logistic manager will deal with goods if they need the extra insurance.
+Finally, the warehouse worker will add paperwork and move package to a pick area.
+All goods are ready to ship to customers.

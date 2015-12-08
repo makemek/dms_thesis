@@ -7,9 +7,16 @@
 % TexStudio: Options -> Configure TeXStudio -> Build -> Default Bibliography tool -> txs:///biber
 
 \usepackage{graphicx}
+\usepackage{svg}
 \usepackage{wrapfig}
 \usepackage{lscape}
+
+\usepackage[hidelinks]{hyperref}
+
+% Table
 \usepackage{multicol}
+\usepackage{multirow}
+\usepackage{longtable}
 
 \usepackage{lscape}
 
@@ -57,6 +64,7 @@
 \newacronym{rest}{REST}{REpresentational State Transfer}
 \newacronym{http}{HTTP}{Hypertext Transfer Protocol}
 \newacronym{api}{API}{Aplication Programming Interface}
+\newacronym{bpmn}{BPMN}{Business Process Modeling Notation}
 
 %signature fields
 \usepackage{amsmath}
@@ -71,3 +79,10 @@
 
 % My macros
 \newcommand{\citefigure}[1]{(\citeauthor{#1} \citeyear{#1})}
+\newcommand{\bpmnfig}[2][,,] 
+{	
+		\begin{center}
+			\includegraphics[#1]{#2}
+		\end{center}		
+}
+\newcommand{\bpmnSymRepo}{res/bg-knowledge/bpmn-symbols/}
