@@ -1,14 +1,29 @@
 % This file contains pre-loaded latex package.
 % Include this file before "begin{document}".
 
+% suppress warnings
+%-------------------------------------------
+
+% pdfTeX warning: pdflatex.exe (file <FILENAME>.pdf): PDF inclusion: multiple pdfs with page group included in a single page>]
+\pdfsuppresswarningpagegroup=1 
+
+
+%-------------------------------------------
+
 \usepackage[backend=biber]{biblatex} 
 \addbibresource{biblio.bib}
-% make sure to use biber to compile bibliography
-% TexStudio: Options -> Configure TeXStudio -> Build -> Default Bibliography tool -> txs:///biber
 
 \usepackage{graphicx}
+\usepackage{svg}
+\usepackage{wrapfig}
 \usepackage{lscape}
+
+\usepackage[hidelinks]{hyperref}
+
+% Table
 \usepackage{multicol}
+\usepackage{multirow}
+\usepackage{longtable}
 
 \usepackage{lscape}
 
@@ -21,7 +36,9 @@
 \makesavenoteenv{figure}
 
 % Utilities for creating table
+\usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\pgfplotsset{compat=1.12}
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -38,13 +55,29 @@
 \newcommand{\IC}{International College}
 
 % glossaries
-\usepackage[acronym]{glossaries}
+\usepackage[xindy, acronym]{glossaries}
 \newacronym{ic}{IC}{\IC}
 \newacronym{kmitl}{KMITL}{\kmitl}
 \newacronym{OCR}{OCR}{Optical Character Recognition}
 \newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{dms}{DMS}{Document Management System}
+\newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{nosql}{NoSQL}{Not only SQL}
+\newacronym{dbms}{DBMS}{Database Management System}
 \newacronym{pdf}{PDF}{Portable Document Format}
-
+\newacronym{rdbms}{RDBMS}{Realtional Database Management System}
+\newacronym{xml}{XML}{EXtensible Markup Language}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{bson}{BSON}{Binary JSON}
+\newacronym{yaml}{YAML}{Yet Another Multicolumn Layout}
+\newacronym{rest}{REST}{REpresentational State Transfer}
+\newacronym{http}{HTTP}{Hypertext Transfer Protocol}
+\newacronym{api}{API}{Aplication Programming Interface}
+\newacronym{bpmn}{BPMN}{Business Process Modeling Notation}
+\newacronym{edms}{EDMS}{Electronics Document Management System}
+\newacronym{dip}{DIP}{Document Image Processing}
+\newacronym{erms}{ERMS}{Electronic Record Management Systems}
+\newacronym{ecm}{ECM}{Enterprise Content Management}
 
 %signature fields
 \usepackage{amsmath}
@@ -59,3 +92,10 @@
 
 % My macros
 \newcommand{\citefigure}[1]{(\citeauthor{#1} \citeyear{#1})}
+\newcommand{\bpmnfig}[2][,,] 
+{	
+		\begin{center}
+			\includegraphics[#1]{#2}
+		\end{center}		
+}
+\newcommand{\bpmnSymRepo}{res/bg-knowledge/bpmn-symbols/}

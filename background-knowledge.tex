@@ -1,0 +1,415 @@
+\chapter{Background Knowledge}
+
+\section{A brief overview of Document Management System (DMS)}
+In the 1980s, printers, scanners, and household computers started to gain popularity.
+Organizations start to take actions on managing their information records and assets seriously.
+\gls{dip} systems were the only available software to satisfy their needs.
+\gls{dip} is the electronic version of filing cabinet where documents need to be scanned, indexed, and store in the system \cite{1_adam_2008}.
+DIP can also analyse figures, texts, and handwriting using various image processing techniques \cite{akram2010document}.
+\begin{wrapfigure}{l}{0.5\textwidth}
+	\includegraphics[scale=0.8]{res/bg-knowledge/edms-components.png}
+	\caption{Components of EDMS \citefigure{1_adam_2008}}
+	\label{fig:edms-components}
+\end{wrapfigure}
+
+Later on in the 1990s, \gls{edms} is developed targeting large enterprises with high volume of documents.
+It is the improved version of \gls{dip} with workflow functionality.
+Workflow functionality enables organizations to passed around scanned document throughout the organization to designated employees.
+\gls{edms} also has its own document repository allowing documents to be indexed and tracked using version control.
+There are various sub-types of \gls{edms} such as \gls{erms} deals mainly with record keeping.
+\gls{ecm} is a suite of applications that manages documents and records.
+Now, \gls{edms} acronym is shortened to \gls{dms}.
+Figure \ref{fig:edms-components} shows a basic components of \gls{dms}.
+Most \gls{dms} applications have these components implemented within.
+\begin{description}
+	\item[Document Repository] \hfill \\
+	Document Repository is a place where indexed documents are stored, usually on a server.
+	\item[Integration with desktop applications] \hfill \\
+	Allowing user to save documents straight to application after the document is created.
+	It is usually a 3rd party add-on embedded in popular office applications such as Microsoft Office.
+	\item[Check-in and check-out] \hfill \\
+	This feature controls who is allowed to make changes or to read documents.
+	Basically, it is a user permission control system.
+	\item[Versioning] \hfill \\
+	Keeping track of changes by assigning a version number to a document.
+	The number is incremented after the document passes major revisions.
+	User can access the previous versions of the document.
+	\item[Auditing] \hfill \\
+	Track who changes document, when, and where.
+	Only authorized user can read these information.
+	\item[Security] \hfill \\
+	Controls how documents should be stored in the server to prevent unauthorized users from attacking the system.
+	\item[Classification and indexing] \hfill \\
+	Metadata and tags provide more information to documents.
+	It helps to search and retrieve documents easier.
+	\item[Search and Retrieval] \hfill \\
+	Allow user to retrieve documents according to keywords.
+	Keywords can be a metadata or contents within a document.
+	A system may offer advance search criteria by looking for individual fields and combine with other fields using basic boolean operations (AND, OR, NOT). 
+\end{description}
+
+\section{What is Metadata}
+Metadata literally means \enquote{data about data} \cite[p.~1]{baca_2008}.
+Brackett \cite[p.149]{brackett_2000} defined metadata in terms of organization as \enquote{Any data about organization's resource}.
+There is no clear definition on what metadata is because this term is used differently in different communities.
+For librarians, it refers to information in the library catalog that help users to find the right book in the library.
+For search engines, it means descriptions of web page's contents and keywords used to rank relevant websites.
+For others, it refers to a descriptive information of resources in human readable format.
+Whatever metadata refers to, they share the following similar usage.
+\begin{enumerate}
+	\item To identify resources.
+	\item To distinguish or bundle similar resources.
+	\item To find resources based on search criteria.
+\end{enumerate}
+There are 3 types of metadata \cite{hodge_2001}.
+\begin{description}
+	\item[Descriptive metadata] give a description of resources for discovery and identification.
+	\item[Structural metadata] describes how component's objects are organized.
+	\item[Administrative metadata] indicates information about how resource suppose to be managed.
+\end{description}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{res/bg-knowledge/data-and-metadata}
+	\caption{data and metadata \citefigure{hay_2006}}
+	\label{fig:data-metadata}
+\end{figure}
+Figure \ref{fig:data-metadata} provides simple model examples of how metadata represents real-world things.
+Each column shows different examples.
+The third row is a descriptive metadata.
+Julia Robert is the customer's name and 10/28/67 is her birthdate.
+These two metadata refer to only this \enquote{Julia Roberts} \includegraphics[scale=0.3]{res/bg-knowledge/metadata-julia} and not any other Julia Roberts. 
+Same with a second example, A branch in \enquote{111 Wall Street} with a branch manager \enquote{Sam Sneed} refer only to this \includegraphics[scale=0.3]{res/bg-knowledge/metadata-wallstreet} branch.
+The next row up is a structured metadata.
+It shows a higher abstraction concept to describe general real-world things.
+Julia Roberts can be generalized as a \enquote{Customer} entity with \enquote{Name} and \enquote{Birthdate} as its attributes.
+A checking account in the third example can be generalized as a table called \enquote{CHECKING\_ACCOUNT} with \enquote{Account\_number} and \enquote{Monthly\_charge} as its columns.
+
+\section{NoSQL}
+\gls{nosql} is a database that does not use \gls{sql}.
+It refers to any database that does not follow the traditional \gls{rdbms} model.
+\gls{sql} is designed to be a query language for relational databases which are usually table-based.
+Records are stored in rows and columns represent fields.
+On the other hand, \gls{nosql} allow to define fields while creating a record.
+Nested values are common in \gls{nosql} databases because \gls{nosql} is aggregate oriented.
+Hashes, arrays, and objects can be nested with themselves.
+
+The main characteristic separating \gls{nosql} databases from \gls{rdbms} is that they do not use query languages derived from \gls{sql}. 
+The following list shows common features of \gls{nosql} \cite[p.~12-16]{nosql-for-dummies}.
+\begin{description}
+	\item[Schema agnostic] \hfill \\
+	\gls{nosql} databases doesn't require schema to be defined explicitly.
+	Any type of records can be stored without having to know how database stores them internally.
+	\item[Nonrelational] \hfill \\
+	A relational database needs relations to describe how tables relate to each other.
+	Unlike \gls{rdbms}, \gls{nosql} databases don't have any relation concept.
+	They don't store record's relation, but rather graph database with key-value pairs.
+	\item[Highly distributable] \hfill \\
+	A single server may not be able to handle all data requests in time.
+	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
+	Storing data across multiple servers in relational databases is a challenging task.
+	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
+\end{description}
+
+There are many \gls{nosql} storage types available to model the content.
+For example, \enquote{Column-oriented database} stores data as columns instead of rows in \gls{rdbms}.
+\enquote{Graph store} represents data as nodes and relationships as edges in a graph.
+This report will focus on \enquote{Document Store} storage type.
+\gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships.
+The topmost node in Figure \ref{arch-node} called a root node.
+This node is required as a starting point for a record and the model must have only one root node.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.48]{res/bg-knowledge/nosql-hierarchical}
+	\caption{The hierarchical organized into a set of parent-child nodes \citefigure{nosql-for-mere-mortals}}
+	\label{arch-node}
+\end{figure}
+Directed Edges connecting between two nodes represents a relationship.
+A node where an arrow points called a parent node.
+A node where an arrow is pointed called a child node.
+The parent node can have many child nodes and each child node can have many parent nodes.
+
+For example, a simple customer's receipt with orders and billing addresses from figure \ref{nosql-aggregate-uml} can be modelled to hierarchical parent-child relationship in figure \ref{nosql-aggregate-uml-realized}. 
+Each node is an object in itself.
+\gls{nosql} databases can locate any node within the graph according to any specific queries.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.55]{res/bg-knowledge/nosql-nosql-agregate-uml}
+	\caption{An aggregate data model in UML notation \citefigure{sadalage_fowler_2013}}
+	\label{nosql-aggregate-uml}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-uml-realized}
+	\caption{A hierarchical structure representation from figure \ref{nosql-aggregate-uml}}
+	\label{nosql-aggregate-uml-realized}
+\end{figure}
+
+\enquote{Document Store} use \gls{xml}, \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
+Client have to use REST API provided by the database to query the data.
+\gls{rest} is a network-based software architectural style of the World Wide Web \cite{doglio, masse_2012}.
+It takes care interactions between client and server.
+Client program communicates with the database using \gls{http} through exposed \glspl{api}.
+
+Table \ref{tbl:doctype-storage-feature} summarizes key features of \gls{nosql} database with \enquote{Document Store} storage type.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l c}
+		\hline
+		Feature                             &      Document Store \\
+		\hline
+		Table-like schema support (columns) &      No \\
+		Complete update/fetch               &      Yes \\
+		Partial update/fetch                &      Yes \\
+		Query/Filter on	value               &      Yes \\
+		Aggregates across rows              &      No \\
+		Relationships between entities      &      No \\
+		Cross-entity view support           &      Yes \\
+		Batch fetch                         &      Yes \\
+		Batch update                        &      Yes \\
+		\hline
+	\end{tabular}
+	\caption{Sumarization of available features for \enquote{Document Store} storage type \citefigure{vaish_2013} \cite{vaish_2013}}
+	\label{tbl:doctype-storage-feature}
+\end{table}
+
+\section{Business Process Modelling Notation (BPMN)}
+\gls{bpmn} is a graphical notation that depicts the steps in business process \cite{bpmn_omg}.
+% What
+The goal is to represent business processes using standard graphical notation.
+% Who
+\gls{bpmn} targets business users and process implementers who need a standard model to communicate their business process.
+% Why
+Business users create, manage, and monitor processes while process implementers turn processes into a physical implementation. 
+\gls{bpmn} doesn't focus on why, when, and how a process is performed.
+But rather what processes, which are the steps to achieve that process, and who should do them.
+With \gls{bpmn}, organizations can understand, improve, and control their business processes.
+Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in this report along with their descriptions\footnote{Please refer to \url{http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf} (page 28 - 41) for more details on all available \gls{bpmn} symbols and its detailed descriptions.}.
+%TODO UPDATE NEW SYMBOLS AS IT APPEARS IN THIS REPORT
+\begin{longtable}{C{0.2\textwidth} L{0.45\textwidth} C{0.3\textwidth}}
+
+	% Setting up header-----------------------------
+	
+	% First header
+	\caption{Summary of \gls{bpmn} symbols \citefigure{bpmn_manual_omg} \cite{bpmn_manual_omg}}
+	\label{tbl:sum-bpmn-symbol} \\
+	
+	\hline
+	Element & Description & Notation \\
+	\hline
+	\endfirsthead
+	%----------------------
+
+	% Repeated header
+	\caption{Summary of \gls{bpmn} symbols \citefigure{bpmn_manual_omg}} \\
+	\hline
+	Element & Description & Notation \\
+	\hline
+	\endhead
+	
+	\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+	\endfoot
+	
+	\hline \hline
+	\endlastfoot
+	%----------------------
+		
+	%-----------------------------------------------
+	
+	Start Event & 
+	Indicates where a process begins &
+	\bpmnfig[scale=0.015]{\bpmnSymRepo start-event-none} \\
+	
+	Intermediate Event &
+	Intermediate Event represents a status reached in a process, and it is modelled explicitly.  &
+	\bpmnfig[scale=0.02]{\bpmnSymRepo start-event-intermediate} \\
+	
+	End Event & 
+	Indicates where a process ends &
+	\bpmnfig[scale=0.015]{\bpmnSymRepo end-event-none} \\
+	
+	End Event Terminate &
+	Terminate all running activities in a process immediately without any error handling. &
+	\bpmnfig[scale=0.015]{\bpmnSymRepo end-event-terminate} \\
+	
+	Message &
+	A Message represents information communicating between two participants. &
+	See two rows below. \\
+	
+	Start Message Event &
+	An event triggers a process to start when a Message arrives from a participant. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo start-event-message} \\
+	
+	End Message Event &
+	A message received from a participant concludes the end of a process. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo end-event-message} \\
+	
+	Activity &
+	An activity performs work within a business process.
+	It can be single or compound.
+	It is an executable element of \gls{bpmn}. &
+	See three rows below. \\
+	
+	Task & 
+	A Task is a unit of work performs in a process.
+	It has a task name inside a rounded rectangle notation.
+	The task is used when process can not be broken down any further.
+	It has no internal parts, representing a single action. &
+	\bpmnfig[scale=0.03]{\bpmnSymRepo task} \\	
+	
+	User Task &
+	A subtype of Task in which human is the one who perform a task with the help of a software application. &
+	\bpmnfig[scale=0.035]{\bpmnSymRepo user-task} \\	
+	
+	Sub-Process &
+	A Sub-Process composes of a single activity or compound activity.
+	It refers to a process that can be broken down to a finer detail.
+	The collapsed Sub-Process hides activity details from the diagram indicated by a plus sign.
+	The expanded one shows activities inside the diagram indicated by a minus sign. &
+	\bpmnfig[scale=0.03]{\bpmnSymRepo subprocess-collapsed}
+	Collapsed Sub-Process
+	\bpmnfig[scale=0.03]{\bpmnSymRepo subprocess-expanded}
+	Expanded Sub-Process \\	
+	
+	Activity Looping &
+	Activity Looping loops itself continuously until its boolean condition becomes \textit{true}.
+	It evaluates condition every time before/after it performed for every loop iteration. &
+	\bpmnfig[scale=0.04]{\bpmnSymRepo task-loop} \\	
+		
+	Normal Flow &
+	Shows activity order performed in a process &
+	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo connection} \\
+	
+	Conditional Flow &
+	It will perform the outgoing sequence flow if and only if conditional expression evaluates to \textit{true}. &
+	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo conditional-flow} \\
+
+	Default Flow &
+	Execute this flow if all other outgoing conditional expression evaluate to \textit{false}. &
+	\bpmnfig[scale=0.02, angle=-45]{\bpmnSymRepo default-flow} \\
+
+	Message Flow &
+	Indicates a Message sent between two participants. &
+	\bpmnfig[scale=0.025, angle=-45]{\bpmnSymRepo message-flow} \\
+
+	Gateway & 
+	Controls branching, merging, forking, and joining multiple sequence flow paths. 
+	& See four rows below. \\
+	
+	Exclusive Gateway &
+	Creates multiple alternative paths in a process.
+	If one of the conditional expression evaluates to \textit{true}, it executes that path without evaluating others.
+	It has the same functionality as conditional flow.
+	The difference is that Exclusive Gateway allows multiple branching from the same node. &
+	
+	\begin{center}
+	\begin{minipage}{0.1\textwidth}
+		\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-none}
+	\end{minipage}
+	or
+	\begin{minipage}{0.1\textwidth}
+		\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-xor}
+	\end{minipage}
+	\end{center} \\
+	
+	Event-based Gateway &
+	Evaluates which event occurs first, not which condition is met.
+	If that event occurred, go to that outgoing flow and discard other conditions. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-eventbased} \\
+	
+	Parallel Gateway &
+	Parallel gateway is used to create and to combine parallel flows.
+	It represents multiple concurrent activities performing at the same time.
+	It doesn't evaluate any condition or event before execution.
+	Parallel gateway will wait for all incoming flows to finish before proceeding to the next outgoing flow. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-parallel} \\	
+	
+	Inclusive Gateway &
+	Evaluates all conditional expression unlike the exclusive gateway.
+	It is used to create alternative parallel paths.
+	If there are multiple conditional expressions evaluated to \textit{true}, those flows will be executed independently in parallel. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo gateway-or} \\		
+	
+	Data Object &
+	Provide information about what activity requires to perform and/or what they produce. 
+	Data Object can also refer to a collection of Data Objects.
+	Data Input have a white arrow on the top corner.
+	It is placed before activity starts indicating what that activity requires.
+	Data Output have a shaded arrow on the the corner.
+	It is placed after activity finished indicating what activity produces. &
+	\bpmnfig[scale=0.025]{\bpmnSymRepo data-object}
+	Data Object
+	\bpmnfig[scale=0.025]{\bpmnSymRepo data-input}
+	Data Input
+	\bpmnfig[scale=0.025]{\bpmnSymRepo data-output}
+	Data Output \\
+	
+	Text Annotation &
+	Text Annotation provides additional information to a \gls{bpmn} diagram reader.
+	Its notation composes of a opening square bracket with a dashed line attached on the left.
+	The dashed line can connect to any \gls{bpmn} element.
+	The bracket contains a descriptive text on the right.
+	It scales vertically to cover multiple lines of text.
+	&
+	\bpmnfig[scale=0.025]{\bpmnSymRepo text-annotation} \\
+	
+	Pool &
+	A Pool represents a collaboration between participants in a process.
+	It can be partitioned to multiple smaller Pools called Lane.
+	Each Lane assigns to one participant.
+	The Participant is a person, machine, group of persons or machines responsible for the process execution within the Pool.
+	The Pool is a container of activities.
+	All activities inside the Pool can cross boundaries to any Lane but not outside the Pool.
+	There are two types of Pool---horizontal and vertical.
+	Both of them has the same functionality.
+	The difference is their alignment.
+	A horizontal one expands horizontally while a vertical one expands vertically.
+	
+	&
+	\bpmnfig[scale=0.03]{\bpmnSymRepo participant}
+	Horizontal Pool
+	\bpmnfig[scale=0.03]{\bpmnSymRepo collaboration}
+	Horizontal Pool with Lanes
+	\bpmnfig[scale=0.03, angle=-90]{\bpmnSymRepo participant}
+	Vertical Pool
+	\bpmnfig[scale=0.03, angle=-90]{\bpmnSymRepo collaboration}
+	Vertical Pool with Lanes. \\
+	
+	\hline
+
+\end{longtable}
+
+\newpage
+
+% Teach readers how to read a BPMN diagram by example.
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.55]{res/bg-knowledge/bpmn-example}
+	\caption{Shipment Process of a hardware retailer \citefigure{bpmn_manual_example_omg} \cite{bpmn_manual_example_omg}.}
+	\label{fig:bpmn-example}
+\end{figure}
+
+Figure \ref{fig:bpmn-example} provided an example of a \gls{bpmn} diagram.
+Note that all gateways come in pairs.
+Exclusive Gateway have to indicate where branching starts and merges.
+Parallel Gateway and Inclusive Gateway need to synchronize flows because branched tasks are performed in parallel.
+Synchronization is to ensure that all branched tasks are completed before going to the next flow.
+
+The figure shows steps of hardware retailer's shipment process of shipping goods to customers.
+There are three participants involved in the hardware retailer---a warehouse worker, a clerk, and a logistics manager.
+A Start Event (\includegraphics[scale=0.0035]{\bpmnSymRepo start-event-none}) marks the beginning of a process.
+An End Event (\includegraphics[scale=0.0035]{\bpmnSymRepo end-event-none}) marks the end of the process.
+Arrows navigates the flow to each node in the diagram.
+
+\enquote{Goods to ship} is a trigger of a process.
+A Parallel Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-parallel}) with outgoing two flows indicates that task \enquote{Decide if normal post or speical shipment} and \enquote{Package goods} have to be done in parallel.
+While clerk is deciding if goods is a normal postal or special shipment, the warehouse worker can start packaging the goods.
+Next clerk's task is to decide a \enquote{Mode of delivery} indicated by an Exclusive Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-none}).
+The gateway is not responsible for clerk's decision, but rather the task before it.
+If the clerk decides that goods are a special carrier, the clerk will perform \enquote{Request quotes from carriers} and \enquote{Assign a carrier \& prepare paperwork} task.
+A special carrier includes a carrier service denoted by a Text Annotation (\includegraphics[scale=0.005]{\bpmnSymRepo text-annotation}).
+If the clerk decides that goods are normal post, the clerk will perform \enquote{Check if extra insurance is necessary} task.
+While the clerk is filling in a post label, if goods requires an extra insurance, the logistics manager will take out extra insurance.
+An Inclusive Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-or}) ensures that logistic manager will deal with goods if they need the extra insurance.
+Finally, the warehouse worker will add paperwork and move package to a pick area.
+All goods are ready to ship to customers.
