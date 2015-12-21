@@ -68,22 +68,51 @@ There are 3 types of metadata \cite{hodge_2001}.
 	\item[Administrative metadata] indicates information about how resource suppose to be managed.
 \end{description}
 
+Electronic documents contain descriptive metadata providing additional information on the document.
+The reason for having metadata associate with the document is that they can be indexed in the system.
+Index is a systematic arrangement of entries designed to enable users to locate information in a document \cite{def-index}.
+User can use metadata to quickly locate documents after they are archived in the system.
+The electronic document contains information such as in figure \ref{metadata-ex-doc}, \ref{metadata-ex-pdf}, and \ref{metadata-ex-png}.
+Figure \ref{metadata-ex-doc} shows the metadata of docx file created by Microsoft Word 2013.
+User can edit some metadata fields directly from properties view in Windows 10 or in Microsoft Word.
+Figure \ref{metadata-ex-png} is the metadata of a \gls{png} file.
+It has information on image dimension and bit depth.
+User can specify date taken in \enquote{Date taken} field.
+\enquote{File} metadata category in figure \ref{metadata-ex-doc} and \ref{metadata-ex-png} are generated automatically by the operating system for every type of file.
+The operating system can use this metadata to index the file within the hard disk.
+Figure \ref{metadata-ex-pdf} shows metadata in a \gls{pdf} file.
+This metadata needs a \gls{pdf} reader software (e.g.\ Adobe Reader, Foxit Reader, etc.) to show it.
+Windows 10 can't display this metadata because Windows doesn't have native support for \gls{pdf}.
+However, there is a third-party software available\footnote{\url{http://coolsoft.altervista.org/en/pdfpropertyextension}} that displays \gls{pdf}'s metadata on a file explorer.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{res/bg-knowledge/data-and-metadata}
-	\caption{data and metadata \citefigure{hay_2006}}
-	\label{fig:data-metadata}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-doc}
+	\end{minipage} \hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-doc2}
+	\end{minipage} \hfill	
+	
+	\caption{Microsoft Word Document (docx) metadata viewed on Windows 10}
+	\label{metadata-ex-doc}
 \end{figure}
-Figure \ref{fig:data-metadata} provides simple model examples of how metadata represents real-world things.
-Each column shows different examples.
-The third row is a descriptive metadata.
-Julia Robert is the customer's name and 10/28/67 is her birthdate.
-These two metadata refer to only this \enquote{Julia Roberts} \includegraphics[scale=0.3]{res/bg-knowledge/metadata-julia} and not any other Julia Roberts. 
-Same with a second example, A branch in \enquote{111 Wall Street} with a branch manager \enquote{Sam Sneed} refer only to this \includegraphics[scale=0.3]{res/bg-knowledge/metadata-wallstreet} branch.
-The next row up is a structured metadata.
-It shows a higher abstraction concept to describe general real-world things.
-Julia Roberts can be generalized as a \enquote{Customer} entity with \enquote{Name} and \enquote{Birthdate} as its attributes.
-A checking account in the third example can be generalized as a table called \enquote{CHECKING\_ACCOUNT} with \enquote{Account\_number} and \enquote{Monthly\_charge} as its columns.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-pdf}
+		\caption{\acrfull{pdf} metadata viewed on Adobe Reader DC}
+		\label{metadata-ex-pdf}
+	\end{minipage} \hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.65]{res/bg-knowledge/metadata-ex-png}
+		\caption{\acrfull{png} metadata viewed on Windows 10}
+		\label{metadata-ex-png}
+	\end{minipage} \hfill	
+\end{figure}
 
 \section{NoSQL}
 \gls{nosql} is a database that does not use \gls{sql}.
