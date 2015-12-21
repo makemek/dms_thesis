@@ -129,24 +129,38 @@ The following list shows common features of \gls{nosql} \cite[p.~12-16]{nosql-fo
 	\item[Schema agnostic] \hfill \\
 	\gls{nosql} databases doesn't require schema to be defined explicitly.
 	Any type of records can be stored without having to know how database stores them internally.
+	This improves flexibility when designing document's metadata model.
+	Some constraints such as field type and field length don't have to be defined explicitly.
+	\gls{nosql} can store mixed data type in the same field.
+	If there is a new type of form, we can reuse the native form model by extending it instead of defining a new schema.
 	\item[Nonrelational] \hfill \\
 	A relational database needs relations to describe how tables relate to each other.
 	Unlike \gls{rdbms}, \gls{nosql} databases don't have any relation concept.
-	They don't store record's relation, but rather graph database with key-value pairs.
+	They don't store record's relation.
+	Meaning that the metadata model doesn't have to go through database normalization process to minimize data redundancy.
+	Programmer can focus on modelling metadata without having to worry about modelling table relations in \gls{rdbms}.
+	
 	\item[Highly distributable] \hfill \\
 	A single server may not be able to handle all data requests in time.
 	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
 	Storing data across multiple servers in relational databases is a challenging task.
 	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
+	\gls{dms} for \gls{ic} needs to be scalable and maintainable.
+	Storage space required to store document files and their metadata is expected to grow over time.
+	If a single storage server is not enough, \gls{nosql} can use multiple storage servers.
+	No need to program new a system to manage distributed queries.
 \end{description}
 
 There are many \gls{nosql} storage types available to model the content.
 For example, \enquote{Column-oriented database} stores data as columns instead of rows in \gls{rdbms}.
 \enquote{Graph store} represents data as nodes and relationships as edges in a graph.
-This report will focus on \enquote{Document Store} storage type.
 \gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships.
 The topmost node in Figure \ref{arch-node} called a root node.
 This node is required as a starting point for a record and the model must have only one root node.
+\gls{dms} for \gls{ic} use \enquote{Document Store} storage type to manage document's metadata.
+The reason is that this storage type can query child nodes, not just the parent node.
+It indexes each queried node automatically resulting in shorter retrieval time.
+Another reason is that programmer can store objects to \gls{nosql} database easily by converting them to \gls{json} objects.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.48]{res/bg-knowledge/nosql-hierarchical}
