@@ -199,12 +199,26 @@ Each node is an object in itself.
 	\label{nosql-uml-hiarch-repr}	
 \end{figure}
 
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{C{0.15\textwidth} C{0.15\textwidth} L{0.2\textwidth} L{0.3\textwidth}}
+\begin{longtable}{C{0.15\textwidth} C{0.15\textwidth} L{0.2\textwidth} L{0.3\textwidth}}
+		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}}
+		\label{tbl:uml-corespond-pdf} \\
 		\hline
 		Class & Attribute & Corresponding field in figure \ref{metadata-ex-pdf} & value \\
 		\hline
+		\endfirsthead
+		
+		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}} \\
+		\hline
+		Class & Attribute & Corresponding field in figure \ref{metadata-ex-pdf} & value \\
+		\hline
+		\endhead
+		
+		\hline \multicolumn{4}{r}{{Continued on next page}} \\ \hline
+		\endfoot
+		
+		\hline \hline
+		\endlastfoot
+		
 		Description & fileName & File: & dms.pdf \\
 		& title & Title: & Document Management System for IC KMITL \\
 		& author & Author:  & Apipol Niyomsak \\
@@ -225,10 +239,7 @@ Each node is an object in itself.
 		& width & Page Size: & 8.50 \\
 		& height & Page Size: & 11.00 \\
 		\hline
-	\end{tabular}
-	\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}}
-	\label{tbl:uml-corespond-pdf}
-\end{table}
+\end{longtable}
 
 Table \ref{tbl:uml-corespond-pdf} summarizes corresponding attributes (figure \ref{nosql-aggregate-uml}) and fields (figure \ref{metadata-ex-pdf}).
 Note that bold-highlighted values are stored differently from any other data types.
