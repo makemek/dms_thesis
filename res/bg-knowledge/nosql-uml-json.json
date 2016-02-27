@@ -1,0 +1,28 @@
+{
+  "PDF": {
+    "Description": {
+      "file_name": "dms.pdf",
+      "title": "Document Management System for IC KMITL",
+      "author": "Apipol Niyomsak",
+      "subject": "",
+      "dateCreate": 1450664710,
+      "dateModified": 1450664710,
+      "application": "LaTeX with hyperref package",
+      "keywords": ["dms", "IC", "KMITL"],
+    },
+    "Advanced": {
+      "pdfProducer": "pdfTeX-1.40.16",
+      "pdfVersion": "1.5 (Acrobat 6.x)",
+      "location": "C:\\Users\\Apipol\\Documents\\TEX\\dms_thesis\\",
+      "fileSizeByte": 1894319,
+      "taggedPDF": false,
+      "fastWebView": false,
+      "totalPage": 40,
+      "pageSize": {
+        "unit": "in",
+        "width": 8.5,
+        "height": 11
+      }
+    }
+  }
+}

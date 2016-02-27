@@ -48,7 +48,7 @@ Most \gls{dms} applications have these components implemented within.
 	A system may offer advance search criteria by looking for individual fields and combine with other fields using basic boolean operations (AND, OR, NOT). 
 \end{description}
 
-\section{What is Metadata}
+\section{Metadata}
 Metadata literally means \enquote{data about data} \cite[p.~1]{baca_2008}.
 Brackett \cite[p.149]{brackett_2000} defined metadata in terms of organization as \enquote{Any data about organization's resource}.
 There is no clear definition on what metadata is because this term is used differently in different communities.
@@ -68,22 +68,51 @@ There are 3 types of metadata \cite{hodge_2001}.
 	\item[Administrative metadata] indicates information about how resource suppose to be managed.
 \end{description}
 
+Electronic documents contain descriptive metadata providing additional information on the document.
+The reason for having metadata associate with the document is that they can be indexed in the system.
+Index is a systematic arrangement of entries designed to enable users to locate information in a document \cite{def-index}.
+User can use metadata to quickly locate documents after they are archived in the system.
+The electronic document contains information such as in figure \ref{metadata-ex-doc}, \ref{metadata-ex-pdf}, and \ref{metadata-ex-png}.
+Figure \ref{metadata-ex-doc} shows the metadata of docx file created by Microsoft Word 2013.
+User can edit some metadata fields directly from properties view in Windows 10 or in Microsoft Word.
+Figure \ref{metadata-ex-png} is the metadata of a \gls{png} file.
+It has information on image dimension and bit depth.
+User can specify date taken in \enquote{Date taken} field.
+\enquote{File} metadata category in figure \ref{metadata-ex-doc} and \ref{metadata-ex-png} are generated automatically by the operating system for every type of file.
+The operating system can use this metadata to index the file within the hard disk.
+Figure \ref{metadata-ex-pdf} shows metadata in a \gls{pdf} file.
+This metadata needs a \gls{pdf} reader software (e.g.\ Adobe Reader, Foxit Reader, etc.) to show it.
+Windows 10 can't display this metadata because Windows doesn't have native support for \gls{pdf}.
+However, there is a third-party software available\footnote{\url{http://coolsoft.altervista.org/en/pdfpropertyextension}} that displays \gls{pdf}'s metadata on a file explorer.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{res/bg-knowledge/data-and-metadata}
-	\caption{data and metadata \citefigure{hay_2006}}
-	\label{fig:data-metadata}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-doc}
+	\end{minipage} \hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-doc2}
+	\end{minipage} \hfill	
+	
+	\caption{Microsoft Word Document (docx) metadata viewed on Windows 10}
+	\label{metadata-ex-doc}
 \end{figure}
-Figure \ref{fig:data-metadata} provides simple model examples of how metadata represents real-world things.
-Each column shows different examples.
-The third row is a descriptive metadata.
-Julia Robert is the customer's name and 10/28/67 is her birthdate.
-These two metadata refer to only this \enquote{Julia Roberts} \includegraphics[scale=0.3]{res/bg-knowledge/metadata-julia} and not any other Julia Roberts. 
-Same with a second example, A branch in \enquote{111 Wall Street} with a branch manager \enquote{Sam Sneed} refer only to this \includegraphics[scale=0.3]{res/bg-knowledge/metadata-wallstreet} branch.
-The next row up is a structured metadata.
-It shows a higher abstraction concept to describe general real-world things.
-Julia Roberts can be generalized as a \enquote{Customer} entity with \enquote{Name} and \enquote{Birthdate} as its attributes.
-A checking account in the third example can be generalized as a table called \enquote{CHECKING\_ACCOUNT} with \enquote{Account\_number} and \enquote{Monthly\_charge} as its columns.
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-pdf}
+		\caption{\acrfull{pdf} metadata viewed on Adobe Reader DC}
+		\label{metadata-ex-pdf}
+	\end{minipage} \hfill
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-png}
+		\caption{\acrfull{png} metadata viewed on Windows 10}
+		\label{metadata-ex-png}
+	\end{minipage} \hfill	
+\end{figure}
 
 \section{NoSQL}
 \gls{nosql} is a database that does not use \gls{sql}.
@@ -100,24 +129,38 @@ The following list shows common features of \gls{nosql} \cite[p.~12-16]{nosql-fo
 	\item[Schema agnostic] \hfill \\
 	\gls{nosql} databases doesn't require schema to be defined explicitly.
 	Any type of records can be stored without having to know how database stores them internally.
+	This improves flexibility when designing document's metadata model.
+	Some constraints such as field type and field length don't have to be defined explicitly.
+	\gls{nosql} can store mixed data type in the same field.
+	If there is a new type of form, we can reuse the native form model by extending it instead of defining a new schema.
 	\item[Nonrelational] \hfill \\
 	A relational database needs relations to describe how tables relate to each other.
 	Unlike \gls{rdbms}, \gls{nosql} databases don't have any relation concept.
-	They don't store record's relation, but rather graph database with key-value pairs.
+	They don't store record's relation.
+	Meaning that the metadata model doesn't have to go through database normalization process to minimize data redundancy.
+	Programmer can focus on modelling metadata without having to worry about modelling table relations in \gls{rdbms}.
+	
 	\item[Highly distributable] \hfill \\
 	A single server may not be able to handle all data requests in time.
 	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
 	Storing data across multiple servers in relational databases is a challenging task.
 	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
+	\gls{dms} for \gls{ic} needs to be scalable and maintainable.
+	Storage space required to store document files and their metadata is expected to grow over time.
+	If a single storage server is not enough, \gls{nosql} can use multiple storage servers.
+	No need to program new a system to manage distributed queries.
 \end{description}
 
 There are many \gls{nosql} storage types available to model the content.
 For example, \enquote{Column-oriented database} stores data as columns instead of rows in \gls{rdbms}.
 \enquote{Graph store} represents data as nodes and relationships as edges in a graph.
-This report will focus on \enquote{Document Store} storage type.
 \gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships.
 The topmost node in Figure \ref{arch-node} called a root node.
-This node is required as a starting point for a record and the model must have only one root node.
+This node represents a record's starting point.
+The model must have only one root node.
+\gls{dms} for \gls{ic} use \enquote{Document Store} storage type to manage document's metadata.
+The reason is that this storage type can query child nodes, not just the parent node.
+Another reason is that programmer can store objects to \gls{nosql} database easily by converting them to \gls{json} objects.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.48]{res/bg-knowledge/nosql-hierarchical}
@@ -129,49 +172,103 @@ A node where an arrow points called a parent node.
 A node where an arrow is pointed called a child node.
 The parent node can have many child nodes and each child node can have many parent nodes.
 
-For example, a simple customer's receipt with orders and billing addresses from figure \ref{nosql-aggregate-uml} can be modelled to hierarchical parent-child relationship in figure \ref{nosql-aggregate-uml-realized}. 
+From figure \ref{metadata-ex-pdf}, a \gls{pdf} metadata can be modelled to hierarchical parent-child relationship as shown in figure \ref{nosql-uml-hiarch-repr}.
+Figure \ref{nosql-aggregate-uml} is a data model representation using \gls{uml} notation.
+\enquote{PDF} is a root node of the the hierarchical model.
+The root node is not necessary for implementation because \enquote{Document Store} had already created it by default.
+Thus, the default-created node causes the \enquote{PDF} node to be its child node.
+Since the hierarchical model require the root node, it is recommended to have the root node in the model.
+Multiplicity constraints indicated by an integer represents maximum allowance number of object instances.
+A note symbol (rectangle with right-folded corner) has dotted lines connected to it.
+Those lines indicate which metadata are generated automatically by \gls{xmp}.
+It restrict user from editing them.
+\gls{xmp} is a file labeling technology developed by Adobe Systems Inc..
+\gls{xmp} embeds metadata into files during the content creation process \cite{adobe-xml}.
+\enquote{Description} and \enquote{Advanced} are \enquote{PDF}'s child nodes.
+\enquote{Description} and \enquote{Advanced} also contain their child nodes.
 Each node is an object in itself.
 \gls{nosql} databases can locate any node within the graph according to any specific queries.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.55]{res/bg-knowledge/nosql-nosql-agregate-uml}
-	\caption{An aggregate data model in UML notation \citefigure{sadalage_fowler_2013}}
+	\includegraphics[scale=0.53]{res/bg-knowledge/nosql-nosql-agregate-uml}
+	\caption{An aggregate data model in UML notation from figure \ref{metadata-ex-pdf}}
 	\label{nosql-aggregate-uml}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-uml-realized}
-	\caption{A hierarchical structure representation from figure \ref{nosql-aggregate-uml}}
-	\label{nosql-aggregate-uml-realized}
+	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-uml-hiarch-repr}
+	\caption{A hierarchical representation from figure \ref{nosql-aggregate-uml}}
+	\label{nosql-uml-hiarch-repr}	
 \end{figure}
 
-\enquote{Document Store} use \gls{xml}, \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
+\begin{longtable}{C{0.15\textwidth} C{0.15\textwidth} L{0.2\textwidth} L{0.3\textwidth}}
+		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}}
+		\label{tbl:uml-corespond-pdf} \\
+		\hline
+		Class & Attribute & Corresponding field in figure \ref{metadata-ex-pdf} & value \\
+		\hline
+		\endfirsthead
+		
+		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}} \\
+		\hline
+		Class & Attribute & Corresponding field in figure \ref{metadata-ex-pdf} & value \\
+		\hline
+		\endhead
+		
+		\hline \multicolumn{4}{r}{{Continued on next page}} \\ \hline
+		\endfoot
+		
+		\hline \hline
+		\endlastfoot
+		
+		Description & fileName & File: & dms.pdf \\
+		& title & Title: & Document Management System for IC KMITL \\
+		& author & Author:  & Apipol Niyomsak \\
+		& subject & Subject: & \\
+		& dateCreate & Created: & \textbf{1450792574} \\
+		& dateModified & Modified: & \textbf{1450792574} \\
+		& application & Application: & LaTeX with hyperref package \\
+		Keyword & tag & Keywords: & [dms, IC, KMITL]\\
+		Advanced & pdfProducer & PDF Producer: & pdfTeX-1.40.16 \\
+		& pdfVersion & PDF Version: & 1.5 (Acrobat 6.x) \\
+		& location & Location: &  C:\textbackslash Users\textbackslash Apipol\textbackslash Documents\textbackslash \newline 
+		TEX\textbackslash dms\_thesis\textbackslash \\
+		& fileSizeByte & File Size: & 1909582 \\
+		& taggedPDF & Tagged PDF: & \textit{\textbf{false}} \\
+		& fastWebView & Fast Web View: & \textit{\textbf{false}} \\
+		& totalPage & Number of Pages: & 42 \\
+		PageSize & unit & Page Size: & in \\
+		& width & Page Size: & 8.50 \\
+		& height & Page Size: & 11.00 \\
+		\hline
+\end{longtable}
+
+Table \ref{tbl:uml-corespond-pdf} summarizes corresponding attributes (figure \ref{nosql-aggregate-uml}) and fields (figure \ref{metadata-ex-pdf}).
+Note that bold-highlighted values are stored differently from any other data types.
+\enquote{dateCreate} and \enquote{dateModified} have \textit{Date} data type.
+When storing date in \gls{nosql}, it converts to UNIX timestamp automatically.
+UNIX timestamp (UNIX time, POSIX time, or UNIX epoch) is the number of seconds elapsed since January 1, 1970 (midnight UTC/GMT) \cite{unix-time}.
+\enquote{taggedPDF} and \enquote{fastWebView} have \textit{Boolean} data type.
+Boolean represents either \textit{true} or \textit{false}.
+\gls{nosql} store this data type as a one byte variable.
+It use less storage than integer or string to avoid any unexpected side effects of comparison. 
+For example, numeric value of \textit{1} is not the same as a boolean value of \textit{true}.
+The boolean data type has to perform logical operation with the same data type.
+If a programmer would like to store a boolean value, he has to use a boolean data type provided by the programming language.
+
+\enquote{Document store} use \gls{xml}, \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
 Client have to use REST API provided by the database to query the data.
 \gls{rest} is a network-based software architectural style of the World Wide Web \cite{doglio, masse_2012}.
 It takes care interactions between client and server.
 Client program communicates with the database using \gls{http} through exposed \glspl{api}.
 
-Table \ref{tbl:doctype-storage-feature} summarizes key features of \gls{nosql} database with \enquote{Document Store} storage type.
-\begin{table}[h]
-	\centering
-	\begin{tabular}{l c}
-		\hline
-		Feature                             &      Document Store \\
-		\hline
-		Table-like schema support (columns) &      No \\
-		Complete update/fetch               &      Yes \\
-		Partial update/fetch                &      Yes \\
-		Query/Filter on	value               &      Yes \\
-		Aggregates across rows              &      No \\
-		Relationships between entities      &      No \\
-		Cross-entity view support           &      Yes \\
-		Batch fetch                         &      Yes \\
-		Batch update                        &      Yes \\
-		\hline
-	\end{tabular}
-	\caption{Sumarization of available features for \enquote{Document Store} storage type \citefigure{vaish_2013} \cite{vaish_2013}}
-	\label{tbl:doctype-storage-feature}
-\end{table}
+Listing \ref{nosql-uml-json} is a \gls{json} source code implemented from figure \ref{nosql-aggregate-uml}.
+\enquote{Document store} databases can import \gls{json} file directly.
+Querying from \enquote{Document store} databases will return \gls{json} results.
+Some web programming languages such as PHP and Javascript can parse \gls{json} results by converting them to associative arrays.
+Thus, programmer can use them to develop their systems.
+
+\lstinputlisting[style=json, label=nosql-uml-json, caption=\gls{json} source code implementation from figure \ref{nosql-aggregate-uml}]{res/bg-knowledge/nosql-uml-json.json}
 
 \section{Business Process Modelling Notation (BPMN)}
 \gls{bpmn} is a graphical notation that depicts the steps in business process \cite{bpmn_omg}.
