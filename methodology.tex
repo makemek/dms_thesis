@@ -12,12 +12,11 @@ Conceptual design will also be introduced to provide an abstract model of this e
 \section{Research Strategy}
 Section \ref{sec:motivation} introduced digital document problems occurred inside \gls{ic}.
 These problems were formulated to research questions suitable for this study.
-The study's goal is to create a system to verify the hypotheses posed by four research questions:
+The study's goal is to create a system to verify the hypotheses posed by three research questions:
 \begin{enumerate}
 	\item What are the critical factors contribute to extreme delay in searching and retrieving documents even though IC have already organized them?
 	\item How to store and retrieve digital \gls{ic}'s documents so that authorized users can access within \gls{ic}, \gls{kmitl} precinct?
 	\item How to track \gls{ic}'s document going through each task specified by \gls{ic}'s document workflow?
-	\item How to model \gls{ic}'s workflows so that it can be executed automatically by a computer?
 \end{enumerate}
 This study implements qualitative research method with three research strategies: interview, case study, and software architectural model.
 The following sections discuss these three strategies in more detail.
@@ -44,6 +43,100 @@ In this study, \gls{ic} staffs are the subject of this study divided into two fo
 \end{description}
 
 \subsubsection{Case Study}
+\citeauthor{merriam1988case} (\citeyear{merriam1988case}) defines case study as an intensive study of a single unit for the purpose of understanding a larger class of similar units.
+Unit refers to an observed sample at a discrete point in time.
+Each unit comprises of cases built from variables upon observations.
+For example, an analysis of worldwide smartphone sales in fourth quarter of 2011 \cite{goasduff2012gartner}.
+Samples are mobile devices.
+Units are worldwide mobile sales to end users observed in fourth quarter of 2010 and 2011.
+Cases are sales by vendor and sales by operating system.
+Variables are total number of sales (thousands of units) and market share percentage.
+Figure \ref{tbl:ex-case-study-var} shows \citeauthor{goasduff2012gartner}'s case study \cite{goasduff2012gartner} in hierarchy based on \citeauthor{merriam1988case}'s definition.
+A unit (sales in fourth quarter) are constructed from two sub units based on years---2010 and 2011.
+Sub units in figure \ref{tbl:ex-case-study-var} are split to another column to preserve space.
+
+\begin{figure}[h]
+	\caption{Samples, units, cases, and variables for \citeauthor{goasduff2012gartner}'s case study \cite{goasduff2012gartner}}
+	\label{tbl:ex-case-study-var}
+\begin{tabular}{ll}
+	\begin{minipage}{8cm}\dirtree{%
+		.1 Mobile Devices.
+			.2 Sales in Fourth Quarter.	
+				.3 2010.
+					.4 By Vendor.
+						.5 Total Sales (Thousands of Units).
+						.5 Market Share (\%).
+					.4 By Operating System.
+						.5 Total Sales (Thousands of Units).
+						.5 Market Share (\%).
+		}
+	\end{minipage}
+	&
+	\begin{minipage}{8cm}\dirtree{%
+		.1 Mobile Devices.
+			.2 Sales in Fourth Quarter.	
+				.3 2011.
+					.4 By Vendor.
+						.5 Total Sales (Thousands of Units).
+						.5 Market Share (\%).
+					.4 By Operating System.
+						.5 Total Sales (Thousands of Units).
+						.5 Market Share (\%).
+		}
+	\end{minipage}
+\end{tabular}
+\end{figure}
+
+Conducting case studies based on \citeauthor{merriam1988case}'s definition can yield concrete results.
+\citeauthor{merriam1988case}'s definition offers an advantage to study the same case in different point of time.
+It also allows variables to be unquantifiable as \citeauthor{merriam1988case} states that variables are built from observation.
+This goes along with the qualitative research method that relies on inquiring and investigating to decide a course of action.
+
+This study utilizes \citeauthor{merriam1988case}'s case study model to construct case studies as shown in figure \ref{fig:our-case-study-method}.
+Documents are a sample.
+\gls{ic}'s documents observed in 2015 is a unit.
+There are three cases;
+\begin{enumerate*}
+	\item storing digital documents;
+	\item retrieving digital documents;
+	\item tracking digital documents.
+\end{enumerate*}
+First and second unit comes from the second research question.
+Thrid unit comes from the third research question.
+Each case comprises of four variables;
+\begin{enumerate*}
+	\item absence form;
+	\item student internship form;
+	\item conference outside \gls{kmitl} form;
+	\item external document.
+\end{enumerate*}
+They come from the scope stated in section \ref{sec:scope}.
+
+\begin{figure}[h!]
+	\centering
+	\caption{Samples, units, cases, and variables for case study of this research}
+	\label{fig:our-case-study-method}
+	\begin{minipage}{8cm}\dirtree{%
+		.1 Documents.
+		.2 \gls{ic}'s Documents Observed in 2015.
+		.3 Storing Digital Documents.
+		.4 Absence Form.
+		.4 Student Internship Form.
+		.4 Conference Outside \gls{kmitl} Form.
+		.4 External Digital Documents.
+		.3 Retrieving Digital Documents.
+		.4 Absence Form.
+		.4 Student Internship Form.
+		.4 Conference Outside \gls{kmitl} Form.
+		.4 External Digital Documents.
+		.3 Tracking Digital Documents.
+		.4 Absence Form.
+		.4 Student Internship Form.
+		.4 Conference Outside \gls{kmitl} Form.
+		.4 External Digital Documents.
+		}
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Software Architectural Model}
 
@@ -52,5 +145,3 @@ In this study, \gls{ic} staffs are the subject of this study divided into two fo
 \section{Storing and Retrieving Documents}
 
 \section{Tracking Documents}
-
-\section{Workflow Modelling}
