@@ -153,6 +153,15 @@ Retrieving documents means opening a file.
 Time for opening the file is negligible.
 There are two hypothesises.
 
+First, it is possible that staffs handle higher priority request and not handle the lower ones.
+If requests with higher priority keep coming, staffs may forget to handle lower priority requests. 
+For example, there are three requests---P, Q, and R where priority $P > Q > R$.
+$P$ takes two hours, $Q$ takes one hour, and $R$ takes thirty minutes.
+$R$ comes first, followed by $P$ and $Q$ assuming that there is no idle time between all requests.
+While staffs are executing $R$, they are interrupted by $P$ and $Q$.
+$R$ has to wait $P$ and $Q$ to finish first.
+Hence, staffs take three hours and thirty minutes to satisfy $R$ instead of thirty minutes.
+If requests with higher priority than $R$ keep coming, $R$ would never be executed.
 
 % The way they organize files hinders retriving and searching eg. files spread all over the place, No standard folder structure and naming convention, everyone stores document locally not centralize
 
