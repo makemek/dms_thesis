@@ -6,11 +6,12 @@ Organizations start to take actions on managing their information records and as
 \gls{dip} systems were the only available software to satisfy their needs.
 \gls{dip} is the electronic version of filing cabinet where documents need to be scanned, indexed, and store in the system \cite{1_adam_2008}.
 DIP can also analyse figures, texts, and handwriting using various image processing techniques \cite{akram2010document}.
-\begin{wrapfigure}{l}{0.5\textwidth}
-	\includegraphics[scale=0.75]{res/bg-knowledge/edms-components.png}
+\begin{figure}
+	\centering
+	\includegraphics{res/bg-knowledge/edms-components.png}
 	\caption{Components of EDMS \citefigure{1_adam_2008}}
 	\label{fig:edms-components}
-\end{wrapfigure}
+\end{figure}
 
 Later on in the 1990s, \gls{edms} is developed targeting large enterprises with high volume of documents.
 It is the improved version of \gls{dip} with workflow functionality.
@@ -201,6 +202,7 @@ Each node is an object in itself.
 	\label{nosql-uml-hiarch-repr}	
 \end{figure}
 
+\begin{normalsize}
 \begin{longtable}{C{0.15\textwidth} C{0.15\textwidth} L{0.2\textwidth} L{0.3\textwidth}}
 		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}}
 		\label{tbl:uml-corespond-pdf} \\
@@ -242,6 +244,7 @@ Each node is an object in itself.
 		& height & Page Size: & 11.00 \\
 		\hline
 \end{longtable}
+\end{normalsize}
 
 Table \ref{tbl:uml-corespond-pdf} summarizes corresponding attributes (figure \ref{nosql-aggregate-uml}) and fields (figure \ref{metadata-ex-pdf}).
 Note that bold-highlighted values are stored differently from any other data types.
@@ -267,8 +270,9 @@ Listing \ref{nosql-uml-json} is a \gls{json} source code implemented from figure
 Querying from \enquote{Document store} databases will return \gls{json} results.
 Some web programming languages such as PHP and Javascript can parse \gls{json} results by converting them to associative arrays.
 Thus, programmer can use them to develop their systems.
-
+\begin{normalsize}
 \lstinputlisting[style=json, label=nosql-uml-json, caption=\gls{json} source code implementation from figure \ref{nosql-aggregate-uml}]{res/bg-knowledge/nosql-uml-json.json}
+\end{normalsize}
 
 \section{Business Process Modelling Notation (BPMN)}
 \gls{bpmn} is a graphical notation that depicts the steps in business process \cite{bpmn_omg}.
