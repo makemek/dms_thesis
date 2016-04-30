@@ -56,7 +56,7 @@ Things they have to do could be approval, signing, printing, or commenting on do
 Then, forwarding the document to another person in the organization without necessarily having to know who that person is.
 They also would like to know any additional documents required before forwarding documents so that they can prepare them beforehand.
 
-For every official \gls{ic}'s documents, \gls{ic} assigns an identification number internally after the document got approved by the higher-ups.
+For every official \gls{ic}'s documents, \gls{ic} assigns an identification number internally.
 There are eleven types of documents separated into three categories based on head of the department who is responsible for those documents as shown in table \ref{tbl-doc-subtype}.
 \begin{table}[h]
 	\caption{Document type with identification code separated by category}
@@ -99,6 +99,26 @@ They are attachments of the official document.
 	\hline
 \end{tabular}
 \end{table}
+
+To generate an identification number for a document, it has to confine to the following format: $TTYYYYDDDD$.
+Where $TT$ is the identification code from table \ref{tbl-doc-subtype}.
+$YYYY$ is the four-digit full Christian year such as 2016 or 2015.
+$DDDD$ is the four-digit number of the document.
+It starts at one and must increment by one each time as the new document is created.
+If $DDDD$ is less than one thousand, it must fill with leading zeros until there are four digits presents.
+If the number is greater than 9999 which is a maximum limit, it has to continue counting normally but without any leading zeros.
+Although, having the same type of document more than ten thousand documents has never happened to \gls{ic} before.
+If new year has started, the $DDDD$ must reset back to one (0001).
+
+To clarify how the identification number is generated and combined together, let's assumes that \gls{ic} already have two documents of type \enquote{Academic Administration}.
+Mr. X would like to take a vacation in May, 2016.
+So he requests an \enquote{Absence Form} and put in an information.
+Then, he submits the form to the system.
+The absence form is a part of academic administration so $TT$ is \enquote{CA}.
+The document is created at 2016 so $YYYY$ is \enquote{2016}.
+Since, there are two documents already.
+The next number is three so $DDDD$ is \enquote{0003}.
+Combining $TT$, $YYYY$, and $DDDD$ together yields CA20160003.
 
 \subsection{Case Study}
 \citeauthor{merriam1988case} (\citeyear{merriam1988case}) defines case study as an intensive study of a single unit for the purpose of understanding a larger class of similar units.
