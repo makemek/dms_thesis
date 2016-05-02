@@ -238,20 +238,39 @@ Thus, figure \ref{fig:our-case-study-method} can be rewritten for simplicity as 
 	\end{minipage}
 \end{figure}
 
-The workflow of each type of forms are represented in figure.
-\begin{figure}
+The workflow of each type of forms are represented as an activity digram shown in figure \ref{fig:diagram-absence}, \ref{fig:diagram-student-internship}, and \ref{fig:diagram-conference}.
+The common operation that appears on all diagram is that someone has to either approve or reject the document.
+User is the person who initiate the document, filling forms, and submit to the staff for approval.
+\enquote{Absence form} and \enquote{Conference outside \gls{kmitl} form} requires user, staff, and dean to sign the document.
+If someone reject the document, user has to be notified about the rejection.
+The final process is to \enquote{finalize document} as shown in figure \ref{fig:diagram-finalize-document}.
+Staff has to upload attachments as an evidence acquired from scanning to the system. 
+Then, the system will notify user that the submitted document has completed successfully.
+\begin{figure}[h]
+	\centering
+	\caption{An activity diagram for \enquote{Absence form}}
+	\label{fig:diagram-absence}
 	\includegraphics[scale=0.5]{res/Methodology/absence}
 \end{figure}
 
 \begin{figure}
+	\centering
+	\caption{An activity diagram for \enquote{Student internship form}}
+	\label{fig:diagram-student-internship}
 	\includegraphics[scale=0.5]{res/Methodology/student_internship}
 \end{figure}
 
 \begin{figure}
+	\centering
+	\caption{An activity diagram for \enquote{Conference outside \gls{kmitl} form}}
+	\label{fig:diagram-conference}
 	\includegraphics[scale=0.5]{res/Methodology/conference}
 \end{figure}
 
 \begin{figure}
+	\centering
+	\caption{A sub activity diagram of task \enquote{Finalize document}}
+	\label{fig:diagram-finalize-document}
 	\includegraphics[scale=0.5]{res/Methodology/finalize_document}
 \end{figure}
 
