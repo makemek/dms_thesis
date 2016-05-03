@@ -320,6 +320,41 @@ User requirement is a goal or task that specific classes of users must be able t
 
 \subsection{System Requirement}
 System requirement is a top-level requirement for a product that contains multiple subsystems, which could be all software or software and hardware \cite{wiegers_2003}.
+\begin{enumerate}
+	\item The system shall operate as a web application hosted on a web server so that all users can access it in one place.
+	\item The system shall not disclose internal workflow to any user for all associated documents except for an administrator.
+	\item The system shall assign an identification code to official documents in the following format: $TTYYYYDDDD$ where
+	\subitem $TT$ is the identification code from table \ref{tbl-doc-subtype}.
+	\subitem $YYYY$ is the four-digit full Christian year such as 2016 or 2015.
+	\subitem $DDDD$ is the four-digit number of the document started at one and increment by one filled with leading zeros.
+	\item The system shall contain the REST \gls{api} so that it can communicate with front-end of this system.
+	The \gls{api} shall not be publicly available.
+	The \gls{api} shall be in URI \enquote{/api/document/\textless interface \textgreater/} where \textless interface \textgreater is the name of the interface.
+	URI, input parameter, output, and description are shown in table \ref{tbl:dms-api}.
+\end{enumerate}
+
+\begin{table}[h]
+	\caption{A list of \gls{api} of this system}
+	\label{tbl:dms-api}
+	\begin{tabular}{lcL{3.5cm}L{3.5cm}}
+		\hline
+		URI & Parameter(s) & Return Value (JSON) & Description \\
+		\hline
+		
+		/api/document/read & User ID, Document ID & A document's metadata on a given ID. & Query a document. \\
+		
+		/api/document/ref & User ID, Document ID & All previous version of the document & Query all previous version of the document on a given ID. \\
+		 
+		/api/document/attach & User ID, Document ID & Document's attachments & Query all document's attachment files on a given ID. \\
+		
+		/api/document/attach & User ID & Document's attachments & Query all user's attachment files in all user's documents. \\
+		
+		/api/document/delete & User ID, Document ID & \gls{http} response & Delete user's document on a given ID.
+		The system must not delete other documents owned by a different user. \\
+		\hline
+	\end{tabular}
+\end{table}
+
 
 \subsection{Quality Attribute}
 Quality attribute is a kind of nonfunctional requirement that describes a service or performance characteristic of a product \cite{wiegers_2003}.
