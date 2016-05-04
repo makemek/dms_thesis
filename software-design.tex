@@ -217,14 +217,14 @@ A class diagram in figure \ref{fig-doc-template} shows relationships between eac
 	\includegraphics[scale=0.5]{res/software-design/document_templating}
 \end{figure}
 
-\textit{DocumentSchema} defines fields that represent a document.
-Table \ref{uml:document-templating} describes what each field is, its data type, and its functionality from figure \ref{fig:doc-template}.
+\textit{Document} defines attributes that represent a document.
+Table \ref{uml:document-templating} describes what each attribute is, its data type, and its functionality from figure \ref{fig:doc-template}.
 \begin{longtable}{lL{4cm}L{7.5cm}}
-	\caption{Description of each field in \textit{DocumentSchema} class}
+	\caption{Description of each attribute in \textit{Document} class}
 	\label{uml:document-templating} \\
 	
 	\hline
-	Field & Data type & Description \\
+	attribute & Data type & Description \\
 	\hline
 	\endhead
 	
@@ -252,11 +252,11 @@ Table \ref{uml:document-templating} describes what each field is, its data type,
 	filepath & String &
 	Absolute path to the file stored in a server. \\
 	
-	relate2Docs & array of \textit{DocumentSchema} &
+	relate2Docs & array of \textit{Document} &
 	Additional documents that involved with this document.
 	If this document refer to other documents, they will be shown here. \\
 	
-	attachments & array of \textit{DocumentSchema} &
+	attachments & array of \textit{Document} &
 	Other required documents or other dependent documents. \\
 \end{longtable}
 
@@ -265,7 +265,7 @@ The schema relies on a \textit{mongoose.Schema} package.
 It provides utility for defining fields and data types suitable for saving to the database.
 As the requirement states that attachments are also document.
 \textit{relate2docs} and \textit{attachments} are fields that store additional documents.
-They should have \textit{DocumentSchema} data type.
+They should have \textit{Document} data type.
 Setting them this way provides a benefit that all metadata about attachments and related documents can be queried from the same object.
 
 \subsection{where digital files should reside in the the server}
