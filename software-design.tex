@@ -1,6 +1,197 @@
 \chapter{Software Design}
 
 \section{Use Case}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.63]{res/Methodology/usecase_diagram}
+	\caption{A usecase diagram for Monkey Office}
+	\label{fig:usecase-diagram}
+\end{figure}
+
+Figure \ref{fig:usecase-diagram} captures system functionalities and requirements represented as \gls{uml} use case diagram.
+Table \ref{tbl:actor-description} describes who these type of users are.
+From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-conclusive-documents} elaborates each use cases in greater detail.
+
+\begin{table}
+	\centering
+	\caption{Type of user and description}
+	\label{tbl:actor-description}
+	\begin{tabular}{|l|L{7.5cm}|}
+		\hline
+		Actor & Description \\
+		\hline
+		Dean & A headmaster of \gls{ic}. \\
+		Deputy dean & Dean's assistant who could also be a dean's representative. \\
+		Assistant of deputy dean & Deputy dean's assistant who deals with documents that is not critical to \gls{ic}. \\
+		Staff & \gls{ic}'s employee in academic department (refer to bottom-most hierarchy in figure \ref{ic-org-sturcture}) \\
+		User & A regular user who have an account provided by an administrator to access the system. \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\newcommand{\alreadylogin}{Have already logged in to the system}
+\newcommand{\allICPersonel}{
+	\begin{itemize}
+		\item Dean
+		\item Deputy dean
+		\item Assistant of deputy dean
+		\item Staff
+	\end{itemize}
+}
+
+\begin{table}
+	\centering
+	\caption{Use case: Reject Document}
+	\label{tbl-usecase:reject-document}
+	
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Reject Document \\
+		\hline
+		
+		\textbf{Description} & Decline the received document and halt the process of this document. \\
+		\textbf{Primary Actor} & \allICPersonel \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & 
+		\begin{itemize}
+			\item The system notifies user for a rejected document
+			\item The rejected document disappears from the list of pending documents
+		\end{itemize} \\
+		\textbf{Trigger} & Read the document \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Click a reject button on a designated document.
+			\item Click \enquote{Yes} when system asks for a confirmation.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Approve Document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Approve Document \\
+		\hline
+		
+		\textbf{Description} & Accept the received document and let it continue to the next execution process. \\
+		\textbf{Primary Actor} & \allICPersonel \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & 
+		\begin{itemize}
+			\item The system notifies user for a approve document
+			\item The approved document disappears from the list of pending documents
+		\end{itemize} \\
+		\textbf{Trigger} & Read the document \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Click an approve button on a designated document.
+			\item Click \enquote{Yes} when system asks for a confirmation.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Print Document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Print Document \\
+		\hline
+		
+		\textbf{Description} & Print paper documents from a printer. \\
+		\textbf{Primary Actor} & Staff \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & Physical document is print out from the printer successfully. \\
+		\textbf{Trigger} & Open the document \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Click \enquote{Print Document} on the main menu.
+			\item Select attachments to be print (if any).
+			\item Select a printer.
+			\item Configure paper size and number of copies as needed.
+			\item Click \enquote{Print} to print the document.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Search Document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Search Document \\
+		\hline
+		
+		\textbf{Description} & Ask the system to find documents. \\
+		\textbf{Primary Actor} & User \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & The system lists documents according to search query \\
+		\textbf{Trigger} & Finding specific documents \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Enter the document's identification code or the name of the form.
+			\item Adding specific searching criteria such as date creation or document's status.
+			\item Click \enquote{Search}.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Attach Other Required Documents}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Attach Other Required Documents \\
+		\hline
+		
+		\textbf{Description} & Some forms require including attachment files in order to continue the process. \\
+		\textbf{Primary Actor} & User \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & The form includes all uploaded documents \\
+		\textbf{Trigger} & The form requires attachments \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Browse files on a local machine and select files that the form requires.
+			\item Upload them. Wait for them to all finish.
+			\item Click \enquote{Next} to continue the execution.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Attach Conclusive Documents}
+	\label{tbl-usecase:attach-conclusive-documents}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Attach Conclusive Documents \\
+		\hline
+		
+		\textbf{Description} & Includes the document that has physical signatures to certify it as a hard evidence. \\
+		\textbf{Primary Actor} & Staff \\
+		\textbf{Pre-condition} & 
+		\begin{itemize}
+			\item \alreadylogin
+			\item All required signatures present.
+		\end{itemize} \\
+		
+		\textbf{Post-condition} & The form has this document in its attachments \\
+		\textbf{Trigger} & The form has completed execution inside its workflow. \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Select a pending form.
+			\item Scan the physical document.
+			\item Upload the scanned document as an attachment.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
