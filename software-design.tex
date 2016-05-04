@@ -223,12 +223,12 @@ Table \ref{uml:document-templating} describes what each attribute is, its data t
 	\caption{Description of each attribute in \textit{Document} class}
 	\label{uml:document-templating} \\
 	\hline
-	attribute & Data type & Description \\
+	Attribute & Data type & Description \\
 	\hline
 	\endfirsthead
 	
 	\hline
-	attribute & Data type & Description \\
+	Attribute & Data type & Description \\
 	\hline
 	\endhead
 	
@@ -271,6 +271,37 @@ As the requirement states that attachments are also document.
 \textit{relate2docs} and \textit{attachments} are fields that store additional documents.
 They should have \textit{Document} data type.
 Setting them this way provides a benefit that all metadata about attachments and related documents can be queried from the same object.
+
+\textit{Document} class also defines methods to manipulate the schema which are its attributes.
+Table \ref{uml:document-method} describes each method in detail.
+
+\begin{longtable}{lL{2.5cm}L{7.5cm}}
+	\caption{\textit{Document} methods}
+	\label{uml:document-method} \\
+	\hline
+	Method & Return data type & Description \\
+	\hline
+	\endfirsthead
+	
+	\hline
+	Method & Return data type & Description \\
+	\hline
+	\endhead		
+	
+	\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+	\endfoot
+	
+	\hline \hline
+	\endlastfoot
+	
+	created & &  Set document's status for newly created document. \\
+	inProgress & & Set document's status as processing. \\
+	done & & Set document's status as done. \\
+	waitApprove & & Set document's status as waiting approval \\
+	getStatus & String & Get the current status on this document. \\
+	getRelatedDocuments & array of \textit{Document} & Get all related documents. \\
+	getAttachments & array of \textit{Document} & Get all attachments. \\
+\end{longtable}
 
 \subsection{where digital files should reside in the the server}
 
