@@ -160,6 +160,34 @@ Table \ref{tbl:actor-description} describes who these type of users are.
 	\end{tabular}
 \end{table}
 
+\begin{table}
+	\centering
+	\caption{Use case: Attach Conclusive Documents}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Attach Conclusive Documents \\
+		\hline
+		
+		\textbf{Description} & Includes the document that has physical signatures to certify it as a hard evidence. \\
+		\textbf{Primary Actor} & Staff \\
+		\textbf{Pre-condition} & 
+		\begin{itemize}
+			\item \alreadylogin
+			\item All required signatures present.
+		\end{itemize} \\
+		
+		\textbf{Post-condition} & The form has this document in its attachments \\
+		\textbf{Trigger} & The form has completed execution inside its workflow. \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Select a pending form.
+			\item Scan the physical document.
+			\item Upload the scanned document as an attachment.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
 Firstly, what metadata should be stored alongside the document so that the system can access to the digital file including its attachments.
