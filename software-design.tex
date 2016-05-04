@@ -111,6 +111,28 @@ Table \ref{tbl:actor-description} describes who these type of users are.
 	\end{tabular}
 \end{table}
 
+\begin{table}
+	\centering
+	\caption{Use case: Search Document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Search Document \\
+		\hline
+		
+		\textbf{Primary Actor} & User \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & The system lists documents according to search query \\
+		\textbf{Trigger} & Finding specific documents \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Enter the document's identification code or the name of the form.
+			\item Adding specific searching criteria such as date creation or document's status.
+			\item Click \enquote{Search}.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
 Firstly, what metadata should be stored alongside the document so that the system can access to the digital file including its attachments.
