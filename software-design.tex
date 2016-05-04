@@ -137,6 +137,29 @@ Table \ref{tbl:actor-description} describes who these type of users are.
 	\end{tabular}
 \end{table}
 
+\begin{table}
+	\centering
+	\caption{Use case: Attach Other Required Documents}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Attach Other Required Documents \\
+		\hline
+		
+		\textbf{Description} & Some forms require including attachment files in order to continue the process. \\
+		\textbf{Primary Actor} & User \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & The form includes all uploaded documents \\
+		\textbf{Trigger} & The form requires attachments \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Browse files on a local machine and select files that the form requires.
+			\item Upload them. Wait for them to all finish.
+			\item Click \enquote{Next} to continue the execution.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
 Firstly, what metadata should be stored alongside the document so that the system can access to the digital file including its attachments.
