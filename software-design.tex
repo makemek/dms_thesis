@@ -25,6 +25,41 @@ Table \ref{tbl:actor-description} describes who these type of users are.
 	\end{tabular}
 \end{table}
 
+\begin{table}
+	\caption{Use cases description and their basic flows}
+	\centering
+	\newcommand{\alreadylogin}{Have already logged in to the system}
+	\newcommand{\allICPersonel}{
+		\begin{itemize}
+			\item Dean
+			\item Deputy dean
+			\item Assistant of deputy dean
+			\item Staff
+		\end{itemize}	
+	}
+	
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Reject Document \\
+		\hline
+		
+		\textbf{Primary Actor} & \allICPersonel \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & 
+		\begin{itemize}
+			\item The system notifies user for a rejected document
+			\item The rejected document disappears from the list of pending documents
+		\end{itemize} \\
+		\textbf{Trigger} & Read the document \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Click a reject button on a designated document.
+			\item Click \enquote{Yes} when system asks for a confirmation.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
 Firstly, what metadata should be stored alongside the document so that the system can access to the digital file including its attachments.
