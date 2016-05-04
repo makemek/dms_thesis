@@ -2,9 +2,28 @@
 
 \section{Use Case}
 \begin{figure}[h]
-	\includegraphics[scale=0.6]{res/Methodology/usecase_diagram}
+	\includegraphics[scale=0.63]{res/Methodology/usecase_diagram}
 	\caption{A usecase diagram for Monkey Office}
+	\label{fig:usecase-diagram}
 \end{figure}
+Figure \ref{fig:usecase-diagram} captures system functionalities and requirements represented as \gls{uml} use case diagram.
+Table \ref{tbl:actor-description} describes who these type of users are.
+\begin{table}
+	\centering
+	\caption{Type of user and description}
+	\label{tbl:actor-description}
+	\begin{tabular}{|l|L{7.5cm}|}
+		\hline
+		Actor & Description \\
+		\hline
+		Dean & A headmaster of \gls{ic}. \\
+		Deputy dean & Dean's assistant who could also be a dean's representative. \\
+		Assistant of deputy dean & Deputy dean's assistant who deals with documents that is not critical to \gls{ic}. \\
+		Staff & \gls{ic}'s employee in academic department (refer to bottom-most hierarchy in figure \ref{ic-org-sturcture}) \\
+		User & A regular user who have an account provided by an administrator to access the system. \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
