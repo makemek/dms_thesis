@@ -84,6 +84,30 @@ Table \ref{tbl:actor-description} describes who these type of users are.
 	\end{tabular}
 \end{table}
 
+\begin{table}
+	\centering
+	\caption{Use case: Print Document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Print Document \\
+		\hline
+		
+		\textbf{Primary Actor} & Staff \\
+		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Post-condition} & Physical document is print out from the printer successfully. \\
+		\textbf{Trigger} & Open the document \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Click \enquote{Print Document} on the main menu.
+			\item Select attachments to be print (if any).
+			\item Select a printer.
+			\item Configure paper size and number of copies as needed.
+			\item Click \enquote{Print} to print the document.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \section{Storing Digital Documents}
 Before storing documents, there are two things to concern.
 Firstly, what metadata should be stored alongside the document so that the system can access to the digital file including its attachments.
