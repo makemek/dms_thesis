@@ -206,12 +206,64 @@ Official documents has a customized identification code as mentioned in table \r
 Unofficial documents has only regular identification number starting at one and increment by one for each document.
 Therefore, the parent document have to store a list of attachments.
 That is a list referring to itself.
-A class diagram \ref{fig-doc-template} shows 
+A class diagram in figure \ref{fig-doc-template} shows relationships between each unit.
+
 \begin{figure*}
+	\caption{Document template creation class diagram}
 	\label{fig-doc-template}
-	\caption{text}
 	\includegraphics[scale=0.5]{res/software-design/document_templating}
 \end{figure*}
+
+\textit{DocumentSchema} defines fields that represent a document.
+Table \ref{uml:document-templating} describes what each field is, its data type, and its functionality.
+\begin{longtable}{lL{4cm}L{7.5cm}}
+	\caption{Description of each field in \textit{DocumentSchema} class}
+	\label{uml:document-templating} \\
+	
+	\hline
+	Field & Data type & Description \\
+	\hline
+	\endhead
+	
+	\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+	\endfoot
+	
+	\hline \hline
+	\endlastfoot
+	
+	owner & String & The original user who create the document. \\
+	
+	dateCreate & Date & A date when this record is created. \\
+	
+	name & String &
+	The filename including extension that is going to appear on the page.
+	It is the original filename that user uploaded.
+	If it is a by-product from the workflow, the system automatically generates it. \\
+	
+	is\_auto\_generate & Boolean &
+	A boolean indicates whether this document is created by the system. \\
+	
+	status & String & 
+	Indicates the current states document going through the workflow. \\
+	
+	filepath & String &
+	Absolute path to the file stored in a server. \\
+	
+	relate2Docs & array of \textit{DocumentSchema} &
+	Additional documents that involved with this document.
+	If this document refer to other documents, they will be shown here. \\
+	
+	attachments & array of \textit{DocumentSchema} &
+	Other required documents or other dependent documents. \\
+\end{longtable}
+
+A schema has to be defined first in order to record document's metadata to the database.
+The schema relies on a \textit{mongoose.Schema} package.
+It provides utility for defining fields and data types suitable for saving to the database.
+As the requirement states that attachments are also document.
+\textit{relate2docs} and \textit{attachments} are fields that store additional documents.
+They should have \textit{DocumentSchema} data type.
+Setting them this way provides a benefit that all metadata about attachments and related documents can be queried from the same object.
 
 Secondly, where digital files should reside in the the server.
 
