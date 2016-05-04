@@ -197,10 +197,13 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 
 \section{Storing Digital Documents}
-Before storing documents, there are two things to concern.
-Firstly, what metadata should be stored alongside the document so that the system can access to the digital file including its attachments.
-Attachments are documents.
-They can be official or unofficial documents.
+Storing documents mean saving documents uploaded by users and create a metadata so that the system can access them.
+Sections below are challenges presented about this problem.
+
+\subsection{what metadata should be stored alongside the document}
+The purpose of storing metadata is to create an abstract concept of the document.
+According to requirements and use cases, the document should contain attachments and other related documents.
+The document can be official or unofficial documents.
 Both official and unofficial documents are the same except for one characteristic.
 Official documents has a customized identification code as mentioned in table \ref{tbl-doc-subtype}.
 Unofficial documents has only regular identification number starting at one and increment by one for each document.
@@ -265,12 +268,11 @@ As the requirement states that attachments are also document.
 They should have \textit{DocumentSchema} data type.
 Setting them this way provides a benefit that all metadata about attachments and related documents can be queried from the same object.
 
-Secondly, where digital files should reside in the the server.
-
+\subsection{where digital files should reside in the the server}
 
 \section{Retrieving Digital Documents}
 
-\section{Tracking Digital Documents}
+\section{Rejecting and Approving Digital Documents}
 
 \section{Mock-up}
 
