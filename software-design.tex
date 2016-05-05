@@ -193,8 +193,29 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 	\end{tabular}
 \end{table}
 
-\section{The Big Picture}
+\section{Architecture}
+Monkey office is a web application deployed on a web server.
+The application has two realms, front-end and back-end.
+The front-end interacts with users directly though provided interfaces.
+The system serves \gls{html} web pages to a client.
+The client who access the system by a \gls{http} request with their web browser will receive a web page as a response.
+The back-end is where the core of the system resides.
+Because the system needs permanent storage to store data on request.
+It needs to communicate with the database to store and retrieve data.
+Figure \ref{fig:architecutre} shows overall subsystems and modules of the application.
 
+\begin{landscape}
+	\begin{figure}
+		\centering
+		\caption{Architecture of this system}
+		\label{fig:architecutre}
+		\includegraphics[scale=0.37]{res/software-design/monkeyOffice_architecture}
+	\end{figure}
+\end{landscape}
+
+\subsection{Frontend}
+
+\subsection{Backend}
 
 \section{Storing Digital Documents}
 Storing documents mean saving documents uploaded by users and create a metadata so that the system can access them.
