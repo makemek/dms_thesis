@@ -303,6 +303,42 @@ Table \ref{uml:document-method} describes each method in detail.
 	getAttachments & array of \textit{Document} & Get all attachments. \\
 \end{longtable}
 
+\textit{DocumentTemplate} applies auto increment functionality to the schema.
+Every time the schema is saved, it invokes the auto increment functionality automatically.
+In design pattern, \textit{DocumentTemplate} is a factory that creates instance object according to given parameters.
+There are two subclasses inherits \textit{DocumentTemplate}, \textit{OfficialDocumentTemplate} and \textit{UnOfficialDocumentTemplate}.
+\textit{OfficialDocumentTemplate} creates a document template based on a given type name and year.
+They are used to create a document with custom identification code as stated in table \ref{tbl-doc-subtype}.
+The purpose of \textit{UnOfficialDocumentTemplate} is to create external documents and attachments.
+It has the same functionality as \textit{DocumentTemplate}.
+Table \ref{uml:document-template} explains what each method does.
+
+\begin{longtable}{L{4cm}L{2.5cm}L{7.5cm}}
+	\caption{\textit{DocumentTemplate} description}
+	\label{uml:document-template} \\
+	\hline
+	Method & Return data type & Description \\
+	\hline
+	\endfirsthead
+	
+	\hline
+	Method & Return data type & Description \\
+	\hline
+	\endhead		
+	
+	\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+	\endfoot
+	
+	\hline \hline
+	\endlastfoot
+	
+	OfficialDocumentTemplate & & A class constructor that receives document type and year to generate an identification code. \\
+	
+	injectMongooseAutoIncrementPlugin & &  Inject \textit{mongoose-auto-increment} package to the schema as a plugin so that the schema can increment the number every time before saving the database. \\
+	
+	compile & \textit{mongoose.model} & Create a model from a schema because the \textit{mongoose.Schema} package requires \textit{mongoose.connection} in order to prepare the schema suitable for saving to the database.
+\end{longtable}
+
 \subsection{where digital files should reside in the the server}
 
 \section{Retrieving Digital Documents}
