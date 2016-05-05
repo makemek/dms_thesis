@@ -337,6 +337,13 @@ Table \ref{uml:document-template} explains what each method does.
 \end{longtable}
 
 \section{Retrieving Digital Documents}
+Retrieving digital documents means querying recorded metadata from the database.
+Referring to figure \ref{fig:doc-template}, the \textit{id} field in \textit{Document} class is a field with unique value.
+The system can query a specific document using the \textit{id} field.
+The system can also use \textit{owner} field to search documents owned by a specific user.
+Fortunately, \textit{mongoose.Model} package encapsulates database layer.
+Each record in the database is treated as an object.
+After querying from the database, it assigns results to each field and instantiate an object from the \textit{Document} class automatically.
 
 \section{Rejecting and Approving Digital Documents}
 
