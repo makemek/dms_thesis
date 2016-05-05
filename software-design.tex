@@ -198,9 +198,6 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \section{Storing Digital Documents}
 Storing documents mean saving documents uploaded by users and create a metadata so that the system can access them.
-Sections below are challenges presented about this problem.
-
-\subsection{what metadata should be stored alongside the document}
 The purpose of storing metadata is to create an abstract concept of the document.
 According to requirements and use cases, the document should contain attachments and other related documents.
 The document can be official or unofficial documents.
@@ -338,8 +335,6 @@ Table \ref{uml:document-template} explains what each method does.
 	
 	compile & \textit{mongoose.model} & Create a model from a schema because the \textit{mongoose.Schema} package requires \textit{mongoose.connection} in order to prepare the schema suitable for saving to the database.
 \end{longtable}
-
-\subsection{where digital files should reside in the the server}
 
 \section{Retrieving Digital Documents}
 
