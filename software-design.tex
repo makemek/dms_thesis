@@ -49,6 +49,36 @@ Document Printing     &            & \checkmark &                          &    
 \end{tabular}
 \end{table}
 
+Figure \ref{fig:mockup-view-home}, \ref{fig:mockup-view-search}, and \ref{fig:mockup-view-approval} shows a mock-up for system view.
+The view name which has dark grey italic text indicates where its placement position in the web page.
+\begin{figure}
+	\centering
+	\captionsetup{singlelinecheck=off}
+	\caption[] { 
+		Mockup for system view. This figure shows two views:
+		\begin{enumerate*}
+			\item Navigation View.
+			\item Documennt Dashboard View.
+			\item Search Result View.
+		\end{enumerate*}}
+	\label{fig:mockup-view-home}
+	\includegraphics[scale=0.32]{res/software-design/view-home}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\caption{Mockup for search result view after performing a search operation}
+	\label{fig:mockup-view-search}
+	\includegraphics[scale=0.32]{res/software-design/view-search}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\caption{An extended view for \gls{ic} personnel users}
+	\label{fig:mockup-view-approval}
+	\includegraphics[scale=0.35]{res/software-design/view-approval}
+\end{figure}
+
 \subsection{Backend}
 
 \section{Storing Digital Documents}
@@ -203,7 +233,5 @@ Each record in the database is treated as an object.
 After querying from the database, it assigns results to each field and instantiate an object from the \textit{Document} class automatically.
 
 \section{Rejecting and Approving Digital Documents}
-
-\section{Mock-up}
 
 \section{Development Tools}
