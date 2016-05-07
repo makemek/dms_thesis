@@ -1,7 +1,5 @@
 \chapter{Software Design}
 
-
-
 \section{Architecture}
 Monkey office is a web application deployed on a web server.
 The application has two realms, front-end and back-end.
@@ -23,6 +21,33 @@ Figure \ref{fig:architecutre} shows overall subsystems and modules of the applic
 \end{landscape}
 
 \subsection{Frontend}
+Frontend consists of user interfaces called view.
+It renders data received from application backend to users.
+User can only interacts with the system through views only.
+There are two types of view, system view and role-specific view.
+System view is a base view available for all type of users.
+It provides basic interaction functionality to the system such as search for documents, view documents, and navigating around the site.
+Role-specific view extends the system view with some extra functionalities available only to specific type of users.
+Those functionalities has already mentioned in section \ref{section:usecase}.
+\gls{ic} personnel view available to staff, assistant of deputy dean, deputy dean, and dean only.
+User view available to user only.
+Table \ref{tbl:page-availability} shows all views in the system and their availability.
+
+\begin{table}[h]
+\centering
+\caption{System views and their availability}
+\label{tbl:page-availability}
+\begin{tabular}{@{}lccC{2cm}ccL{3cm}@{}}
+\toprule
+\multirow{2}{*}{View} & \multicolumn{5}{c}{Availability}                                               & \multicolumn{1}{c}{\multirow{2}{*}{Description}} \\ \cmidrule(lr){2-6}
+                      & User       & Staff      & Assistant of deputy dean & Deaputy dean & Dean       & \multicolumn{1}{c}{}                             \\ \midrule
+Document Dashboard    & \checkmark & \checkmark & \checkmark               & \checkmark   & \checkmark & View lists of documents                          \\
+Search Result         & \checkmark & \checkmark & \checkmark               & \checkmark   & \checkmark & View search result                               \\
+Navigation            & \checkmark & \checkmark & \checkmark               & \checkmark   & \checkmark & Menu on the top to navigate around the site      \\
+Document Approval     &            & \checkmark & \checkmark               & \checkmark   & \checkmark & Approve or reject documents                      \\
+Document Printing     &            & \checkmark &                          &              &            & Print out documents                              \\ \bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Backend}
 
