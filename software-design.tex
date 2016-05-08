@@ -80,6 +80,34 @@ The view name which has dark grey italic text indicates where its placement posi
 \end{figure}
 
 \subsection{Backend}
+Application backend is the core of the system.
+It connects between frontend and a database.
+It processes input sent from the frontend and sends a response back for further processing such as displaying data to a user.
+There are two systems working on the backend, authorization system and document manager.
+The authorization system decides which user have authority to access and make changes to the document.
+It uses user data and permission data which are stored inside the database to make a decision.
+The document manager takes care a creation and a modification processes of documents.
+It has three subsystems:
+\begin{table}
+	\centering
+	\begin{tabular}{lL{6.5cm}}
+		\hline
+		Subsystem & Description \\
+		\hline
+		Document Data Model & Define how each type of document should be created including assigning an identification code. \\
+		Approval System & Manages and updates documents when they are approved or rejected. \\
+		Printing System & Printing out digital documents to a paper using a printer. \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Controller}
+There are two controllers placed between the frontend and the backend to control flow of data.
+Web request controller handles \gls{http} requests sent by the user through a system view and response sent by the system.
+It delegates requests to a designated system to process requests.
+Another controller located between the backend and the database is \gls{dbms}.
+It handles communication between the database and the application.
+It provides various functionalities to manage the database such as defining data and performing CRUD operations.
 
 \section{Storing Digital Documents}
 Storing documents mean saving documents uploaded by users and create a metadata so that the system can access them.
