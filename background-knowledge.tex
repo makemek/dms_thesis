@@ -1,6 +1,6 @@
 \chapter{Background Knowledge}
 
-\section{A brief overview of Document Management System (DMS)}
+\section{An overview of Document Management System (DMS)}
 In the 1980s, printers, scanners, and household computers started to gain popularity.
 Organizations start to take actions on managing their information records and assets seriously.
 \gls{dip} systems were the only available software to satisfy their needs.
@@ -51,7 +51,6 @@ Most \gls{dms} applications have these components implemented within.
 
 \section{Metadata}
 Metadata literally means \enquote{data about data} \cite[p.~1]{baca_2008}.
-Brackett \cite[p.149]{brackett_2000} defined metadata in terms of organization as \enquote{Any data about organization's resource}.
 There is no clear definition on what metadata is because this term is used differently in different communities.
 For librarians, it refers to information in the library catalog that help users to find the right book in the library.
 For search engines, it means descriptions of web page's contents and keywords used to rank relevant websites.
@@ -73,10 +72,10 @@ Electronic documents contain descriptive metadata providing additional informati
 The reason for having metadata associate with the document is that they can be indexed in the system.
 Index is a systematic arrangement of entries designed to enable users to locate information in a document \cite{def-index}.
 User can use metadata to quickly locate documents after they are archived in the system.
-The electronic document contains information such as in figure \ref{metadata-ex-doc}, \ref{metadata-ex-pdf}, and \ref{metadata-ex-png}.
-Figure \ref{metadata-ex-doc} shows the metadata of docx file created by Microsoft Word 2013.
+The electronic document contains information such as those in figure \ref{metadata-ex-doc}, \ref{metadata-ex-pdf}, and \ref{metadata-ex-png}.
+Figure \ref{metadata-ex-doc} shows the metadata of a docx file created by Microsoft Word 2013.
 User can edit some metadata fields directly from properties view in Windows 10 or in Microsoft Word.
-Figure \ref{metadata-ex-png} is the metadata of a \gls{png} file.
+figure \ref{metadata-ex-png} is the metadata of a \gls{png} file.
 It has information on image dimension and bit depth.
 User can specify date taken in \enquote{Date taken} field.
 \enquote{File} metadata category in figure \ref{metadata-ex-doc} and \ref{metadata-ex-png} are generated automatically by the operating system for every type of file.
@@ -96,7 +95,7 @@ However, there is a third-party software available\footnote{\url{http://coolsoft
 		\includegraphics*[scale=0.6]{res/bg-knowledge/metadata-ex-doc2}
 	\end{minipage} \hfill	
 	
-	\caption{Microsoft Word Document (docx) metadata viewed on Windows 10}
+	\caption{Microsoft Word Document (docx) metadata viewed Windows 10}
 	\label{metadata-ex-doc}
 \end{figure}
 \begin{figure}[h]
@@ -120,7 +119,7 @@ However, there is a third-party software available\footnote{\url{http://coolsoft
 It refers to any database that does not follow the traditional \gls{rdbms} model.
 \gls{sql} is designed to be a query language for relational databases which are usually table-based.
 Records are stored in rows and columns represent fields.
-On the other hand, \gls{nosql} allow to define fields while creating a record.
+On the other hand, \gls{nosql} allows to define fields while creating a record.
 Nested values are common in \gls{nosql} databases because \gls{nosql} is aggregate oriented.
 Hashes, arrays, and objects can be nested with themselves.
 
@@ -128,17 +127,17 @@ The main characteristic separating \gls{nosql} databases from \gls{rdbms} is tha
 The following list shows common features of \gls{nosql} \cite[p.~12-16]{nosql-for-dummies}.
 \begin{description}
 	\item[Schema agnostic] \hfill \\
-	\gls{nosql} databases doesn't require schema to be defined explicitly.
+	\gls{nosql} databases do not require schema to be defined explicitly.
 	Any type of records can be stored without having to know how database stores them internally.
 	This improves flexibility when designing document's metadata model.
-	Some constraints such as field type and field length don't have to be defined explicitly.
+	Some constraints such as field type and field length do not have to be defined beforehand.
 	\gls{nosql} can store mixed data type in the same field.
 	If there is a new type of form, we can reuse the native form model by extending it instead of defining a new schema.
 	\item[Nonrelational] \hfill \\
 	A relational database needs relations to describe how tables relate to each other.
-	Unlike \gls{rdbms}, \gls{nosql} databases don't have any relation concept.
-	They don't store record's relation.
-	Meaning that the metadata model doesn't have to go through database normalization process to minimize data redundancy.
+	Unlike \gls{rdbms}, \gls{nosql} databases do not have any relation concept.
+	They don not store record's relation.
+	Meaning that the metadata model does not have to go through database normalization process to minimize data redundancy.
 	Programmer can focus on modelling metadata without having to worry about modelling table relations in \gls{rdbms}.
 	
 	\item[Highly distributable] \hfill \\
@@ -161,19 +160,20 @@ This node represents a record's starting point.
 The model must have only one root node.
 \gls{dms} for \gls{ic} use \enquote{Document Store} storage type to manage document's metadata.
 The reason is that this storage type can query child nodes, not just the parent node.
-Another reason is that programmer can store objects to \gls{nosql} database easily by converting them to \gls{json} objects.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.48]{res/bg-knowledge/nosql-hierarchical}
 	\caption{The hierarchical organized into a set of parent-child nodes \citefigure{nosql-for-mere-mortals}}
 	\label{arch-node}
 \end{figure}
-Directed Edges connecting between two nodes represents a relationship.
+Another reason is that programmer can store objects to \gls{nosql} database easily by converting them to \gls{json} objects.
+
+Directed edges connecting between two nodes represents a relationship.
 A node where an arrow points called a parent node.
 A node where an arrow is pointed called a child node.
 The parent node can have many child nodes and each child node can have many parent nodes.
 
-From figure \ref{metadata-ex-pdf}, a \gls{pdf} metadata can be modelled to hierarchical parent-child relationship as shown in figure \ref{nosql-uml-hiarch-repr}.
+From Figure \ref{metadata-ex-pdf}, a \gls{pdf} metadata can be modelled to hierarchical parent-child relationship as shown in figure \ref{nosql-uml-hiarch-repr}.
 Figure \ref{nosql-aggregate-uml} is a data model representation using \gls{uml} notation.
 \enquote{PDF} is a root node of the the hierarchical model.
 The root node is not necessary for implementation because \enquote{Document Store} had already created it by default.
@@ -282,7 +282,7 @@ The goal is to represent business processes using standard graphical notation.
 \gls{bpmn} targets business users and process implementers who need a standard model to communicate their business process.
 % Why
 Business users create, manage, and monitor processes while process implementers turn processes into a physical implementation. 
-\gls{bpmn} doesn't focus on why, when, and how a process is performed.
+\gls{bpmn} does not focus on why, when, and how a process is performed.
 But rather what processes, which are the steps to achieve that process, and who should do them.
 With \gls{bpmn}, organizations can understand, improve, and control their business processes.
 Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in this report along with their descriptions\footnote{Please refer to \url{http://www.omg.org/cgi-bin/doc?formal/11-01-03.pdf} (page 28 - 41) for more details on all available \gls{bpmn} symbols and its detailed descriptions.}.
@@ -490,7 +490,7 @@ Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in thi
 	\label{fig:bpmn-example}
 \end{figure}
 
-Figure \ref{fig:bpmn-example} provided an example of a \gls{bpmn} diagram.
+Figure \ref{fig:bpmn-example} provides an example of a \gls{bpmn} diagram.
 Note that all gateways come in pairs.
 Exclusive Gateway have to indicate where branching starts and merges.
 Parallel Gateway and Inclusive Gateway need to synchronize flows because branched tasks are performed in parallel.
