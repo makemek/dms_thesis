@@ -270,10 +270,7 @@ System requirement is a top-level requirement for a product that contains multip
 \begin{enumerate}
 	\item The system shall operate as a web application hosted on a web server so that all users can access it in one place.
 	\item The system shall not disclose internal workflow to any user for all associated documents except for an administrator.
-	\item The system shall assign an identification code to official documents in the following format: $TTYYYYDDDD$ where
-	\subitem $TT$ is the identification code from table \ref{tbl-doc-subtype}.
-	\subitem $YYYY$ is the four-digit full Christian year such as 2016 or 2015.
-	\subitem $DDDD$ is the four-digit number of the document started at one and increment by one filled with leading zeros.
+	\item The system shall assign an identification code to official documents in the format $TTYYYYDDDD$.
 	\item The system shall contain the REST \gls{api} so that it can communicate with front-end of this system.
 	The \gls{api} shall not be publicly available.
 	The \gls{api} shall be in URI \enquote{/api/document/\textless interface \textgreater/} where \textless interface \textgreater is the name of the interface.
