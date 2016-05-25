@@ -470,37 +470,3 @@ Table \ref{tbl:sum-bpmn-symbol} summarizes \gls{bpmn} symbols that appear in thi
 
 \end{longtable}
 
-\newpage
-
-% Teach readers how to read a BPMN diagram by example.
-\begin{figure}[t]
-	\centering
-	\includegraphics[scale=0.55]{res/bg-knowledge/bpmn-example}
-	\caption{Shipment Process of a hardware retailer \citefigure{bpmn_manual_example_omg} \cite{bpmn_manual_example_omg}.}
-	\label{fig:bpmn-example}
-\end{figure}
-
-Figure \ref{fig:bpmn-example} provides an example of a \gls{bpmn} diagram.
-Note that all gateways come in pairs.
-Exclusive Gateway have to indicate where branching starts and merges.
-Parallel Gateway and Inclusive Gateway need to synchronize flows because branched tasks are performed in parallel.
-Synchronization is to ensure that all branched tasks are completed before going to the next flow.
-
-The figure shows steps of hardware retailer's shipment process of shipping goods to customers.
-There are three participants involved in the hardware retailer---a warehouse worker, a clerk, and a logistics manager.
-A Start Event (\includegraphics[scale=0.0035]{\bpmnSymRepo start-event-none}) marks the beginning of a process.
-An End Event (\includegraphics[scale=0.0035]{\bpmnSymRepo end-event-none}) marks the end of the process.
-Arrows navigates the flow to each node in the diagram.
-
-\enquote{Goods to ship} is a trigger of a process.
-A Parallel Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-parallel}) with outgoing two flows indicates that task \enquote{Decide if normal post or speical shipment} and \enquote{Package goods} have to be done in parallel.
-While clerk is deciding if goods is a normal postal or special shipment, the warehouse worker can start packaging the goods.
-Next clerk's task is to decide a \enquote{Mode of delivery} indicated by an Exclusive Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-none}).
-The gateway is not responsible for clerk's decision, but rather the task before it.
-If the clerk decides that goods are a special carrier, the clerk will perform \enquote{Request quotes from carriers} and \enquote{Assign a carrier \& prepare paperwork} task.
-A special carrier includes a carrier service denoted by a Text Annotation (\includegraphics[scale=0.005]{\bpmnSymRepo text-annotation}).
-If the clerk decides that goods are normal post, the clerk will perform \enquote{Check if extra insurance is necessary} task.
-While the clerk is filling in a post label, if goods requires an extra insurance, the logistics manager will take out extra insurance.
-An Inclusive Gateway (\includegraphics[scale=0.005]{\bpmnSymRepo gateway-or}) ensures that logistic manager will deal with goods if they need the extra insurance.
-Finally, the warehouse worker will add paperwork and move package to a pick area.
-All goods are ready to ship to customers.
