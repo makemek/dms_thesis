@@ -50,7 +50,9 @@ Most \gls{dms} applications have these components implemented within.
 \end{description}
 
 \section{Metadata}
+
 Metadata literally means \enquote{data about data} \cite[p.~1]{baca_2008}.
+
 There is no clear definition on what metadata is because this term is used differently in different communities.
 For librarians, it refers to information in the library catalog that help users to find the right book in the library.
 For search engines, it means descriptions of web page's contents and keywords used to rank relevant websites.
@@ -61,14 +63,9 @@ Whatever metadata refers to, they share the following similar usage.
 	\item To distinguish or bundle similar resources.
 	\item To find resources based on search criteria.
 \end{enumerate}
-There are 3 types of metadata \cite{hodge_2001}.
-\begin{description}
-	\item[Descriptive metadata] give a description of resources for discovery and identification.
-	\item[Structural metadata] describes how component's objects are organized.
-	\item[Administrative metadata] indicates information about how resource suppose to be managed.
-\end{description}
 
-Electronic documents contain descriptive metadata providing additional information on the document.
+
+Electronic documents contain descriptive metadata providing additional information on the document such as Document name, Author name, Date etc.
 The reason for having metadata associate with the document is that they can be indexed in the system.
 Index is a systematic arrangement of entries designed to enable users to locate information in a document \cite{def-index}.
 User can use metadata to quickly locate documents after they are archived in the system.
@@ -140,21 +137,12 @@ The following list shows common features of \gls{nosql} \cite[p.~12-16]{nosql-fo
 	Meaning that the metadata model does not have to go through database normalization process to minimize data redundancy.
 	Programmer can focus on modelling metadata without having to worry about modelling table relations in \gls{rdbms}.
 	
-	\item[Highly distributable] \hfill \\
-	A single server may not be able to handle all data requests in time.
-	Instead of dedicating database on the single server, many servers needed to process queries in parallel.
-	Storing data across multiple servers in relational databases is a challenging task.
-	\gls{nosql} databases can handle distributed queries as long as connected machines are fast enough to talk to each other.
-	\gls{dms} for \gls{ic} needs to be scalable and maintainable.
-	Storage space required to store document files and their metadata is expected to grow over time.
-	If a single storage server is not enough, \gls{nosql} can use multiple storage servers.
-	No need to program new a system to manage distributed queries.
 \end{description}
 
 There are many \gls{nosql} storage types available to model the content.
 For example, \enquote{Column-oriented database} stores data as columns instead of rows in \gls{rdbms}.
 \enquote{Graph store} represents data as nodes and relationships as edges in a graph.
-\gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships.
+\gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships(Document Store will keep every documents and any related with documents on database).
 The topmost node in Figure \ref{arch-node} called a root node.
 This node represents a record's starting point.
 The model must have only one root node.
@@ -170,18 +158,20 @@ Another reason is that programmer can store objects to \gls{nosql} database easi
 
 Directed edges connecting between two nodes represents a relationship.
 A node where an arrow points called a parent node.
-A node where an arrow is pointed called a child node.
-The parent node can have many child nodes and each child node can have many parent nodes.
+A node where an arrow is pointed to called a child node.
+The parent node can have many child nodes. 
 
-From Figure \ref{metadata-ex-pdf}, a \gls{pdf} metadata can be modelled to hierarchical parent-child relationship as shown in figure \ref{nosql-uml-hiarch-repr}.
+
+
+From Figure \ref{metadata-ex-pdf}, a \gls{pdf} metadata can be modelled to hierarchical parent-child relationship as shown in Figure \ref{nosql-uml-hiarch-repr}.
+
 Figure \ref{nosql-aggregate-uml} is a data model representation using \gls{uml} notation.
 \enquote{PDF} is a root node of the the hierarchical model.
 The root node is not necessary for implementation because \enquote{Document Store} had already created it by default.
 Thus, the default-created node causes the \enquote{PDF} node to be its child node.
-Since the hierarchical model require the root node, it is recommended to have the root node in the model.
-Multiplicity constraints indicated by an integer represents maximum allowance number of object instances.
+
 A note symbol (rectangle with right-folded corner) has dotted lines connected to it.
-Those lines indicate which metadata are generated automatically by \gls{xmp}.
+Those dotted lines indicate which metadata are generated automatically by \gls{xmp}.
 It restrict user from editing them.
 \gls{xmp} is a file labeling technology developed by Adobe Systems Inc..
 \gls{xmp} embeds metadata into files during the content creation process \cite{adobe-xml}.
@@ -259,7 +249,7 @@ For example, numeric value of \textit{1} is not the same as a boolean value of \
 The boolean data type has to perform logical operation with the same data type.
 If a programmer would like to store a boolean value, he has to use a boolean data type provided by the programming language.
 
-\enquote{Document store} use \gls{xml}, \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
+\enquote{Document store} use \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
 Client have to use REST API provided by the database to query the data.
 \gls{rest} is a network-based software architectural style of the World Wide Web \cite{doglio, masse_2012}.
 It takes care interactions between client and server.

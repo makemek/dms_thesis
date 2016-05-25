@@ -1,6 +1,6 @@
 \chapter{Requirement and Analysis}
 \section{Introduction}
-The overall purposes of this study is to improve efficiencies of \gls{ic}'s digital document management strategies. 
+The overall purposes of this project is to create a system to improve efficiencies of \gls{ic}'s digital document management strategies. 
 The study involves investigating internal \gls{ic}'s working procedures and regulations.
 How \gls{ic} execute strategies on their digital document assets.
 What are advantages and disadvantages of their strategies.
@@ -39,20 +39,20 @@ Only academic and academic support located at the bottom-most hierarchy involves
 
 In this study, \gls{ic} staffs are the subject of this study divided into two focus groups:
 \begin{description}
-	\item [Academic staffs (the buttom-most hierarchy)] as a primary focus group because they are responsible for keeping records of all \gls{ic}'s documents.
+	\item [Academic staffs] as a primary focus group because they are responsible for keeping records of all \gls{ic}'s documents.
 	Transfer documents around the organization according to \gls{ic}'s workflow specifications.
 	Managing day-to-day operations within the organization.
 	They also provide academic advices and guidances to \gls{ic} undergraduate and postgraduate students.
 
-	\item [Administrative staffs] as a secondary focus group because they are not directly involve in keeping and organizing documents.
+	\item [Administrative staffs] as a secondary focus group because they are directly involve in keeping and organizing documents.
 	Some of them have privilege to issue, review, and approve documents.
 	In order to know more about their procedures, deputy dean and deputy dean's assistant are selected as a sample for this study.
 \end{description}
 
-After conducted an interview, \gls{ic} staffs reveal that they would like a system that manage their organization's documents automatically.
+After conducting the questionaire interview, \gls{ic} staffs reveal that they would like a system that manage their organization's documents automatically.
 What they mean by managing is that they would like to know what are they suppose to do with received documents.
 Things they have to do could be approval, signing, or printing documents.
-Then, forwarding the document to another person in the organization without necessarily having to know who that person is.
+Then, forwarding the document to another person who is involved in the workflow. 
 They also would like to know any additional documents required before forwarding documents so that they can prepare them beforehand.
 
 For every official \gls{ic}'s documents, \gls{ic} assigns an identification number internally.
@@ -82,7 +82,7 @@ There are eleven types of documents separated into three categories based on hea
 \end{tabular}
 \end{table}
 
-According to the scope stated in section \ref{sec:scope}, each documents are associated with the document as shown in table \ref{tbl-scope-doc-subtype}.
+According to the scope stated in section \ref{sec:scope}, each document form has its own document type as can be seen in table \ref{tbl-scope-doc-subtype}.
 External documents are not \gls{ic}'s official documents in table \ref{tbl-doc-subtype}.
 They are attachments of the official document.
 \begin{table}
@@ -101,15 +101,15 @@ They are attachments of the official document.
 
 To generate an identification number for a document, it has to confine to the following format: $TTYYYYDDDD$.
 Where $TT$ is the identification code from table \ref{tbl-doc-subtype}.
-$YYYY$ is the four-digit full Christian year such as 2016 or 2015.
-$DDDD$ is the four-digit number of the document.
+$YYYY$ is a four-digit such as 2016 or 2015.
+$DDDD$ is a four-digit running number.
 It starts at one and must increment by one each time as the new document is created.
 If $DDDD$ is less than one thousand, it must fill with leading zeros until there are four digits presents.
 If the number is greater than 9999 which is a maximum limit, it has to continue counting normally but without any leading zeros.
 Although, having the same type of document more than ten thousand documents has never happened to \gls{ic} before.
 If new year has started, the $DDDD$ must reset back to one (0001).
 
-To clarify how the identification number is generated and combined together, let's assumes that \gls{ic} already have two documents of type \enquote{Academic Administration}.
+To clarify how the identification number is generated and combined together, assume that \gls{ic} already have two documents of type \enquote{Academic Administration}(CA).
 Mr. X would like to take a vacation on May, 2016.
 So he requests an \enquote{Absence Form} and put in an information.
 Then, he submits the form to the system.
@@ -284,14 +284,14 @@ User requirement is a goal or task that specific classes of users must be able t
 	User shall be able to includes digital attachment files to the document as it states.
 	
 	\item
-	Staff and dean shall be able to read documents.
+	Staff including dean shall be able to read documents.
 	Then perform either the following actions: reject or approve the document.
 	
 	\item
 	Staff shall be able to print out paper documents from digital documents including attachments.
 	
 	\item
-	If any official document requires physical signature(s) as a conclusive evidence, staff shall be able to scan and upload that document as an attachment.
+	If any official document requires physical signature(s) as a conclusive evidence, staff shall be able to scan and upload that document as an attachment of the official document.
 	
 	\item
 	Any \gls{ic} personnel who have a write-access to official documents shall have read-access to all previous versions of those documents.
@@ -300,7 +300,7 @@ User requirement is a goal or task that specific classes of users must be able t
 	User shall be able to search their documents by the following criteria:
 	\subitem A document identification code given by the system.
 	\subitem A Form's name.
-	\subitem A date when the document is created.
+	\subitem A date when the document is created/modified.
 	\subitem A Document's status indicates whether the document is rejected, pending, or completed successfully.
 	
 	Any mentioned criteria can be mixed together to create more complex search queries.
