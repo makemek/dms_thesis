@@ -387,6 +387,36 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
+	\caption{Use case: Share documents to other roles}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Share documents to other roles \\
+		\hline
+		
+		\textbf{Description} & Let a group of users categorized by roles to have read-access to the document \\
+		\textbf{Primary Actor} & Web administrator, lecturer, and other granted users \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin.
+			\item There are at least two users in the system.
+			\item There is at least one document owned by a user.
+			\item The document has to complete all tasks defined by a workflow successfully.
+		\end{enumerate} \\
+		\textbf{Post-condition} & User(s) who are selected by the document's owner have read-access to the designated owner's document \\
+		\textbf{Trigger} & This use case can happen at any time \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On \enquote{My Documents} tab, click the \enquote{Edit} button located on the \enquote{visibility} column.
+			\item Tick a checkbox on a desired role to be able to see the document.
+			\item Click \enquote{save} button.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\centering
 	\caption{Use case: Search Document}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
