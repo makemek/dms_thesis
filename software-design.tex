@@ -37,15 +37,16 @@ Table \ref{tbl:page-availability} shows all views in the system and their availa
 \centering
 \caption{System views and their availability}
 \label{tbl:page-availability}
-\begin{tabular}{@{}lccC{2cm}ccL{3cm}@{}}
-\toprule
-\multirow{2}{*}{View} & \multicolumn{5}{c}{Availability}                                               & \multicolumn{1}{c}{\multirow{2}{*}{Description}} \\ \cmidrule(lr){2-6}
-                      & User       & Staff      & Assistant of deputy dean & Deaputy dean & Dean       & \multicolumn{1}{c}{}                             \\ \midrule
-Document Dashboard    & \checkmark & \checkmark & \checkmark               & \checkmark   & \checkmark & View lists of documents                          \\
-Search Result         & \checkmark & \checkmark & \checkmark               & \checkmark   & \checkmark & View search result                               \\
-Navigation            & \checkmark & \checkmark & \checkmark               & \checkmark   & \checkmark & Menu on the top to navigate around the site      \\
-Document Approval     &            & \checkmark & \checkmark               & \checkmark   & \checkmark & Approve or reject documents                      \\
-Document Printing     &            & \checkmark &                          &              &            & Print out documents                              \\ \bottomrule
+\begin{tabular}{@{}L{3cm}C{2cm}cC{2cm}L{5.5cm}@{}}
+	\toprule
+	\multirow{2}{*}{View}        & \multicolumn{3}{c}{Availability}                     & \multirow{2}{*}{Description}                    \\ \cmidrule(lr){2-4}
+	& Web Administrator & Staff      & Other Granted Users &                                                 \\ \midrule
+	Document Dashboard           & \checkmark        & \checkmark & \checkmark          & View lists of documents                         \\
+	Search Result                & \checkmark        & \checkmark & \checkmark          & View search result                              \\
+	Navigation                   & \checkmark        & \checkmark & \checkmark          & Menu on the top to navigate around the site     \\
+	Document Visibility Settings & \checkmark        & \checkmark &                     & Configure which role(s) can access the document \\
+	Document Deatils             & \checkmark        & \checkmark & \checkmark          & View more information of the document           \\
+	Role Management              & \checkmark        &            &                     & Assign, create, delete user's role(s)           \\ \bottomrule
 \end{tabular}
 \end{table}
 
