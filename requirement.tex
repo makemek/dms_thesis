@@ -488,3 +488,29 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 		\hline
 	\end{tabular}
 \end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Download document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Download document \\
+		\hline
+		
+		\textbf{Description} &  Retrieve an electronic document file \\
+		\textbf{Primary Actor} & Other granted user \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin
+			\item User owns at least one document in his/her account
+		\end{enumerate} \\
+		\textbf{Post-condition} & User retrieve the file from the system to his/her computer \\
+		\textbf{Trigger} & This use case can happen at any time \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On \enquote{My Documents} tab, locate the desired document and click on a hyperlink at \enquote{Document name} column
+			\item Wait until the download completes
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
