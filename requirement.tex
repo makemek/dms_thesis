@@ -355,6 +355,38 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
+	\caption{Use case: Assign role to user}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Assign role to user \\
+		\hline
+		
+		\textbf{Description} & Assigning roles of \gls{ic} such as student or staff to the user. \\
+		\textbf{Primary Actor} & Web administrator \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin.
+			\item There is at least one user registers to the system.
+		\end{enumerate} \\
+		\textbf{Post-condition} & The system assigns a role to user and notify him/her. \\
+		\textbf{Trigger} & 
+		\begin{enumerate}
+			\item A user has registered to the system.
+			\item A user request web administrator to change a role.
+		\end{enumerate}\\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On the top menu-bar, click on the \enquote{Admin} tab.
+			\item Navigate to \enquote{Settings} and click on the \enquote{Role Management}
+			\item Click on the desired role and select which user to be assigned to.
+			\item Click \enquote{save} button.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
 	\caption{Use case: Search Document}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
