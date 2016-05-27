@@ -442,6 +442,32 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
+	\caption{Use case: Track document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Track document \\
+		\hline
+		
+		\textbf{Description} & Track a document executing in a workflow \\
+		\textbf{Primary Actor} & Other granted users \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin
+			\item User executes a workflow that is going to produce at least one document.
+		\end{enumerate} \\
+		\textbf{Post-condition} & The system display an executing task defined by the workflow \\
+		\textbf{Trigger} & The document is forward to the next task in the workflow \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On \enquote{My Documents} tab at \enquote{status} column, click on the status (created, in progress, or done).
+			\item The system displays the entire workflow and highlights the executing task in which will produce the document.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
 	\caption{Use case: Search Document}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
