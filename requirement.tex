@@ -9,15 +9,12 @@ Solutions that could further improve flows of documents inside \gls{ic}.
 This chapter presents requirement gathering methods to address the problem.
 
 \section{Gathering Requirements}
-Section \ref{sec:motivation} introduced digital document problems occurred inside \gls{ic}.
-These problems were formulated to research questions suitable for this study.
-The study's goal is to create a system to verify the hypotheses posed by two research questions:
-\begin{enumerate}
-	\item How to store and retrieve digital \gls{ic}'s documents so that authorized users can access within \gls{ic}, \gls{kmitl} precinct?
-	\item How to track \gls{ic}'s document going through each task specified by \gls{ic}'s document workflow?
-\end{enumerate}
-This study implements qualitative research method with two research strategies: interview and case study.
-The following sections discuss these two strategies in more detail.
+To understand what user expects the system to do is an essential part of developing a software.
+The more system operates close to their expectation, the more satisfaction they get.
+User's expectation on the system can be described as requirements.
+A descriptive text describes the system's functionality.
+What they are and why the user need them.
+The following sections discuss these two strategies in order to gather requirements from the user.
 
 \subsection{Interview}
 \citeauthor{gall7j} (\citeyear{gall7j}) states that interview is the spontaneous generation of questions in a natural interaction, typically one that occurs as part of ongoing participant observation fieldwork.
@@ -317,7 +314,7 @@ Quality attribute is a kind of non-functional requirement that describes a servi
 \label{section:usecase}
 Figure \ref{fig:usecase-diagram} captures system functionalities and requirements represented as \gls{uml} use case diagram.
 Table \ref{tbl:actor-description} describes who these type of users are.
-From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-conclusive-documents} elaborates each use cases in greater detail.
+From table \ref{tbl:usecase-first} to table \ref{tbl:usecase-last} elaborates each use cases in greater detail.
 
 \begin{figure*}
 	\centering
@@ -330,15 +327,17 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 	\centering
 	\caption{Type of user and description}
 	\label{tbl:actor-description}
-	\begin{tabular}{|l|L{7.5cm}|}
+	\begin{tabular}{|l|L{8.5cm}|}
 		\hline
 		Actor & Description \\
 		\hline
-		Dean & A headmaster of \gls{ic}. \\
-		Deputy dean & Dean's assistant who could also be a dean's representative. \\
-		Assistant of deputy dean & Deputy dean's assistant who deals with documents that is not critical to \gls{ic}. \\
-		Staff & \gls{ic}'s employee in academic department (refer to bottom-most hierarchy in figure \ref{ic-org-sturcture}) \\
-		User & A regular user who have an account provided by an administrator to access the system. \\
+		Web administrator & A website maintainer who has privilege to grant access to user by providing a username and password.
+		They can see what is going on within the system. For example, they can access any documents and workflows.
+		They know many workflow is executing by who and when.
+		A web adminsitrator can also manage user within the system such as create, update, delete, and assign roles to a user \\
+		\gls{ic} staff & \gls{ic}'s employees who is in \gls{ic}'s organization structure from figure \ref{ic-org-sturcture} \\
+		Other granted users & Users who is neither all of the above, but got access permission from the web administrator.
+		They can be students or employees from a different department of \gls{kmitl} \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -355,27 +354,32 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
-	\caption{Use case: Reject Document}
-	\label{tbl-usecase:reject-document}
-	
+	\caption{Use case: Assign role to user}
+	\label{tbl:usecase-first}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
-		\textbf{Use Case Name} & Reject Document \\
+		\textbf{Use Case Name} & Assign role to user \\
 		\hline
 		
-		\textbf{Description} & Decline the received document and halt the process of this document. \\
-		\textbf{Primary Actor} & \allICPersonel \\
-		\textbf{Pre-condition} & \alreadylogin. \\
-		\textbf{Post-condition} & 
-		\begin{itemize}
-			\item The system notifies user for a rejected document
-			\item The rejected document disappears from the list of pending documents
-		\end{itemize} \\
-		\textbf{Trigger} & Read the document \\
+		\textbf{Description} & Assigning roles of \gls{ic} such as student or staff to the user. \\
+		\textbf{Primary Actor} & Web administrator \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin.
+			\item There is at least one user registers to the system.
+		\end{enumerate} \\
+		\textbf{Post-condition} & The system assigns a role to user and notify him/her. \\
+		\textbf{Trigger} & 
+		\begin{enumerate}
+			\item A user has registered to the system.
+			\item A user request web administrator to change a role.
+		\end{enumerate}\\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
-			\item Click a reject button on a designated document.
-			\item Click \enquote{Yes} when system asks for a confirmation.
+			\item On the top menu-bar, click on the \enquote{Admin} tab.
+			\item Navigate to \enquote{Settings} and click on the \enquote{Role Management}
+			\item Click on the desired role and select which user to be assigned to.
+			\item Click \enquote{save} button.
 		\end{enumerate} \\
 		\hline
 	\end{tabular}
@@ -383,25 +387,28 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
-	\caption{Use case: Approve Document}
+	\caption{Use case: Share documents to other roles}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
-		\textbf{Use Case Name} & Approve Document \\
+		\textbf{Use Case Name} & Share documents to other roles \\
 		\hline
 		
-		\textbf{Description} & Accept the received document and let it continue to the next execution process. \\
-		\textbf{Primary Actor} & \allICPersonel \\
-		\textbf{Pre-condition} & \alreadylogin. \\
-		\textbf{Post-condition} & 
-		\begin{itemize}
-			\item The system notifies user for a approve document
-			\item The approved document disappears from the list of pending documents
-		\end{itemize} \\
-		\textbf{Trigger} & Read the document \\
+		\textbf{Description} & Let a group of users categorized by roles to have read-access to the document \\
+		\textbf{Primary Actor} & Web administrator, \gls{ic} staff, and other granted users \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin.
+			\item There are at least two users in the system.
+			\item There is at least one document owned by a user.
+			\item The document has to complete all tasks defined by a workflow successfully.
+		\end{enumerate} \\
+		\textbf{Post-condition} & User(s) who are selected by the document's owner have read-access to the designated owner's document \\
+		\textbf{Trigger} & This use case can happen at any time \\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
-			\item Click an approve button on a designated document.
-			\item Click \enquote{Yes} when system asks for a confirmation.
+			\item On \enquote{My Documents} tab, click the \enquote{Edit} button located on the \enquote{visibility} column.
+			\item Tick a checkbox on a desired role to be able to see the document.
+			\item Click \enquote{save} button.
 		\end{enumerate} \\
 		\hline
 	\end{tabular}
@@ -409,24 +416,82 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
-	\caption{Use case: Print Document}
+	\caption{Use case: View previous revision of the document}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
-		\textbf{Use Case Name} & Print Document \\
+		\textbf{Use Case Name} & View previous revision of the document \\
 		\hline
 		
-		\textbf{Description} & Print paper documents from a printer. \\
-		\textbf{Primary Actor} & Staff \\
-		\textbf{Pre-condition} & \alreadylogin. \\
-		\textbf{Post-condition} & Physical document is print out from the printer successfully. \\
-		\textbf{Trigger} & Open the document \\
+		\textbf{Description} & Find out more information about the previous revision of the same document \\
+		\textbf{Primary Actor} & \gls{ic} staff \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin.
+			\item At least two documents are already exist in the system.
+		\end{enumerate} \\
+		\textbf{Post-condition} & The highlights differences such as file name, author, or attachments between the previous revision and the current revision \\
+		\textbf{Trigger} & This use case can happen at any time \\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
-			\item Click \enquote{Print Document} on the main menu.
-			\item Select attachments to be print (if any).
-			\item Select a printer.
-			\item Configure paper size and number of copies as needed.
-			\item Click \enquote{Print} to print the document.
+			\item On \enquote{My Documents} tab, locate the document and click on \enquote{More Details} button
+			\item Click \enquote{Compare with previous revision} button.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Track document}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Track document \\
+		\hline
+		
+		\textbf{Description} & Track a document executing in a workflow \\
+		\textbf{Primary Actor} & Other granted users \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin
+			\item User executes a workflow that is going to produce at least one document.
+		\end{enumerate} \\
+		\textbf{Post-condition} & The system display an executing task defined by the workflow \\
+		\textbf{Trigger} & The document is forward to the next task in the workflow \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On \enquote{My Documents} tab at \enquote{status} column, click on the status (created, in progress, or done).
+			\item The system displays the entire workflow and highlights the executing task in which will produce the document.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Do Pending Task}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Do pending task \\
+		\hline
+		
+		\textbf{Description} & Given a task from the workflow, a user has to perform an action upon the task as instructed by the workflow such as upload attachment(s), fill a form, or sign a document  \\
+		\textbf{Primary Actor} & Granted users \\
+		\textbf{Pre-condition} & \begin{enumerate}
+			\item \alreadylogin
+			\item User executes at least one workflow and the workflow is not complete its process yet
+		\end{enumerate} \\
+		\textbf{Post-condition} & 
+		\begin{enumerate}
+			\item The task disappear from the view 
+			\item The task is carried out to the next task in the workflow
+		\end{enumerate} \\
+		\textbf{Trigger} & The task requires user to take an action \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On \enquote{Pending tasks} tab, select a desired task and click on \enquote{More detail}
+			\item The system show instructions on what user has to do with the task.
+			User has to perform accordingly.
+			\item Click \enquote{submit} to complete the task
 		\end{enumerate} \\
 		\hline
 	\end{tabular}
@@ -441,10 +506,10 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 		\hline
 		
 		\textbf{Description} & Ask the system to find documents. \\
-		\textbf{Primary Actor} & User \\
-		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Primary Actor} & Granted user \\
+		\textbf{Pre-condition} & \alreadylogin \\
 		\textbf{Post-condition} & The system lists documents according to search query \\
-		\textbf{Trigger} & Finding specific documents \\
+		\textbf{Trigger} & This use case can happen at any time \\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
 			\item Enter the document's identification code or the name of the form.
@@ -457,22 +522,28 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
-	\caption{Use case: Attach Other Required Documents}
+	\caption{Use case: Search Workflow}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
-		\textbf{Use Case Name} & Attach Other Required Documents \\
+		\textbf{Use Case Name} & Search Workflow \\
 		\hline
 		
-		\textbf{Description} & Some forms require including attachment files in order to continue the process. \\
-		\textbf{Primary Actor} & User \\
-		\textbf{Pre-condition} & \alreadylogin. \\
-		\textbf{Post-condition} & The form includes all uploaded documents \\
-		\textbf{Trigger} & The form requires attachments \\
+		\textbf{Description} & Find workflow(s) that user has executed  \\
+		\textbf{Primary Actor} & Granted user \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin
+			\item User has executed at least on workflow
+		\end{enumerate} \\
+		\textbf{Post-condition} & The system lists workflows according to search query \\
+		\textbf{Trigger} & This use case can happen at any time \\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
-			\item Browse files on a local machine and select files that the form requires.
-			\item Upload them. Wait for them to all finish.
-			\item Click \enquote{Next} to continue the execution.
+			\item Enter the name of the workflow.
+			\item Select workflow's execution status
+			\item Enter a sentence, word, or phrase to look for inside the task (optional)
+			\item Specify an execution date (optional)
+			\item Click \enquote{Search}.
 		\end{enumerate} \\
 		\hline
 	\end{tabular}
@@ -480,28 +551,26 @@ From table \ref{tbl-usecase:reject-document} to table \ref{tbl-usecase:attach-co
 
 \begin{table}
 	\centering
-	\caption{Use case: Attach Conclusive Documents}
-	\label{tbl-usecase:attach-conclusive-documents}
+	\caption{Use case: Download document}
+	\label{tbl:usecase-last}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
-		\textbf{Use Case Name} & Attach Conclusive Documents \\
+		\textbf{Use Case Name} & Download document \\
 		\hline
 		
-		\textbf{Description} & Includes the document that has physical signatures to certify it as a hard evidence. \\
-		\textbf{Primary Actor} & Staff \\
+		\textbf{Description} &  Retrieve an electronic document file \\
+		\textbf{Primary Actor} & Other granted user \\
 		\textbf{Pre-condition} & 
-		\begin{itemize}
+		\begin{enumerate}
 			\item \alreadylogin
-			\item All required signatures present.
-		\end{itemize} \\
-		
-		\textbf{Post-condition} & The form has this document in its attachments \\
-		\textbf{Trigger} & The form has completed execution inside its workflow. \\
+			\item User owns at least one document in his/her account
+		\end{enumerate} \\
+		\textbf{Post-condition} & User retrieve the file from the system to his/her computer \\
+		\textbf{Trigger} & This use case can happen at any time \\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
-			\item Select a pending form.
-			\item Scan the physical document.
-			\item Upload the scanned document as an attachment.
+			\item On \enquote{My Documents} tab, locate the desired document and click on a hyperlink at \enquote{Document name} column
+			\item Wait until the download completes
 		\end{enumerate} \\
 		\hline
 	\end{tabular}
