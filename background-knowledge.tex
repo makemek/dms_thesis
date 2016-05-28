@@ -143,126 +143,26 @@ There are many \gls{nosql} storage types available to model the content.
 For example, \enquote{Column-oriented database} stores data as columns instead of rows in \gls{rdbms}.
 \enquote{Graph store} represents data as nodes and relationships as edges in a graph.
 \gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships(Document Store will keep every documents and any related with documents on database).
-The topmost node in Figure \ref{arch-node} called a root node.
-This node represents a record's starting point.
-The model must have only one root node.
-\gls{dms} for \gls{ic} use \enquote{Document Store} storage type to manage document's metadata.
+\gls{dms} for \gls{ic} use \enquote{Document Store} storage type to manage document's metadata. %TODO explain Document Store
 The reason is that this storage type can query child nodes, not just the parent node.
-\begin{figure}[h]
-	\centering
-	\caption{The hierarchical organized into a set of parent-child nodes}
-	\includegraphics[scale=0.48]{res/bg-knowledge/nosql-hierarchical}
-	\label{arch-node}
-\end{figure}
 Another reason is that programmer can store objects to \gls{nosql} database easily by converting them to \gls{json} objects.
-
-Directed edges connecting between two nodes represents a relationship.
-A node where an arrow points called a parent node.
-A node where an arrow is pointed to called a child node.
-The parent node can have many child nodes. 
-
-
-
-From Figure \ref{metadata-ex-pdf}, a \gls{pdf} metadata can be modelled to hierarchical parent-child relationship as shown in Figure \ref{nosql-uml-hiarch-repr}.
-
-Figure \ref{nosql-aggregate-uml} is a data model representation using \gls{uml} notation.
-\enquote{PDF} is a root node of the the hierarchical model.
-The root node is not necessary for implementation because \enquote{Document Store} had already created it by default.
-Thus, the default-created node causes the \enquote{PDF} node to be its child node.
-
-A note symbol (rectangle with right-folded corner) has dotted lines connected to it.
-Those dotted lines indicate which metadata are generated automatically by \gls{xmp}.
-It restrict user from editing them.
-\gls{xmp} is a file labeling technology developed by Adobe Systems Inc..
-\gls{xmp} embeds metadata into files during the content creation process \cite{adobe-xml}.
-\enquote{Description} and \enquote{Advanced} are \enquote{PDF}'s child nodes.
-\enquote{Description} and \enquote{Advanced} also contain their child nodes.
-Each node is an object in itself.
-\gls{nosql} databases can locate any node within the graph according to any specific queries.
-\begin{figure}[ht]
-	\centering
-	\caption{An aggregate data model in UML notation from figure \ref{metadata-ex-pdf}}
-	\label{nosql-aggregate-uml}	
-	\includegraphics[scale=0.53]{res/bg-knowledge/nosql-nosql-agregate-uml}
-\end{figure}
-\begin{figure}[ht]
-	\centering
-	\caption{A hierarchical representation from figure \ref{nosql-aggregate-uml}}
-	\label{nosql-uml-hiarch-repr}	
-	\includegraphics[scale=0.5]{res/bg-knowledge/nosql-uml-hiarch-repr}
-\end{figure}
-
-\begin{normalsize}
-\begin{longtable}{C{0.15\textwidth} C{0.15\textwidth} L{0.2\textwidth} L{0.3\textwidth}}
-		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}}
-		\label{tbl:uml-corespond-pdf} \\
-		\hline
-		Class & Attribute & Corresponding field in figure \ref{metadata-ex-pdf} & value \\
-		\hline
-		\endfirsthead
-		
-		\caption{Corresponding attributes and fields between figure \ref{nosql-aggregate-uml} and \ref{metadata-ex-pdf}} \\
-		\hline
-		Class & Attribute & Corresponding field in figure \ref{metadata-ex-pdf} & value \\
-		\hline
-		\endhead
-		
-		\hline \multicolumn{4}{r}{{Continued on next page}} \\ \hline
-		\endfoot
-		
-		\hline \hline
-		\endlastfoot
-		
-		Description & fileName & File: & dms.pdf \\
-		& title & Title: & Document Management System for IC KMITL \\
-		& author & Author:  & Apipol Niyomsak \\
-		& subject & Subject: & \\
-		& dateCreate & Created: & \textbf{1450792574} \\
-		& dateModified & Modified: & \textbf{1450792574} \\
-		& application & Application: & LaTeX with hyperref package \\
-		Keyword & tag & Keywords: & [dms, IC, KMITL]\\
-		Advanced & pdfProducer & PDF Producer: & pdfTeX-1.40.16 \\
-		& pdfVersion & PDF Version: & 1.5 (Acrobat 6.x) \\
-		& location & Location: &  C:\textbackslash Users\textbackslash Apipol\textbackslash Documents\textbackslash \newline 
-		TEX\textbackslash dms\_thesis\textbackslash \\
-		& fileSizeByte & File Size: & 1909582 \\
-		& taggedPDF & Tagged PDF: & \textit{\textbf{false}} \\
-		& fastWebView & Fast Web View: & \textit{\textbf{false}} \\
-		& totalPage & Number of Pages: & 42 \\
-		PageSize & unit & Page Size: & in \\
-		& width & Page Size: & 8.50 \\
-		& height & Page Size: & 11.00 \\
-		\hline
-\end{longtable}
-\end{normalsize}
-
-Table \ref{tbl:uml-corespond-pdf} summarizes corresponding attributes (figure \ref{nosql-aggregate-uml}) and fields (figure \ref{metadata-ex-pdf}).
-Note that bold-highlighted values are stored differently from any other data types.
-\enquote{dateCreate} and \enquote{dateModified} have \textit{Date} data type.
-When storing date in \gls{nosql}, it converts to UNIX timestamp automatically.
-UNIX timestamp (UNIX time, POSIX time, or UNIX epoch) is the number of seconds elapsed since January 1, 1970 (midnight UTC/GMT) \cite{unix-time}.
-\enquote{taggedPDF} and \enquote{fastWebView} have \textit{Boolean} data type.
-Boolean represents either \textit{true} or \textit{false}.
-\gls{nosql} store this data type as a one byte variable.
-It use less storage than integer or string to avoid any unexpected side effects of comparison. 
-For example, numeric value of \textit{1} is not the same as a boolean value of \textit{true}.
-The boolean data type has to perform logical operation with the same data type.
-If a programmer would like to store a boolean value, he has to use a boolean data type provided by the programming language.
-
 \enquote{Document store} use \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
 Client have to use REST API provided by the database to query the data.
 \gls{rest} is a network-based software architectural style of the World Wide Web \cite{doglio, masse_2012}.
 It takes care interactions between client and server.
 Client program communicates with the database using \gls{http} through exposed \glspl{api}.
-
-Listing \ref{nosql-uml-json} is a \gls{json} source code implemented from figure \ref{nosql-aggregate-uml}.
 \enquote{Document store} databases can import \gls{json} file directly.
 Querying from \enquote{Document store} databases will return \gls{json} results.
 Some web programming languages such as PHP and Javascript can parse \gls{json} results by converting them to associative arrays.
 Thus, programmer can use them to develop their systems.
-\begin{normalsize}
-\lstinputlisting[style=json, label=nosql-uml-json, caption=\gls{json} source code implementation from figure \ref{nosql-aggregate-uml}]{res/bg-knowledge/nosql-uml-json.json}
-\end{normalsize}
+
+%TODO Create exmple document UML
+
+
+%TODO New JSON
+%\begin{normalsize}
+%\lstinputlisting[style=json, label=nosql-uml-json, caption=\gls{json} source code implementation from figure \ref{nosql-aggregate-uml}]{res/bg-knowledge/nosql-uml-json.json}
+%\end{normalsize}
 
 \section{Business Process Modelling Notation (BPMN)}
 \gls{bpmn} is a graphical notation that depicts the steps in business process \cite{bpmn_omg}.
