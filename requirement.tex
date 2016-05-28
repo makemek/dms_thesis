@@ -79,23 +79,6 @@ There are eleven types of documents separated into three categories based on hea
 \end{tabular}
 \end{table}
 
-According to the scope stated in section \ref{sec:scope}, each document form has its own document type as can be seen in table \ref{tbl-scope-doc-subtype}.
-External documents are not \gls{ic}'s official documents in table \ref{tbl-doc-subtype}.
-They are attachments of the official document.
-\begin{table}
-	\centering
-	\caption{Association between document stated in \ref{sec:scope} and document type in table \ref{tbl-doc-subtype}}
-	\label{tbl-scope-doc-subtype}
-\begin{tabular}{ll}
-	Document Form & Document Type \\
-	\hline
-	Absence Form & Academic Administration \\
-	Student Internship Form & Student Affairs \\
-	Conference Outside \gls{kmitl} Form & Academic Administration \\
-	\hline
-\end{tabular}
-\end{table}
-
 To generate an identification number for a document, it has to confine to the following format: $TTYYYYDDDD$.
 Where $TT$ is the identification code from table \ref{tbl-doc-subtype}.
 $YYYY$ is a four-digit such as 2016 or 2015.
@@ -229,15 +212,11 @@ User requirement is a goal or task that specific classes of users must be able t
 	User shall be able to includes digital attachment files to the document as it states.
 	
 	\item
-	Staff including dean shall be able to read documents.
-	Then perform either the following actions: reject or approve the document.
+	Staff shall have read-access to documents.
 	
 	\item
 	Staff shall be able to print out paper documents from digital documents including attachments.
-	
-	\item
-	If any official document requires physical signature(s) as a conclusive evidence, staff shall be able to scan and upload that document as an attachment of the official document.
-	
+		
 	\item
 	Any \gls{ic} personnel who have a write-access to official documents shall have read-access to all previous versions of those documents.
 	
@@ -245,7 +224,7 @@ User requirement is a goal or task that specific classes of users must be able t
 	User shall be able to search their documents by the following criteria:
 	\subitem A document identification code given by the system.
 	\subitem A Form's name.
-	\subitem A date when the document is created/modified.
+	\subitem A date when the document is created and modified.
 	\subitem A Document's status indicates whether the document is rejected, pending, or completed successfully.
 	
 	Any mentioned criteria can be mixed together to create more complex search queries.
@@ -258,7 +237,7 @@ User requirement is a goal or task that specific classes of users must be able t
 	The system notify user by updating document's status to a new one.
 	
 	\item
-	Staff and dean should be notified when there is a new pending document forwarded to them.
+	Staff should be notified when there is a new pending document forwarded to them.
 	The notification method is the same as \ref{notification-method}.
 \end{enumerate}
 
