@@ -504,14 +504,43 @@ From table \ref{tbl:usecase-first} to table \ref{tbl:usecase-last} elaborates ea
 		\hline
 		
 		\textbf{Description} & Ask the system to find documents. \\
-		\textbf{Primary Actor} & User \\
-		\textbf{Pre-condition} & \alreadylogin. \\
+		\textbf{Primary Actor} & Granted user \\
+		\textbf{Pre-condition} & \alreadylogin \\
 		\textbf{Post-condition} & The system lists documents according to search query \\
-		\textbf{Trigger} & Finding specific documents \\
+		\textbf{Trigger} & This use case can happen at any time \\
 		\textbf{Basic flow} & 
 		\begin{enumerate}
 			\item Enter the document's identification code or the name of the form.
 			\item Adding specific searching criteria such as date creation or document's status.
+			\item Click \enquote{Search}.
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Use case: Search Workflow}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Search Workflow \\
+		\hline
+		
+		\textbf{Description} & Find workflow(s) that user has executed  \\
+		\textbf{Primary Actor} & Granted user \\
+		\textbf{Pre-condition} & 
+		\begin{enumerate}
+			\item \alreadylogin
+			\item User has executed at least on workflow
+		\end{enumerate} \\
+		\textbf{Post-condition} & The system lists workflows according to search query \\
+		\textbf{Trigger} & This use case can happen at any time \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item Enter the name of the workflow.
+			\item Select workflow's execution status
+			\item Enter a sentence, word, or phrase to look for inside the task (optional)
+			\item Specify an execution date (optional)
 			\item Click \enquote{Search}.
 		\end{enumerate} \\
 		\hline
