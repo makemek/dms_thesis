@@ -327,15 +327,17 @@ From table \ref{tbl:usecase-first} to table \ref{tbl:usecase-last} elaborates ea
 	\centering
 	\caption{Type of user and description}
 	\label{tbl:actor-description}
-	\begin{tabular}{|l|L{7.5cm}|}
+	\begin{tabular}{|l|L{8.5cm}|}
 		\hline
 		Actor & Description \\
 		\hline
-		Dean & A headmaster of \gls{ic}. \\
-		Deputy dean & Dean's assistant who could also be a dean's representative. \\
-		Assistant of deputy dean & Deputy dean's assistant who deals with documents that is not critical to \gls{ic}. \\
-		Staff & \gls{ic}'s employee in academic department (refer to bottom-most hierarchy in figure \ref{ic-org-sturcture}) \\
-		User & A regular user who have an account provided by an administrator to access the system. \\
+		Web administrator & A website maintainer who has privilege to grant access to user by providing a username and password.
+		They can see what is going on within the system. For example, they can access any documents and workflows.
+		They know many workflow is executing by who and when.
+		A web adminsitrator can also manage user within the system such as create, update, delete, and assign roles to a user \\
+		\gls{ic} staff & \gls{ic}'s employees who is in \gls{ic}'s organization structure from figure \ref{ic-org-sturcture} \\
+		Other granted users & Users who is neither all of the above, but got access permission from the web administrator.
+		They can be students or employees from a different department of \gls{kmitl} \\
 		\hline
 	\end{tabular}
 \end{table}
