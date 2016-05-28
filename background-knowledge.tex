@@ -144,7 +144,51 @@ For example, \enquote{Column-oriented database} stores data as columns instead o
 \enquote{Graph store} represents data as nodes and relationships as edges in a graph.
 \gls{nosql} databases with \enquote{Document Store} storage type organized data as a hierarchical model with parent-child relationships(Document Store will keep every documents and any related with documents on database).
 \gls{dms} for \gls{ic} use \enquote{Document Store} storage type to manage document's metadata. %TODO explain Document Store
-The reason is that this storage type can query child nodes, not just the parent node.
+\enquote{Document store} is a hash table in which there exist a unique key.
+A unique key points to a particular data.
+The data in which the key pointed to is called \enquote{value}.
+The value can also contains a key or a an array of keys.
+For example, Using \ref{metadata-ex-png} to show metadata as key-value in table \ref{tbl:ex-metadata-key-value}.
+\begin{table}
+	\centering
+	\caption{Figure \ref{metadata-ex-png} shown as \enquote{Document store} format}
+	\label{tbl:ex-metadata-key-value}
+	\begin{tabular}{ll}
+		\hline
+		Key & Value \\
+		\hline
+		
+		Dimension & 
+		\begin{tabular}{ll}
+			Key & Value \\
+			\hline
+			Width & 792 \\
+			Height & 727 \\
+			Bit depth & 24 \\
+			
+		\end{tabular} \\
+		
+		File & 
+		\begin{tabular}{ll}
+			\hline
+			Key & Value \\
+			\hline
+			Name & 4758-1798459565.png \\
+			Item type & PNG File \\
+			Folder path & C:/Users/Apipol/Pictures \\
+			Date created & 23/01/15 08:37 \\
+			Date modified & 23/01/15 08:37 \\
+			Size & 413 KB \\
+			Attributes & A \\
+			Availability & Available offline \\
+			
+		\end{tabular} \\
+		
+		\hline
+	\end{tabular}
+\end{table}
+
+The reason to use this storage strategy is that can query values from keys of keys in any depth.
 Another reason is that programmer can store objects to \gls{nosql} database easily by converting them to \gls{json} objects.
 \enquote{Document store} use \gls{json}, \gls{bson}, or \gls{yaml} to manipulate data.
 Client have to use REST API provided by the database to query the data.
