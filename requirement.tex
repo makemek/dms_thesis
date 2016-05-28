@@ -466,6 +466,37 @@ From table \ref{tbl:usecase-first} to table \ref{tbl:usecase-last} elaborates ea
 
 \begin{table}
 	\centering
+	\caption{Use case: Do Pending Task}
+	\begin{tabular}{|l|L{9cm}|}
+		\hline
+		\textbf{Use Case Name} & Do pending task \\
+		\hline
+		
+		\textbf{Description} & Given a task from the workflow, a user has to perform an action upon the task as instructed by the workflow such as upload attachment(s), fill a form, or sign a document  \\
+		\textbf{Primary Actor} & Granted users \\
+		\textbf{Pre-condition} & \begin{enumerate}
+			\item \alreadylogin
+			\item User executes at least one workflow and the workflow is not complete its process yet
+		\end{enumerate} \\
+		\textbf{Post-condition} & 
+		\begin{enumerate}
+			\item The task disappear from the view 
+			\item The task is carried out to the next task in the workflow
+		\end{enumerate} \\
+		\textbf{Trigger} & The task requires user to take an action \\
+		\textbf{Basic flow} & 
+		\begin{enumerate}
+			\item On \enquote{Pending tasks} tab, select a desired task and click on \enquote{More detail}
+			\item The system show instructions on what user has to do with the task.
+			User has to perform accordingly.
+			\item Click \enquote{submit} to complete the task
+		\end{enumerate} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
 	\caption{Use case: Search Document}
 	\begin{tabular}{|l|L{9cm}|}
 		\hline
